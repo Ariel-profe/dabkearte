@@ -121,26 +121,50 @@ export const contactMethods = [
 export const events = [
   {
     id: 1,
-    title: 'Cumpleanos',
-    desc: 'Llevamos lo mejor del Dabke y creamos un ambiente unico',
+    title: 'Historia',
+    desc: 'Nacimos en el anio 2014 para poder brindarle a la colectividad arabe de Mendoza un grupo estable que pueda representar a cada sirio y libanes de este suelo.',
     icon: LiaBirthdayCakeSolid
   },
   {
     id: 2,
-    title: 'Fiestas',
-    desc: 'Lorem ipsum dolor equi',
+    title: 'Integrantes',
+    desc: 'Comenzamos siendo 8 integrantes. Al dia de hoy somos un elenco de 27 bailarines estables, con edades entre 19 y 42 anios.',
     icon: LuPartyPopper
   },
   {
     id: 3,
-    title: 'Casamientos',
-    desc: 'Los protagonistas conoceran como ',
+    title: 'Ensayos',
+    desc: 'Entrenamos cada semana para seguir perfeccionando nuestra tecnica y asi poder mejorar la representatividad que queremos alcanzar.',
     icon: GiLinkedRings
   },
   {
     id: 4,
-    title: 'Homenajes',
-    desc: 'Lorem ipsum dolor equi',
+    title: 'Estilos',
+    desc: 'Estudiamos, aprendemos y ensenamos muchos estilos de Dabke, cada uno con sus tecnicas, detalles y fuerza.',
+    icon: LiaMedalSolid
+  },
+  {
+    id: 5,
+    title: 'Institucional',
+    desc: 'Contamos con el apoyo de todas las instituciones y organizaciones arabes de Mendoza, gracias a todos ellos aumenta nuestra visibilidad.',
+    icon: LiaBirthdayCakeSolid
+  },
+  {
+    id: 6,
+    title: 'Vestuario',
+    desc: 'Contamos con una amplia variedad de vestuarios tradicionales para poder representar de forma correcta cada estilo de Dabke que bailemos.',
+    icon: LuPartyPopper
+  },
+  {
+    id: 7,
+    title: 'Estudios',
+    desc: 'Contamos con profesores y alumnos altamente capacitados para poder bailar y ensenar el Dabke de la mejor manera.',
+    icon: GiLinkedRings
+  },
+  {
+    id: 8,
+    title: 'Contrataciones',
+    desc: 'Realizamos eventos publicos y privados. Cummpleanos, casamientos, homenajes y toda participacion de nuestro interes.',
     icon: LiaMedalSolid
   },
 ];
@@ -325,7 +349,7 @@ export const team = [
   },
   {
     description: "Lorem",
-    title: "Macarena Della Gaspera",
+    title: "Maca Della Gaspera",
     src: "/images/team/ariel.jpg",
     content: () => {
       return (
@@ -338,6 +362,18 @@ export const team = [
   {
     description: "Lorem",
     title: "Magali Mafauad",
+    src: "/images/team/ariel.jpg",
+    content: () => {
+      return (
+        <p>
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
+        </p>
+      );
+    },
+  },
+  {
+    description: "Lorem",
+    title: "Martin Bulfon",
     src: "/images/team/ariel.jpg",
     content: () => {
       return (

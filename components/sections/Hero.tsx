@@ -59,9 +59,9 @@ export const Hero = () => {
           translateY,
           opacity,
         }}
-        className=""
+        className="space-y-5"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 lg:my-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 mt-20">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -80,18 +80,21 @@ export const Hero = () => {
           ))}
         </motion.div>
       </motion.div>
+      <div className="flex h-40 w-40 rounded-full bg-quaternary/90 mx-auto absolute bottom-[60%] left-20 blur-[150px]"></div>
     </div>
   );
 };
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto lg:pt-48 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        Somos <br /> Dabkearte Mendoza <span className="text-quaternary">.</span>
+    <div className="max-w-7xl relative mx-auto pt-48 px-4 w-full left-0 top-0">
+      <h1 className="text-5xl md:text-7xl font-bold dark:text-white">
+        Somos <br /> Dabkearte Mendoza
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        Aprendemos y nos especializamos en el Dabke, danza folclorica arabe. Tomados de las manos y pisando fuerte, queremos llevar esta danza al siguiente nivel para que la conozcan todas las personas de nuestro pais. 
+      <p className="max-w-2xl text-lg md:text-xl mt-8 dark:text-neutral-200">
+        Bailamos Dabke <br />
+        Queremos que te enamores de esta danza, como lo estamos nosotros<br />
+        Somos de Mendoza - Argentina. 
       </p>
     </div>
   );

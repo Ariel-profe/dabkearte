@@ -34,8 +34,8 @@ export function Team() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <section className="py-20 lg:py-32 px-3 lg:px-6" id="equipo">
-      <SparklesText text="El team DabkeArte" />
+    <section className="2xl:container bg-slate-900 py-20 px-3 lg:px-6" id="equipo">
+      <SparklesText text="El team DabkeArte" className="text-center lg:text-end" />
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -72,7 +72,7 @@ export function Team() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%] flex flex-col bg-primary dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-primary dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
@@ -121,13 +121,13 @@ export function Team() {
       </AnimatePresence>
 
         {/* TeamCard */}
-      <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 mx-auto w-full gap-4 max-w-[1600px]">
+      <ul className="flex flex-wrap mx-auto w-full gap-4 max-w-[1600px]">
         {team.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="group p-3 flex flex-col justify-between items-center hover:bg-primary dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="group py-2 flex flex-col justify-between items-center hover:bg-primary dark:hover:bg-neutral-800 rounded-xl cursor-pointer md:min-w-[210px] mx-auto lg:mx-0"
           >
             <div className="flex gap-4 flex-col justify-center items-center">
               <motion.div layoutId={`image-${card.title}-${id}`}>

@@ -1,4 +1,5 @@
 
+import { contactMethods } from "@/lib/utils";
 import { PiFacebookLogoLight, PiYoutubeLogoThin, PiInstagramLogoLight, PiWhatsappLogoThin   } from "react-icons/pi";
 
 const footerNavs = [
@@ -50,12 +51,10 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-      <footer className="text-slate-500 px-4 py-5 lg:py-10 w-full mx-auto">
-          <div className="max-w-lg sm:mx-auto sm:text-center">
-              <img src="/logo.svg" className="w-32 sm:mx-auto" />
-              <p className="leading-relaxed mt-4 text-sm">
-                  Hagamos del Dabke una danza popular para poder compartirla juntos.
-              </p>
+      <footer className="text-slate-500 bg-slate-950 px-3 lg:px-6 py-10 w-full mx-auto flex flex-col items-center">
+          <div className="relative group max-w-lg mx-auto text-center transition duration-500">
+              <img src="/logo.svg" className="w-32 mx-auto" />
+              <div className="hidden group-hover:flex h-20 w-20 rounded-full bg-quaternary/90 mx-auto absolute inset-0 blur-3xl"></div>
           </div>
           <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
               {
@@ -68,11 +67,23 @@ export const Footer = () => {
                   ))
               }
           </ul>
-          <div className="mt-8 items-center justify-between sm:flex">
-              <div className="mt-4 sm:mt-0">
+          <div className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
+              {
+                  contactMethods.map((item, idx) => (
+                      <div key={idx} className="hover:text-slate-400 transition-colors">
+                        <p className="flex flex-wrap items-center gap-1">
+                        <span className="text-secondary">{item.icon}</span>
+                        { item.contact }
+                        </p>
+                      </div>
+                  ))
+              }
+          </div>
+          <div className="mt-8 flex flex-col lg:flex-row items-center justify-between w-full">
+              <h4 className="mt-4 sm:mt-0 text-center">
                   &copy; {year} Desarrollado por  
                     <a href="/" className="hover:text-slate-400 transition-colors md:hover:underline"> AMN Consultora Informatica. </a>
-              </div>
+              </h4>
               <div className="mt-6 sm:mt-0">
                   <ul className="flex items-center space-x-4">
                     {
@@ -80,7 +91,7 @@ export const Footer = () => {
                         <li
                           key={id} 
                           className="w-10 h-10 flex items-center justify-center">
-                            <a href={href} className="md:hover:text-slate-300 transition-colors">
+                            <a href={href} className="md:hover:text-slate-400 md:hover:scale-105 transition">
                                <Icon size={30} />
                             </a>
                         </li>

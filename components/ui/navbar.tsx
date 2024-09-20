@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { navlinks } from "@/lib/utils";
 import { BurgerButton } from "./burger-button";
+import { FlipLink } from "./flip-link";
 
 export const Navbar = () => {
 
@@ -33,10 +34,12 @@ export const Navbar = () => {
 
   const navLink = {
     hidden: {
-      y: "100%"
+      y: "100%",
+      opacity: 0
     },
     show: {
       y: 0,
+      opacity: 1,
       transition: {
         ease: "easeOut",
         delay: 0.2,
@@ -45,9 +48,10 @@ export const Navbar = () => {
     },
     exit: {
       y: "100%",
+      opacity: 0,
       transition: {
         ease: "easeOut",
-        duration: 0.2
+        duration: 0.2,
       }
     }
   };
@@ -76,21 +80,17 @@ export const Navbar = () => {
               <ul className="max-w-[900px] leading-none space-y-3">
                 {
                   navlinks.map(link => (
-                    <li key={link.id} className="overflow-hidden" >
-                      <motion.div
-                        variants={navLink} 
-                        initial="hidden" 
-                        animate="show" 
-                        exit="exit"> 
-                          <a 
-                            className="text-5xl md:text-7xl lg:text-[80px] hover:text-secondary uppercase transition-colors" 
-                            href={link.href}
-                            onClick={()=> setIsOpen(false)}
-                            >
-                            {link.name}
-                          </a>
-                      </motion.div>
-                    </li>
+                    <motion.li 
+                      key={link.id} 
+                      className="overflow-hidden" 
+                      onClick={()=>setIsOpen(false)} 
+                      variants={navLink} 
+                      initial="hidden" 
+                      animate="show" 
+                      exit="exit"
+                    >
+                     <FlipLink href={link.href}>{link.name}</FlipLink>
+                    </motion.li>
                   ))
                 }
               </ul>
