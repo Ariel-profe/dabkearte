@@ -70,8 +70,8 @@ export const Navbar = () => {
           <div className="w-screen h-screen overflow-hidden fixed inset-0 z-40">
             <div className="w-full h-full grid grid-cols-20 grid-rows-1">
               {
-                [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((_, i) => (
-                  <motion.div key={i} className="w-full h-full bg-primary" variants={children} initial="hidden" animate="show" exit="exit" custom={i}></motion.div>
+                [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((item) => (
+                  <motion.div key={item} className="w-full h-full bg-primary" variants={children} initial="hidden" animate="show" exit="exit" custom={item}></motion.div>
                 ))
               }
             </div>

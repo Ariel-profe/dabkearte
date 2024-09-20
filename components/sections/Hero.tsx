@@ -106,7 +106,7 @@ export const ProductCard = ({
 }: {
   product: {
     title: string;
-    thumbnail: string;
+    img: string;
   };
   translate: MotionValue<number>;
 }) => {
@@ -123,7 +123,7 @@ export const ProductCard = ({
     >
       <div className="block group-hover/product:shadow-2xl">
         <img
-          src={product.thumbnail}
+          src={product.img}
           height="600"
           width="700"
           className="object-cover object-left-top absolute h-full w-full inset-0 lg:group-hover:opacity-35"

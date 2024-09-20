@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { SparklesText } from '../ui/sparkles-text'
 
 export const Galery = () => {

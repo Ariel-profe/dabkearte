@@ -2,7 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import {Footer} from "@/components/ui/footer";
+import { Footer } from "@/components/ui/footer";
 import { Navbar } from "@/components/ui/navbar";
 
 const poppins = Poppins({ 
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`w-full bg-slate-900 bg-grid-small-white/[0.1] flex flex-col antialiased ${poppins.className} text-tertiary`}>
         <div className='flex flex-col'>
           <Navbar />

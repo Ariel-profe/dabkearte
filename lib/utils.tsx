@@ -35,55 +35,45 @@ export const navlinks = [
 export const heroImages = [
   {
     title: "Daq almani",
-    thumbnail:
-      "/images/hero/1.jpeg",
+    img: "/images/hero/1.jpeg",
   },
   {
     title: "Lebnani",
-    thumbnail:
-      "/images/hero/2.jpeg",
+    img: "/images/hero/2.jpeg",
   },
   {
     title: "Hal bawadi",
-    thumbnail:
-      "/images/hero/3.jpeg",
+    img: "/images/hero/3.jpeg",
   },
  
   {
     title: "Dela3ona",
-    thumbnail:
-      "/images/hero/4.jpeg",
+    img: "/images/hero/4.jpeg",
   },
   {
     title: "Mahlake",
-    thumbnail:
-      "/images/hero/5.jpg",
+    img: "/images/hero/5.jpg",
   },
   {
     title: "Hal el mayed",
-    thumbnail:
-      "/images/hero/1.jpeg",
+    img: "/images/hero/1.jpeg",
   },
  
   {
     title: "Allah yeshglu",
-    thumbnail:
-     "/images/hero/2.jpeg",
+    img: "/images/hero/2.jpeg",
   },
   {
     title: "Dabke daqtein",
-    thumbnail:
-      "/images/hero/3.jpeg",
+    img: "/images/hero/3.jpeg",
   },
   {
     title: "Dabke nar",
-    thumbnail:
-      "/images/hero/4.jpeg",
+    img: "/images/hero/4.jpeg",
   },
   {
     title: "Bel ruh bel damm",
-    thumbnail:
-      "/images/hero/5.jpg",
+    img: "/images/hero/5.jpg",
   }
 ];
 
@@ -171,6 +161,7 @@ export const events = [
 
 export const team = [
   {
+    id:1,
     description: "Lorem ipsum",
     title: "Aldana Arenas",
     src: "/images/team/ariel.jpg",
@@ -183,6 +174,7 @@ export const team = [
     },
   },
   {
+    id:2,
     description: "Lorem ipsum",
     title: "Andrea Fuentes",
     src: "/images/team/ariel.jpg",
@@ -195,6 +187,7 @@ export const team = [
     },
   },
   {
+    id:3,
     description: "Lorem ipsum",
     title: "Ariel Elias",
     src: "/images/team/ariel.jpg",
@@ -216,6 +209,7 @@ export const team = [
   },
 
   {
+    id:4,
     description: "Lorem ipsum",
     title: "Camila Ferro",
     src: "/images/team/ariel.jpg",
@@ -228,6 +222,7 @@ export const team = [
     },
   },
   {
+    id:5,
     description: "Lorem",
     title: "Camila Quiroga",
     src: "/images/team/ariel.jpg",
@@ -240,6 +235,7 @@ export const team = [
     },
   },
   {
+    id:6,
     description: "Lorem",
     title: "Carolina Leiva",
     src: "/images/team/ariel.jpg",
@@ -252,6 +248,7 @@ export const team = [
     },
   },
   {
+    id:7,
     description: "Lorem ipsum",
     title: "Daniela Amin",
     src: "/images/team/ariel.jpg",
@@ -264,6 +261,7 @@ export const team = [
     },
   },
   {
+    id:8,
     description: "Lorem ipsum",
     title: "Fatima Taha",
     src: "/images/team/ariel.jpg",
@@ -276,6 +274,7 @@ export const team = [
     },
   },
   {
+    id:9,
     description: "Lorem",
     title: "Florencia Amin",
     src: "/images/team/ariel.jpg",
@@ -288,6 +287,7 @@ export const team = [
     },
   },
   {
+    id:10,
     description: "Lorem",
     title: "Florencia Cuillieri",
     src: "/images/team/ariel.jpg",
@@ -300,6 +300,7 @@ export const team = [
     },
   },
   {
+    id:11,
     description: "Lorem",
     title: "Florencia Munafo",
     src: "/images/team/ariel.jpg",
@@ -312,6 +313,7 @@ export const team = [
     },
   },
   {
+    id:12,
     description: "Lorem",
     title: "Gisel Guzman",
     src: "/images/team/ariel.jpg",
@@ -324,6 +326,7 @@ export const team = [
     },
   },
   {
+    id:13,
     description: "Lorem",
     title: "Guillermina Elias",
     src: "/images/team/ariel.jpg",
@@ -336,6 +339,7 @@ export const team = [
     },
   },
   {
+    id:14,
     description: "Lorem",
     title: "Maria Eugenia Cassar",
     src: "/images/team/ariel.jpg",
@@ -348,6 +352,7 @@ export const team = [
     },
   },
   {
+    id:15,
     description: "Lorem",
     title: "Maca Della Gaspera",
     src: "/images/team/ariel.jpg",
@@ -360,6 +365,7 @@ export const team = [
     },
   },
   {
+    id:16,
     description: "Lorem",
     title: "Magali Mafauad",
     src: "/images/team/ariel.jpg",
@@ -372,6 +378,7 @@ export const team = [
     },
   },
   {
+    id:17,
     description: "Lorem",
     title: "Martin Bulfon",
     src: "/images/team/ariel.jpg",
@@ -384,6 +391,7 @@ export const team = [
     },
   },
   {
+    id:18,
     description: "Lorem",
     title: "Micaela Poblete",
     src: "/images/team/ariel.jpg",
@@ -396,6 +404,7 @@ export const team = [
     },
   },
   {
+    id:19,
     description: "Lorem",
     title: "Nadir Daou",
     src: "/images/team/ariel.jpg",
@@ -408,6 +417,7 @@ export const team = [
     },
   },
   {
+    id:20,
     description: "Lorem",
     title: "Nancy Ceschin",
     src: "/images/team/ariel.jpg",
@@ -420,6 +430,7 @@ export const team = [
     },
   },
   {
+    id:21,
     description: "Lorem",
     title: "Nur Yamin",
     src: "/images/team/ariel.jpg",
@@ -432,6 +443,7 @@ export const team = [
     },
   },
   {
+    id:22,
     description: "Lorem",
     title: "Renzo Farjo",
     src: "/images/team/ariel.jpg",
@@ -444,6 +456,7 @@ export const team = [
     },
   },
   {
+    id:23,
     description: "Lorem",
     title: "Rocio Cutifani",
     src: "/images/team/ariel.jpg",
@@ -456,6 +469,7 @@ export const team = [
     },
   },
   {
+    id:24,
     description: "Lorem",
     title: "Sebastian Andrawos",
     src: "/images/team/ariel.jpg",
@@ -468,6 +482,7 @@ export const team = [
     },
   },
   {
+    id:25,
     description: "Lorem",
     title: "Sol Sttoco",
     src: "/images/team/ariel.jpg",
@@ -480,6 +495,7 @@ export const team = [
     },
   },
   {
+    id:26,
     description: "Lorem",
     title: "Yamil Mocayar",
     src: "/images/team/ariel.jpg",
@@ -492,6 +508,7 @@ export const team = [
     },
   },
   {
+    id:27,
     description: "Lorem",
     title: "Yisel Gari",
     src: "/images/team/ariel.jpg",

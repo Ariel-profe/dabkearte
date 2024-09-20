@@ -1,6 +1,6 @@
 
-import { contactMethods } from "@/lib/utils";
 import { PiFacebookLogoLight, PiYoutubeLogoThin, PiInstagramLogoLight, PiWhatsappLogoThin   } from "react-icons/pi";
+import { contactMethods } from "@/lib/utils";
 
 const footerNavs = [
   {

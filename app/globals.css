@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
-/** {
-  scrollbar-width: thin;
-  scrollbar-color: #397524 #DFE9EB;
-}*/
-
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
   height: 10px;

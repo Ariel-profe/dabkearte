@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { MotionConfig, motion } from "framer-motion";
 
 export const BurgerButton = ({setIsOpen, isOpen}:{isOpen: boolean; setIsOpen: Dispatch<SetStateAction<boolean>>}) => {
