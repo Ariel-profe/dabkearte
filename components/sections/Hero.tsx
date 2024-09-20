@@ -47,9 +47,10 @@ export const Hero = () => {
     springConfig
   );
   return (
-    <div
+    <section
+      id="#"
       ref={ref}
-      className="h-[220vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[245vh] xl:h-[210vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -81,7 +82,7 @@ export const Hero = () => {
         </motion.div>
       </motion.div>
       <div className="flex h-40 w-40 rounded-full bg-quaternary/90 mx-auto absolute bottom-[60%] left-20 blur-[150px]"></div>
-    </div>
+    </section>
   );
 };
 

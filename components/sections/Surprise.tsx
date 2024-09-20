@@ -12,7 +12,7 @@ import { TextHoverEffect } from "../ui/text-hover-effect";
 export function Surprise() {
 
     return (
-        <div className="py-40 flex items-center justify-center">
+        <section className="py-40 flex items-center justify-center bg-slate-950">
             <Modal>
                 <ModalTrigger className="flex justify-center group/modal-btn w-full lg:h-[22rem]">
                     <TextHoverEffect text="SORPRESA" />
@@ -34,6 +34,6 @@ export function Surprise() {
                     </ModalFooter>
                 </ModalBody>
             </Modal>
-        </div>
+        </section>
     );
 };

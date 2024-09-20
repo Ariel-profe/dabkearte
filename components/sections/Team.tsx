@@ -34,7 +34,7 @@ export function Team() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <section className="2xl:container bg-slate-900 py-20 px-3 lg:px-6" id="equipo">
+    <section className="bg-slate-950 py-20 px-3 lg:px-6" id="equipo">
       <SparklesText text="El team DabkeArte" className="text-center lg:text-end" />
       <AnimatePresence>
         {active && typeof active === "object" && (
@@ -121,7 +121,7 @@ export function Team() {
       </AnimatePresence>
 
         {/* TeamCard */}
-      <ul className="flex flex-wrap mx-auto w-full gap-4 max-w-[1600px]">
+      <ul className="flex flex-wrap mx-auto w-full gap-4 2xl:container">
         {team.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}

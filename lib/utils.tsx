@@ -22,14 +22,14 @@ export const navlinks = [
   },
   {
     id: 3,
-    name: 'galeria',
-    href: '#galeria'
+    name: 'equipo',
+    href: '#equipo'
   },
   {
     id: 4,
-    name: 'contacto',
-    href: '#contacto'
-  },
+    name: 'galeria',
+    href: '#galeria'
+  }
 ];
 
 export const heroImages = [
