@@ -34,7 +34,7 @@ export function Team() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <section className="bg-slate-950 py-20 px-3 lg:px-6" id="equipo">
+    <section className="xl:container mx-auto bg-slate-950 py-20 px-3 lg:px-6" id="equipo">
       <SparklesText text="El team DabkeArte" className="text-center lg:text-end" />
       <AnimatePresence>
         {active && typeof active === "object" && (
@@ -64,7 +64,7 @@ export function Team() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-secondary rounded-full h-6 w-6"
+              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-10 w-10"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -72,7 +72,7 @@ export function Team() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-primary dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
@@ -84,7 +84,7 @@ export function Team() {
                 />
               </motion.div>
 
-              <div>
+              <div className="h-full">
                 <div className="flex justify-between items-start p-4">
                   <div className="">
                     <motion.h3
@@ -94,7 +94,7 @@ export function Team() {
                       {active.title}
                     </motion.h3>
                     <motion.p 
-                      className="text-quaternary"
+                      className="text-primary text-xl"
                       layoutId={`description-${active.description}-${id}`}
                     >
                       {active.description}
@@ -107,7 +107,7 @@ export function Team() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-slate-400 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-slate-600 text-md h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -180,7 +180,7 @@ export const CloseIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-4 w-4 text-black"
+      className="h-6 w-6 text-black"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M18 6l-12 12" />
