@@ -91,7 +91,6 @@ export const Hero = () => {
           ))}
         </motion.div>
       </motion.div>
-      <div className="flex h-40 w-40 rounded-full bg-quaternary/90 mx-auto absolute bottom-[60%] left-20 blur-[150px]"></div>
     </section>
   );
 };

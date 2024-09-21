@@ -5,14 +5,14 @@ import { SparklesText } from "../ui/sparkles-text";
 export function About() {
  
   return (
-    <div className="2xl:container mx-auto py-10 lg:py-20" id="nosotros">
+    <section id="#nosotros" className="container px-3 mx-auto py-10 lg:py-20">
       <SparklesText text="Un poquito de nosotros" className="text-center lg:text-start" />
       <div className="grid md:grid-cols-2 lg:grid-cols-4 relative z-10 mx-auto px-3">
         {events.map((event, index) => (
           <Feature key={event.title} {...event} index={index} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -28,8 +28,7 @@ const Feature = ({
   index: number;
 }) => {
   return (
-    <section
-      id="#nosotros"
+    <div
       className={cn(
         "flex flex-col lg:border-r py-10 relative group/feature",
         (index === 0 || index === 4) && "lg:border-l",
@@ -54,6 +53,6 @@ const Feature = ({
       <p className="text-sm text-slate-300 max-w-xs relative z-10 px-10">
         {desc}
       </p>
-    </section>
+    </div>
   );
 };

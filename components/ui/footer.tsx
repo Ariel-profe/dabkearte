@@ -51,10 +51,11 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-      <footer className="text-slate-500 px-3 lg:px-6 py-10 w-full mx-auto flex flex-col items-center">
+      <footer className="text-slate-500 px-3 lg:px-6 py-10 w-full mx-auto flex flex-col items-center bg-[#160e29]">
+        <div className="container px-3">
           <div className="relative group max-w-lg mx-auto text-center transition duration-500">
               <img src="/logo.svg" className="w-32 mx-auto" />
-              <div className="hidden group-hover:flex h-20 w-20 rounded-full bg-quaternary/90 mx-auto absolute inset-0 blur-3xl"></div>
+              <div className="hidden group-hover:flex h-20 w-20 rounded-full bg-golden mx-auto absolute inset-0 blur-3xl"></div>
           </div>
           <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
               {
@@ -100,6 +101,7 @@ export const Footer = () => {
                   </ul>
               </div>
           </div>
+        </div>
       </footer>
   )
 }

@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`w-full bg-slate-900 bg-grid-small-white/[0.1] flex flex-col antialiased ${poppins.className} text-tertiary`}>
+      <body className={`w-full bg-[#0f0a1f] mx-auto flex flex-col antialiased ${poppins.className} text-tertiary`}>
         <div className='flex flex-col'>
           <Navbar />
           <main className='flex-grow shadow-md'>

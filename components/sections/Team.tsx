@@ -35,8 +35,8 @@ export function Team() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <section className="mx-auto bg-slate-950 py-20 px-3 lg:px-6" id="equipo">
-      <SparklesText text="El team DabkeArte" className="2xl:container text-center lg:text-end" />
+    <section className="bg-slate-950 py-20" id="equipo">
+      <SparklesText text="El team DabkeArte" className="container px-3 text-center lg:text-end" />
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -128,16 +128,14 @@ export function Team() {
          layoutId={`card-${card.title}-${id}`}
          key={`card-${card.title}-${id}`}
          onClick={() => setActive(card)}
-         className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-primary rounded-xl cursor-pointer"
+         className="p-2 flex flex-col md:flex-row justify-between items-center hover:bg-primary rounded-xl cursor-pointer"
        >
-         <div className="flex gap-4 flex-col md:flex-row ">
+         <div className="flex gap-4 flex-col md:flex-row items-center md:items-start">
            <motion.div layoutId={`image-${card.title}-${id}`}>
              <img
-               width={100}
-               height={100}
                src={card.src}
                alt={card.title}
-               className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
+               className="h-14 w-14 md:h-24 md:w-24 rounded-lg object-cover object-top"
              />
            </motion.div>
            <div className="">
