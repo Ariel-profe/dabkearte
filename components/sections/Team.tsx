@@ -35,8 +35,8 @@ export function Team() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <section className="xl:container mx-auto bg-slate-950 py-20 px-3 lg:px-6" id="equipo">
-      <SparklesText text="El team DabkeArte" className="text-center lg:text-end" />
+    <section className="mx-auto bg-slate-950 py-20 px-3 lg:px-6" id="equipo">
+      <SparklesText text="El team DabkeArte" className="2xl:container text-center lg:text-end" />
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div

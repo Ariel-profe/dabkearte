@@ -3,7 +3,7 @@ import { SparklesText } from '../ui/sparkles-text'
 
 export const Galery = () => {
     return (
-        <section className='xl:container mx-auto py-10 lg:py-20' id='galeria'>
+        <section className='2xl:container mx-auto py-10 lg:py-20' id='galeria'>
             <SparklesText text='¡Encontra más en nuestras redes!' className='text-center lg:text-start' />
             <div className=" px-4 my-2 sm:px-6 lg:px-8 mx-auto">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
