@@ -35,12 +35,13 @@ const AnimatedHamburgerButton = ({setIsOpen, isOpen}:{isOpen: boolean; setIsOpen
         />
         <motion.span
           variants={VARIANTS.bottom}
-          className="absolute h-[3.5px] w-5 bg-white"
+          className="absolute h-[3.5px] w-5"
           style={{
-            x: "-50%",
-            y: "50%",
-            bottom: "35%",
-            left: "calc(50% + 10px)",
+            x: "-50%", 
+            y: "50%", 
+            bottom: "35%", 
+            left: "calc(50% + 10px)", 
+            background: "linear-gradient(to right, #be8f3d, #c8a051, #d3b266, #dec37b, #e9d591, #e9d591, #e9d591, #e9d591, #dec37b, #d3b266, #c8a051, #be8f3d)"
           }}
         />
       </motion.button>
@@ -72,6 +73,7 @@ const VARIANTS = {
       rotate: ["0deg", "0deg", "45deg"],
       bottom: ["35%", "50%", "50%"],
       left: "50%",
+      background: "#fff"
     },
     closed: {
       rotate: ["45deg", "0deg", "0deg"],

@@ -23,6 +23,9 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        'golden': "linear-gradient(to right, #be8f3d, #c8a051, #d3b266, #dec37b, #e9d591, #e9d591, #e9d591, #e9d591, #dec37b, #d3b266, #c8a051, #be8f3d)",
+      },
       gridTemplateColumns: {
         '20': 'repeat(20, minmax(100px, 1fr))'
       },

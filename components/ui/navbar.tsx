@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { navlinks } from "@/lib/utils";
 import { BurgerButton } from "./burger-button";
 import { FlipLink } from "./flip-link";
+import { IconContext } from "react-icons";
 
 export const Navbar = () => {
 
@@ -79,17 +80,26 @@ export const Navbar = () => {
           <div className="w-full h-full absolute inset-0 flex justify-center items-center z-30 ">
               <ul className="max-w-[900px] leading-none space-y-5">
                 {
-                  navlinks.map(link => (
+                  navlinks.map(({href, icon:Icon, id, name}) => (
                     <motion.li 
-                      key={link.id} 
-                      className="overflow-hidden" 
+                      key={id} 
+                      className="overflow-hidden flex gap-1 items-center" 
                       onClick={()=>setIsOpen(false)} 
                       variants={navLink} 
                       initial="hidden" 
                       animate="show" 
                       exit="exit"
                     >
-                     <FlipLink href={link.href}>{link.name}</FlipLink>
+                     <svg className="w-10 h-10 md:w-20 md:h-20">
+                      <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
+                        <stop stopColor="#BE8F3D" offset="0%" />
+                        <stop stopColor="#F8EDAF" offset="50%" />
+                        <stop stopColor="#BE8F3D" offset="100%" />
+                      </linearGradient>
+
+                    <Icon style={{ fill: "url(#blue-gradient)"}} className="text-4xl md:text-7xl"/>
+                    </svg>
+                     <FlipLink href={href}>{name}</FlipLink>
                     </motion.li>
                   ))
                 }

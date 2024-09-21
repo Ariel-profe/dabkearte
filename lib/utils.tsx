@@ -4,6 +4,10 @@ import { twMerge } from "tailwind-merge";
 import { LuPartyPopper } from "react-icons/lu";
 import { GiLinkedRings } from "react-icons/gi";
 import { LiaBirthdayCakeSolid, LiaMedalSolid  } from "react-icons/lia";
+import { BiHomeSmile } from "react-icons/bi";
+import { FaRegHandshake } from "react-icons/fa";
+import { CiImageOn } from "react-icons/ci";
+import { IoPeopleCircleOutline } from "react-icons/io5";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -13,22 +17,26 @@ export const navlinks = [
   {
     id: 1,
     name: 'inicio',
-    href: '/'
+    href: '/',
+    icon: BiHomeSmile
   },
   {
     id: 2,
     name: 'nosotros',
-    href: '#nosotros'
+    href: '#nosotros',
+    icon: IoPeopleCircleOutline
   },
   {
     id: 3,
     name: 'equipo',
-    href: '#equipo'
+    href: '#equipo',
+    icon: FaRegHandshake
   },
   {
     id: 4,
     name: 'galeria',
-    href: '#galeria'
+    href: '#galeria',
+    icon: CiImageOn
   }
 ];
 
@@ -49,6 +57,31 @@ export const heroImages = [
   {
     title: "Dela3ona",
     img: "/images/hero/4.jpeg",
+  },
+  {
+    title: "Mahlake",
+    img: "/images/hero/5.jpg",
+  },
+  {
+    title: "Hal el mayed",
+    img: "/images/hero/1.jpeg",
+  },
+ 
+  {
+    title: "Allah yeshglu",
+    img: "/images/hero/2.jpeg",
+  },
+  {
+    title: "Dabke daqtein",
+    img: "/images/hero/3.jpeg",
+  },
+  {
+    title: "Dabke nar",
+    img: "/images/hero/4.jpeg",
+  },
+  {
+    title: "Bel ruh bel damm",
+    img: "/images/hero/5.jpg",
   },
   {
     title: "Mahlake",

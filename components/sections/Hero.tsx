@@ -14,6 +14,7 @@ import { heroImages } from "@/lib/utils";
 export const Hero = () => {
   const firstRow = heroImages.slice(0, 5);
   const secondRow = heroImages.slice(5, 10);
+  const thirdRow = heroImages.slice(10, 15);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -50,7 +51,7 @@ export const Hero = () => {
     <section
       id="#"
       ref={ref}
-      className="h-[245vh] xl:h-[210vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[290vh] 2xl:h-[250vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -76,6 +77,15 @@ export const Hero = () => {
             <ProductCard
               product={product}
               translate={translateXReverse}
+              key={product.title}
+            />
+          ))}
+        </motion.div>
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10">
+          {thirdRow.map((product) => (
+            <ProductCard
+              product={product}
+              translate={translateX}
               key={product.title}
             />
           ))}
@@ -120,13 +130,11 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-80 2xl:h-96 w-[23rem] 2xl:w-[30rem] relative flex-shrink-0"
     >
       <div className="block group-hover/product:shadow-2xl">
         <img
           src={product.img}
-          height="600"
-          width="700"
           className="object-cover object-left-top absolute h-full w-full inset-0 lg:group-hover:opacity-35"
           alt={product.title}
         />
