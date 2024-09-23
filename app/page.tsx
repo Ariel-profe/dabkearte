@@ -3,13 +3,14 @@ import { Galery } from "@/components/sections/Galery"
 import { Hero } from "@/components/sections/Hero"
 import { Surprise } from "@/components/sections/Surprise"
 import { Team } from "@/components/sections/Team"
+import { Team2 } from "@/components/sections/Team2"
 
 const Homepage = () => {
   return (
     <div>
       <Hero />
       <About />
-      <Team />
+      <Team2 />
       <Galery />
       <Surprise />
     </div>
