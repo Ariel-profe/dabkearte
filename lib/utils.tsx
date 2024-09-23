@@ -174,18 +174,6 @@ export const events = [
   },
   {
     id: 6,
-    title: 'Vestuario',
-    desc: 'Contamos con una amplia variedad de vestuarios tradicionales para poder representar de forma correcta cada estilo de Dabke que bailemos.',
-    icon: LuPartyPopper
-  },
-  {
-    id: 7,
-    title: 'Estudios',
-    desc: 'Contamos con profesores y alumnos altamente capacitados para poder bailar y ensenar el Dabke de la mejor manera.',
-    icon: GiLinkedRings
-  },
-  {
-    id: 8,
     title: 'Contrataciones',
     desc: 'Realizamos eventos publicos y privados. Cummpleanos, casamientos, homenajes y toda participacion de nuestro interes.',
     icon: LiaMedalSolid

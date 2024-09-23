@@ -122,7 +122,7 @@ export function Team() {
       </AnimatePresence>
 
         {/* TeamCard */}
-      <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mx-auto w-full gap-4 2xl:container">
+      <ul className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 mx-auto w-full gap-4 container px-3">
         {team.map((card, index) => (
          <motion.div
          layoutId={`card-${card.title}-${id}`}

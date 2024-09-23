@@ -7,7 +7,7 @@ export function About() {
   return (
     <section id="#nosotros" className="container px-3 mx-auto py-10 lg:py-20">
       <SparklesText text="Un poquito de nosotros" className="text-center lg:text-start" />
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 relative z-10 mx-auto px-3">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 relative z-10 mx-auto px-3">
         {events.map((event, index) => (
           <Feature key={event.title} {...event} index={index} />
         ))}
@@ -31,14 +31,14 @@ const Feature = ({
     <div
       className={cn(
         "flex flex-col lg:border-r py-10 relative group/feature",
-        (index === 0 || index === 4) && "lg:border-l",
-        index < 4 && "lg:border-b"
+        (index === 0 || index === 3) && "lg:border-l",
+        index < 3 && "lg:border-b"
       )}
     >
-      {index < 4 && (
+      {index < 3 && (
         <div className="opacity-0 lg:group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-primary to-transparent pointer-events-none" />
       )}
-      {index >= 4 && (
+      {index >= 3 && (
         <div className="opacity-0 lg:group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-primary to-transparent pointer-events-none" />
       )}
       <div className="mb-4 relative z-10 px-10 text-slate-200">
