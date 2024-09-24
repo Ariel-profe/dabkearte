@@ -8,15 +8,16 @@ const secondTeam = team.slice(14, 27);
 
 export function Team2() {
   return (
-    <div className="flex flex-col items-center justify-center gap-5 mb-10 w-full h-screen bg-slate-950 px-3">
+    <section className="min-h-[80vh] bg-slate-950 px-3 py-10 lg:py-20" id="equipo">
+      <div className="container flex flex-col items-center justify-center gap-5 w-full h-full mx-auto">
         <SparklesText text="El team DabkeArte" className="text-center lg:text-end" />
-        <div className="flex flex-wrap items-center justify-center">
+        <div className="flex flex-wrap gap-3 items-center justify-center mb-10">
             <AnimatedTooltip items={firstTeam} />
         </div>
-        <div className="flex flex-wrap items-center justify-center">
+        <div className="flex flex-wrap gap-3 items-center justify-center">
             <AnimatedTooltip items={secondTeam} />
         </div>
-
-    </div>
+      </div>
+    </section>
   );
 }

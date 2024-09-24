@@ -5,24 +5,90 @@ export const Galery = () => {
     return (
         <section className='container px-3 py-10 lg:py-20' id='galeria'>
             <SparklesText text='¡Encontra más en nuestras redes!' className='text-center lg:text-start' />
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    <div className="space-y-2">
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1668906093328-99601a1aa584?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
+                {/* First images */}
+                <div className="flex flex-wrap">
+                    <div className="flex w-full md:w-1/2 flex-wrap">
+                        <div className="w-1/2 p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/1.jpeg" />
+                        </div>
+                        <div className="w-1/2 p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/2.jpeg" />
+                        </div>
+                        <div className="w-full p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/3.jpeg" />
+                        </div>
                     </div>
-                    <div className="space-y-2">
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1668584054131-d5721c515211?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1664574654529-b60630f33fdb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
+                    <div className="flex w-full md:w-1/2 flex-wrap">
+                        <div className="w-full p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/5.jpg" />
+                        </div>
+                        <div className="w-1/2 p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/4.jpeg" />
+                        </div>
+                        <div className="w-1/2 p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/2.jpeg" />
+                        </div>
                     </div>
-                    <div className="space-y-2">
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
+                </div>
+                {/* Second images */}
+                <div className="-m-1 flex flex-wrap md:-m-2">
+                    <div className="flex w-full md:w-1/2 flex-wrap">
+                        <div className="w-1/2 p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/1.jpeg" />
+                        </div>
+                        <div className="w-1/2 p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/2.jpeg" />
+                        </div>
+                        <div className="w-full p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/3.jpeg" />
+                        </div>
                     </div>
-                    <div className="space-y-2">
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1668869713519-9bcbb0da7171?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
-                        <img className="w-full h-auto object-cover" src="https://images.unsplash.com/photo-1668584054035-f5ba7d426401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Gallery Masonry Image" />
+                    <div className="flex w-full md:w-1/2 flex-wrap">
+                        <div className="w-full p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/5.jpg" />
+                        </div>
+                        <div className="w-1/2 p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/4.jpeg" />
+                        </div>
+                        <div className="w-1/2 p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/2.jpeg" />
+                        </div>
                     </div>
                 </div>
         </section>

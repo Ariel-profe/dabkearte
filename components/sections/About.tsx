@@ -41,7 +41,7 @@ const Feature = ({
       {index >= 3 && (
         <div className="opacity-0 lg:group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-primary to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-slate-200">
+      <div className="mb-4 relative z-10 px-10 text-quaternary">
         <Icon size={40} />
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">

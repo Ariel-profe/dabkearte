@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+
 import {
     Modal,
     ModalBody,
@@ -12,7 +12,7 @@ import { TextHoverEffect } from "../ui/text-hover-effect";
 export function Surprise() {
 
     return (
-        <section className="py-40 flex items-center justify-center">
+        <section className="py-40 flex relative items-center justify-center group">
             <Modal>
                 <ModalTrigger className="flex justify-center group/modal-btn w-full lg:h-[22rem]">
                     <TextHoverEffect text="#YoDabkeArte" />
