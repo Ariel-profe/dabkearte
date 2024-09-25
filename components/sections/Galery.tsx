@@ -8,13 +8,13 @@ export const Galery = () => {
                 {/* First images */}
                 <div className="flex flex-wrap">
                     <div className="flex w-full md:w-1/2 flex-wrap">
-                        <div className="w-1/2 p-1 md:p-2">
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
                             src="/images/hero/1.jpeg" />
                         </div>
-                        <div className="w-1/2 p-1 md:p-2">
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
@@ -34,13 +34,13 @@ export const Galery = () => {
                             className="block h-full w-full rounded-lg object-cover object-center"
                             src="/images/hero/5.jpg" />
                         </div>
-                        <div className="w-1/2 p-1 md:p-2">
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
                             src="/images/hero/4.jpeg" />
                         </div>
-                        <div className="w-1/2 p-1 md:p-2">
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
@@ -51,13 +51,13 @@ export const Galery = () => {
                 {/* Second images */}
                 <div className="-m-1 flex flex-wrap md:-m-2">
                     <div className="flex w-full md:w-1/2 flex-wrap">
-                        <div className="w-1/2 p-1 md:p-2">
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
                             src="/images/hero/1.jpeg" />
                         </div>
-                        <div className="w-1/2 p-1 md:p-2">
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
@@ -77,13 +77,13 @@ export const Galery = () => {
                             className="block h-full w-full rounded-lg object-cover object-center"
                             src="/images/hero/5.jpg" />
                         </div>
-                        <div className="w-1/2 p-1 md:p-2">
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
                             src="/images/hero/4.jpeg" />
                         </div>
-                        <div className="w-1/2 p-1 md:p-2">
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"

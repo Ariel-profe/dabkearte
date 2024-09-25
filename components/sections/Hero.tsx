@@ -97,14 +97,14 @@ export const Hero = () => {
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto pt-48 px-4 w-full left-0 top-0">
+    <div className="max-w-7xl relative mx-auto pt-60 px-4 w-full left-0 top-0">
       <h1 className="text-5xl md:text-7xl font-bold dark:text-white">
         Somos <br /> Dabkearte Mendoza
       </h1>
       <p className="max-w-2xl text-lg md:text-xl mt-8 dark:text-neutral-200">
-        Bailamos Dabke <br />
-        Queremos que te enamores de esta danza, como lo estamos nosotros<br />
-        Somos de Mendoza - Argentina. 
+        Estamos en Mendoza - Argentina <br />
+        Bailamos Dabke, danza folclorica árabe <br />
+        ¡Queremos conocerte y que nos conozcas!
       </p>
     </div>
   );

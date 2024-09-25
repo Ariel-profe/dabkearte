@@ -1,32 +1,12 @@
 
-import { PiFacebookLogoLight, PiYoutubeLogoThin, PiInstagramLogoLight, PiWhatsappLogoThin   } from "react-icons/pi";
-import { contactMethods } from "@/lib/utils";
 import Link from "next/link";
-
-const footerNavs = [
-  {
-      href: '#nosotros',
-      name: 'Nosotros'
-  },
-  {
-      href: '#integrantes',
-      name: 'Integrantes'
-  },
-  {
-      href: '#galeria',
-      name: 'Galeria'
-  },
-
-  {
-      href: '#contacto',
-      name: 'Contacto'
-  }
-];
+import { PiFacebookLogoLight, PiYoutubeLogoThin, PiInstagramLogoLight, PiWhatsappLogoThin   } from "react-icons/pi";
+import { contactMethods, navlinks } from "@/lib/utils";
 
 const footerSocials = [
   {
       id:1,
-      href: '/',
+      href: 'https://www.instagram.com/dabkearte_mendoza/',
       icon: PiInstagramLogoLight
   },
   {
@@ -52,15 +32,15 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-      <footer className="text-slate-500 px-3 lg:px-6 py-10 w-full mx-auto flex flex-col items-center bg-[#201446]">
+      <footer className="text-slate-400 px-3 lg:px-6 py-10 w-full mx-auto flex flex-col items-center bg-[#201446]">
         <div className="container px-3">
           <Link href={'/'} className="relative max-w-lg mx-auto text-center">
               <img src="/logo.svg" className="w-32 mx-auto" />
           </Link>
-          <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
+          <ul className="flex flex-col md:flex-row items-center justify-center mt-8 space-y-5  sm:space-x-4 sm:space-y-0">
               {
-                  footerNavs.map((item, idx) => (
-                      <li key={idx} className="hover:text-slate-400 transition-colors">
+                  navlinks.map((item, idx) => (
+                      <li key={idx} className="hover:text-slate-300 transition-colors capitalize">
                           <a key={idx} href={item.href}>
                               { item.name }
                           </a>
@@ -68,10 +48,10 @@ export const Footer = () => {
                   ))
               }
           </ul>
-          <div className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
+          <div className="flex flex-col md:flex-row items-center justify-center mt-8 space-y-5 sm:space-x-4 sm:space-y-0">
               {
                   contactMethods.map((item, idx) => (
-                      <div key={idx} className="hover:text-slate-400 transition-colors">
+                      <div key={idx} className="hover:text-slate-300 transition-colors">
                         <p className="flex flex-wrap items-center gap-1">
                         <span className="text-secondary">{item.icon}</span>
                         { item.contact }
@@ -83,7 +63,7 @@ export const Footer = () => {
           <div className="mt-8 flex flex-col lg:flex-row items-center justify-between w-full">
               <h4 className="mt-4 sm:mt-0 text-center">
                   &copy; {year} Desarrollado por  
-                    <a href="/" className="hover:text-slate-400 transition-colors md:hover:underline"> AMN Consultora Informatica. </a>
+                    <a href="/" className="hover:text-slate-300 transition-colors md:hover:underline"> AMN Consultora Informatica. </a>
               </h4>
               <div className="mt-6 sm:mt-0">
                   <ul className="flex items-center space-x-4">
@@ -92,7 +72,7 @@ export const Footer = () => {
                         <li
                           key={id} 
                           className="w-10 h-10 flex items-center justify-center">
-                            <a href={href} className="md:hover:text-slate-400 md:hover:scale-105 transition">
+                            <a href={href} target="_blank" className="md:hover:text-slate-300 md:hover:scale-105 transition">
                                <Icon size={30} />
                             </a>
                         </li>

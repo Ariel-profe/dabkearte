@@ -28,8 +28,8 @@ export const navlinks = [
   },
   {
     id: 3,
-    name: 'equipo',
-    href: '#equipo',
+    name: 'integrantes',
+    href: '#integrantes',
     icon: FaRegHandshake
   },
   {
@@ -118,8 +118,7 @@ export const contactMethods = [
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
           </svg>
       ,
-      contact: "Ciudad de Mendoza, Argentina.",
-      title: "Nuestro lugar"
+      contact: "Mendoza, Argentina.",
   },
   {
       icon:
@@ -128,7 +127,6 @@ export const contactMethods = [
           </svg>
       ,
       contact: "+54 9 (261) 3625959",
-      title: "Telefono"
   },
   {
       icon:
@@ -137,7 +135,6 @@ export const contactMethods = [
           </svg>
       ,
       contact: "dabkearte.mendoza@gmail.com",
-      title: "Email"
   },
 ];
 
@@ -145,37 +142,37 @@ export const events = [
   {
     id: 1,
     title: 'Historia',
-    desc: 'Nacimos en el anio 2014 para poder brindarle a la colectividad arabe de Mendoza un grupo estable que pueda representar a cada sirio y libanes de este suelo.',
+    desc: 'Nacimos en el año 2014 para poder brindarle a la colectividad árabe de Mendoza un grupo estable que pueda representar a cada sirio y libanés de este suelo.',
     icon: LiaBirthdayCakeSolid
   },
   {
     id: 2,
     title: 'Integrantes',
-    desc: 'Comenzamos siendo 8 integrantes. Al dia de hoy somos un elenco de 27 bailarines estables, con edades entre 19 y 42 anios.',
+    desc: '¡Comenzamos siendo 8 personas!. Al día de hoy somos un elenco de 27 bailarines estables y apasionados por el Dabke.',
     icon: LuPartyPopper
   },
   {
     id: 3,
     title: 'Ensayos',
-    desc: 'Entrenamos cada semana para seguir perfeccionando nuestra tecnica y asi poder mejorar la representatividad que queremos alcanzar.',
+    desc: 'Entrenamos cada semana para seguir perfeccionando nuestra técnica y así poder mejorar la representatividad que queremos alcanzar.',
     icon: GiLinkedRings
   },
   {
     id: 4,
     title: 'Estilos',
-    desc: 'Estudiamos, aprendemos y ensenamos muchos estilos de Dabke, cada uno con sus tecnicas, detalles y fuerza.',
+    desc: 'Estudiamos, aprendemos y enseñamos muchos estilos de Dabke, cada uno con sus técnicas, detalles y fuerza.',
     icon: LiaMedalSolid
   },
   {
     id: 5,
     title: 'Institucional',
-    desc: 'Contamos con el apoyo de todas las instituciones y organizaciones arabes de Mendoza, gracias a todos ellos aumenta nuestra visibilidad.',
+    desc: 'Contamos con el apoyo de las instituciones y organizaciones árabes de Mendoza, que son de gran ayuda para difundir nuestro arte.',
     icon: LiaBirthdayCakeSolid
   },
   {
     id: 6,
     title: 'Contrataciones',
-    desc: 'Realizamos eventos publicos y privados. Cummpleanos, casamientos, homenajes y toda participacion de nuestro interes.',
+    desc: 'Realizamos eventos públicos y privados. Cumpleaños, casamientos, homenajes y toda participación de nuestro interés.',
     icon: LiaMedalSolid
   },
 ];
@@ -186,47 +183,21 @@ export const team = [
     description: "Lorem ipsum",
     title: "Aldana Arenas",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos!
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/aldyarenas/',
   },
   {
     id:2,
     description: "Lorem ipsum",
     title: "Andrea Fuentes",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/andrefuentesgomez/'
   },
   {
     id:3,
     description: "Lorem ipsum",
     title: "Ariel Elias",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/arielo_elias/',
   },
 
   {
@@ -234,311 +205,160 @@ export const team = [
     description: "Lorem ipsum",
     title: "Camila Ferro",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
   },
   {
     id:5,
     description: "Lorem",
     title: "Camila Quiroga",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/camiqnacif/',
   },
   {
     id:6,
     description: "Lorem",
     title: "Carolina Leiva",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/caracolinaleiva/',
   },
   {
     id:7,
     description: "Lorem ipsum",
     title: "Daniela Amin",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/dani.amin.11/',
   },
   {
     id:8,
     description: "Lorem ipsum",
     title: "Fatima Taha",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/fatima.tahaa/',
   },
   {
     id:9,
     description: "Lorem",
     title: "Florencia Amin",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/florcitamin/',
   },
   {
     id:10,
     description: "Lorem",
     title: "Florencia Cuillieri",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/florcuillieri/',
   },
   {
     id:11,
     description: "Lorem",
     title: "Florencia Munafo",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/flor_munafo_bellydancer/',
   },
   {
     id:12,
     description: "Lorem",
     title: "Gisel Guzman",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
   },
   {
     id:13,
     description: "Lorem",
     title: "Guillermina Elias",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://linktr.ee/gelias',
   },
   {
     id:14,
     description: "Lorem",
     title: "Maria Eugenia Cassar",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/mauge.cassar/',
   },
   {
     id:15,
     description: "Lorem",
     title: "Maca Della Gaspera",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/macadg0295/',
   },
   {
     id:16,
     description: "Lorem",
     title: "Magali Mafauad",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
   },
   {
     id:17,
     description: "Lorem",
     title: "Martin Bulfon",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
   },
   {
     id:18,
     description: "Lorem",
     title: "Micaela Poblete",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/micapoblete_/',
   },
   {
     id:19,
     description: "Lorem",
     title: "Nadir Daou",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
   },
   {
     id:20,
     description: "Lorem",
     title: "Nancy Ceschin",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/nanyceschin/',
   },
   {
     id:21,
     description: "Lorem",
     title: "Nur Yamin",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/nur.yaminsemaan/',
   },
   {
     id:22,
     description: "Lorem",
     title: "Renzo Farjo",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/renzofarjo/',
   },
   {
     id:23,
     description: "Lorem",
     title: "Rocio Cutifani",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/ro_cutifani/',
   },
   {
     id:24,
     description: "Lorem",
     title: "Sebastian Andrawos",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
   },
   {
     id:25,
     description: "Lorem",
     title: "Sol Sttoco",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/sol_sttoco/',
   },
   {
     id:26,
     description: "Lorem",
     title: "Yamil Mocayar",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
   },
   {
     id:27,
     description: "Lorem",
     title: "Yisel Gari",
     src: "/images/team/ariel.jpg",
-    content: () => {
-      return (
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime ad molestiae, enim aliquam error pariatur dolor hic explicabo, eum commodi saepe itaque totam blanditiis fugit impedit nisi delectus! Veritatis, quos
-        </p>
-      );
-    },
+    social: 'https://www.instagram.com/yiselgari/',
   }
 ];

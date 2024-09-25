@@ -8,6 +8,8 @@ import {
   useMotionValue,
   useSpring,
 } from "framer-motion";
+import { FaInstagram } from "react-icons/fa";
+import { PiLinktreeLogoThin } from "react-icons/pi";
 
 export const AnimatedTooltip = ({
   items,
@@ -17,7 +19,7 @@ export const AnimatedTooltip = ({
     title: string;
     description: string;
     src: string;
-    content: any
+    social?: string;
   }[];
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -25,7 +27,7 @@ export const AnimatedTooltip = ({
   const x = useMotionValue(0); // going to set this value on mouse move
   // rotate the tooltip
   const rotate = useSpring(
-    useTransform(x, [-100, 100], [-45, 45]),
+    useTransform(x, [-100, 100], [-30, 30]),
     springConfig
   );
   // translate the tooltip
@@ -70,11 +72,15 @@ export const AnimatedTooltip = ({
                 className="absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
               >
                 <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
-                <div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
+                <div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px "/>
                 <div className="font-bold text-white relative z-30 text-base">
                   {item.title}
                 </div>
-                <div className="text-white text-xs">{item.description}</div>
+                <div className="text-white text-sm">{item.description}</div>
+                <a href={item.social} target="_blank" className="text-white text-2xl md:hover:text-slate-300 transition-colors">
+                  {item.social && item.social.includes('instagram') && <FaInstagram />}
+                  {item.social && item.social.includes('linktr') && <PiLinktreeLogoThin  />}
+                  </a>
               </motion.div>
             )}
           </AnimatePresence>
