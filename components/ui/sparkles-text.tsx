@@ -39,6 +39,7 @@ interface SparklesTextProps {
    * The text to be displayed
    * */
   text: string;
+  subtext?: string;
 
   /**
    * @default 10
@@ -62,6 +63,7 @@ interface SparklesTextProps {
 
 export const SparklesText: React.FC<SparklesTextProps> = ({
   text,
+  subtext,
   colors = { first: "#9E7AFF", second: "#FE8BBB" },
   className,
   sparklesCount = 5,
@@ -106,7 +108,7 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
 
   return (
     <div
-      className={cn("text-2xl lg:text-4xl font-bold mb-10 lg:mb-20 w-[80%] xl:w-full mx-auto", className)}
+      className={cn(" mb-10 lg:mb-20 w-[80%] xl:w-full mx-auto", className)}
       {...props}
       style={
         {
@@ -115,12 +117,13 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
         } as CSSProperties
       }
     >
-      <h1 className="relative inline-block">
+      <h1 className="relative inline-block text-2xl lg:text-4xl font-bold">
         {sparkles.map((sparkle) => (
           <Sparkle key={sparkle.id} {...sparkle} />
         ))}
         <strong>{text}</strong>
       </h1>
+      <h4>{subtext}</h4>
     </div>
   );
 };

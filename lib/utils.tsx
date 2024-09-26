@@ -64,24 +64,24 @@ export const heroImages = [
   },
   {
     title: "Hal el mayed",
-    img: "/images/hero/1.jpeg",
+    img: "/images/hero/6.jpg",
   },
  
   {
     title: "Allah yeshglu",
-    img: "/images/hero/2.jpeg",
+    img: "/images/hero/1.jpeg",
   },
   {
     title: "Dabke daqtein",
-    img: "/images/hero/3.jpeg",
+    img: "/images/hero/2.jpeg",
   },
   {
     title: "Dabke nar",
-    img: "/images/hero/4.jpeg",
+    img: "/images/hero/3.jpeg",
   },
   {
     title: "Bel ruh bel damm",
-    img: "/images/hero/5.jpg",
+    img: "/images/hero/4.jpeg",
   },
   {
     title: "Mahlake",
@@ -89,24 +89,24 @@ export const heroImages = [
   },
   {
     title: "Hal el mayed",
-    img: "/images/hero/1.jpeg",
+    img: "/images/hero/6.jpg",
   },
  
   {
     title: "Allah yeshglu",
-    img: "/images/hero/2.jpeg",
+    img: "/images/hero/1.jpeg",
   },
   {
     title: "Dabke daqtein",
-    img: "/images/hero/3.jpeg",
+    img: "/images/hero/2.jpeg",
   },
   {
     title: "Dabke nar",
-    img: "/images/hero/4.jpeg",
+    img: "/images/hero/3.jpeg",
   },
   {
     title: "Bel ruh bel damm",
-    img: "/images/hero/5.jpg",
+    img: "/images/hero/4.jpeg",
   }
 ];
 
@@ -182,14 +182,14 @@ export const team = [
     id:1,
     description: "Lorem ipsum",
     title: "Aldana Arenas",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/aldana.jpeg",
     social: 'https://www.instagram.com/aldyarenas/',
   },
   {
     id:2,
     description: "Lorem ipsum",
     title: "Andrea Fuentes",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/andrea.jpeg",
     social: 'https://www.instagram.com/andrefuentesgomez/'
   },
   {
@@ -217,7 +217,7 @@ export const team = [
     id:6,
     description: "Lorem",
     title: "Carolina Leiva",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/carolina.png",
     social: 'https://www.instagram.com/caracolinaleiva/',
   },
   {
@@ -231,7 +231,7 @@ export const team = [
     id:8,
     description: "Lorem ipsum",
     title: "Fatima Taha",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/fatima.jpeg",
     social: 'https://www.instagram.com/fatima.tahaa/',
   },
   {
@@ -245,7 +245,7 @@ export const team = [
     id:10,
     description: "Lorem",
     title: "Florencia Cuillieri",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/florC.jpeg",
     social: 'https://www.instagram.com/florcuillieri/',
   },
   {
@@ -265,7 +265,7 @@ export const team = [
     id:13,
     description: "Lorem",
     title: "Guillermina Elias",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/guillermina.jpeg",
     social: 'https://linktr.ee/gelias',
   },
   {
@@ -279,14 +279,14 @@ export const team = [
     id:15,
     description: "Lorem",
     title: "Maca Della Gaspera",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/macarena.png",
     social: 'https://www.instagram.com/macadg0295/',
   },
   {
     id:16,
     description: "Lorem",
     title: "Magali Mafauad",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/magali.jpeg",
   },
   {
     id:17,
@@ -311,7 +311,7 @@ export const team = [
     id:20,
     description: "Lorem",
     title: "Nancy Ceschin",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/nancy.jpeg",
     social: 'https://www.instagram.com/nanyceschin/',
   },
   {
@@ -332,7 +332,7 @@ export const team = [
     id:23,
     description: "Lorem",
     title: "Rocio Cutifani",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/rocio.jpeg",
     social: 'https://www.instagram.com/ro_cutifani/',
   },
   {
@@ -345,20 +345,21 @@ export const team = [
     id:25,
     description: "Lorem",
     title: "Sol Sttoco",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/sol.jpeg",
     social: 'https://www.instagram.com/sol_sttoco/',
   },
   {
     id:26,
     description: "Lorem",
     title: "Yamil Mocayar",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/yamil.jpeg",
+    social: 'https://www.instagram.com/yamilovich.ar/',
   },
   {
     id:27,
     description: "Lorem",
     title: "Yisel Gari",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/yisel.jpeg",
     social: 'https://www.instagram.com/yiselgari/',
   }
 ];

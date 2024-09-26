@@ -2,14 +2,14 @@ import { About } from "@/components/sections/About"
 import { Galery } from "@/components/sections/Galery"
 import { Hero } from "@/components/sections/Hero"
 import { Surprise } from "@/components/sections/Surprise"
-import { Team2 } from "@/components/sections/Team2"
+import { Team } from "@/components/sections/Team"
 
 const Homepage = () => {
   return (
     <div>
       <Hero />
       <About />
-      <Team2 />
+      <Team />
       <Galery />
       <Surprise />
     </div>

@@ -77,9 +77,9 @@ export const AnimatedTooltip = ({
                   {item.title}
                 </div>
                 <div className="text-white text-sm">{item.description}</div>
-                <a href={item.social} target="_blank" className="text-white text-2xl md:hover:text-slate-300 transition-colors">
-                  {item.social && item.social.includes('instagram') && <FaInstagram />}
-                  {item.social && item.social.includes('linktr') && <PiLinktreeLogoThin  />}
+                <a href={item.social} target="_blank" className="text-2xl transition-colors md:hover:opacity-75">
+                  {item.social && item.social.includes('instagram') && <FaInstagram className="text-rose-400" />}
+                  {item.social && item.social.includes('linktr') && <PiLinktreeLogoThin className="text-emerald-300"  />}
                   </a>
               </motion.div>
             )}

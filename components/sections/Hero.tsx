@@ -51,7 +51,7 @@ export const Hero = () => {
     <section
       id="#"
       ref={ref}
-      className="h-[290vh] 2xl:h-[250vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[220vh] xl:h-[250vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -81,7 +81,7 @@ export const Hero = () => {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10">
+        <motion.div className="hidden xl:flex flex-row-reverse space-x-reverse space-x-10">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -103,7 +103,7 @@ export const Header = () => {
       </h1>
       <p className="max-w-2xl text-lg md:text-xl mt-8 dark:text-neutral-200">
         Estamos en Mendoza - Argentina <br />
-        Bailamos Dabke, danza folclorica árabe <br />
+        Bailamos Dabke, danza folclórica árabe <br />
         ¡Queremos conocerte y que nos conozcas!
       </p>
     </div>
@@ -126,8 +126,7 @@ export const ProductCard = ({
         x: translate,
       }}
       key={product.title}
-      className="group/product h-80 2xl:h-96 w-[23rem] 2xl:w-[30rem] relative flex-shrink-0"
-    >
+      className="group/product h-52 xl:h-96 w-[23rem] xl:w-[30rem] relative flex-shrink-0"    >
       <div className="block group-hover/product:shadow-2xl">
         <img
           src={product.img}
@@ -136,9 +135,6 @@ export const ProductCard = ({
         />
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 text-white">
-        {product.title}
-      </h2>
     </motion.div>
   );
 };

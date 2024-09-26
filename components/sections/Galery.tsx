@@ -4,7 +4,7 @@ import { SparklesText } from '../ui/sparkles-text'
 export const Galery = () => {
     return (
         <section className='container px-3 py-10 lg:py-20' id='galeria'>
-            <SparklesText text='¡Encontra más en nuestras redes!' className='text-center lg:text-start' />
+            <SparklesText text='Momentos hermosos' subtext='Iremos actualizando las imágenes' className='text-center lg:text-start' />
                 {/* First images */}
                 <div className="flex flex-wrap">
                     <div className="flex w-full md:w-1/2 flex-wrap">
