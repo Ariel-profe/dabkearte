@@ -44,14 +44,14 @@ export const Hero = () => {
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
+    useTransform(scrollYProgress, [0, 0.2], [-500, 200]),
     springConfig
   );
   return (
     <section
       id="#"
       ref={ref}
-      className="h-[220vh] xl:h-[250vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[210vh] xl:h-[230vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -68,7 +68,7 @@ export const Hero = () => {
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -77,7 +77,7 @@ export const Hero = () => {
             <ProductCard
               product={product}
               translate={translateXReverse}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -86,7 +86,7 @@ export const Hero = () => {
             <ProductCard
               product={product}
               translate={translateX}
-              key={product.title}
+              key={product.id}
             />
           ))}
         </motion.div>
@@ -115,7 +115,7 @@ export const ProductCard = ({
   translate,
 }: {
   product: {
-    title: string;
+    id: number;
     img: string;
   };
   translate: MotionValue<number>;
@@ -125,13 +125,13 @@ export const ProductCard = ({
       style={{
         x: translate,
       }}
-      key={product.title}
+      key={product.id}
       className="group/product h-52 xl:h-96 w-[23rem] xl:w-[30rem] relative flex-shrink-0"    >
       <div className="block group-hover/product:shadow-2xl">
         <img
           src={product.img}
           className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title}
+          alt={`imagen-${product.id}`}
         />
       </div>
       <div className="absolute inset-0 h-full w-full opacity-0 bg-black pointer-events-none"></div>

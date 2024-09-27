@@ -93,7 +93,7 @@ export const Navbar = () => {
             </div>
 
           <div className="w-full h-full absolute inset-0 flex justify-center items-center z-30">
-              <ul className="max-w-[900px] leading-none">
+              <ul className="max-w-[900px] space-y-6 leading-none">
                 {
                   navlinks.map(({href, icon:Icon, id, name}) => (
                     <motion.li 
@@ -105,15 +105,6 @@ export const Navbar = () => {
                       animate="show" 
                       exit="exit"
                     >
-                     {/* <svg className="w-10 h-10 md:w-20 md:h-20">
-                      <linearGradient id="blue-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
-                        <stop stopColor="#BE8F3D" offset="0%" />
-                        <stop stopColor="#F8EDAF" offset="50%" />
-                        <stop stopColor="#BE8F3D" offset="100%" />
-                      </linearGradient>
-
-                    <Icon style={{ fill: "url(#blue-gradient)"}} className="text-4xl md:text-6xl"/>
-                    </svg> */}
                      <FlipLink href={href}>{name}</FlipLink>
                     </motion.li>
                   ))

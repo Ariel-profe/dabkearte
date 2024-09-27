@@ -41,73 +41,21 @@ export const navlinks = [
 ];
 
 export const heroImages = [
-  {
-    title: "Daq almani",
-    img: "/images/hero/1.jpeg",
-  },
-  {
-    title: "Lebnani",
-    img: "/images/hero/2.jpeg",
-  },
-  {
-    title: "Hal bawadi",
-    img: "/images/hero/3.jpeg",
-  },
- 
-  {
-    title: "Dela3ona",
-    img: "/images/hero/4.jpeg",
-  },
-  {
-    title: "Mahlake",
-    img: "/images/hero/5.jpg",
-  },
-  {
-    title: "Hal el mayed",
-    img: "/images/hero/6.jpg",
-  },
- 
-  {
-    title: "Allah yeshglu",
-    img: "/images/hero/1.jpeg",
-  },
-  {
-    title: "Dabke daqtein",
-    img: "/images/hero/2.jpeg",
-  },
-  {
-    title: "Dabke nar",
-    img: "/images/hero/3.jpeg",
-  },
-  {
-    title: "Bel ruh bel damm",
-    img: "/images/hero/4.jpeg",
-  },
-  {
-    title: "Mahlake",
-    img: "/images/hero/5.jpg",
-  },
-  {
-    title: "Hal el mayed",
-    img: "/images/hero/6.jpg",
-  },
- 
-  {
-    title: "Allah yeshglu",
-    img: "/images/hero/1.jpeg",
-  },
-  {
-    title: "Dabke daqtein",
-    img: "/images/hero/2.jpeg",
-  },
-  {
-    title: "Dabke nar",
-    img: "/images/hero/3.jpeg",
-  },
-  {
-    title: "Bel ruh bel damm",
-    img: "/images/hero/4.jpeg",
-  }
+  {id: 1, img: "/images/hero/1.jpeg"},
+  {id: 2, img: "/images/hero/2.jpeg"},
+  {id: 3, img: "/images/hero/3.jpg"},
+  {id: 4, img: "/images/hero/4.jpg"},
+  {id: 5, img: "/images/hero/5.jpg"},
+  {id: 6, img: "/images/hero/6.jpg"},
+  {id: 7, img: "/images/hero/7.jpeg"},
+  {id: 8, img: "/images/hero/8.jpg"},
+  {id: 9, img: "/images/hero/9.jpg"},
+  {id: 10, img: "/images/hero/10.jpg"},
+  {id: 11, img: "/images/hero/11.jpeg"},
+  {id: 12, img: "/images/hero/12.jpg"},
+  {id: 13, img: "/images/hero/13.jpg"},
+  {id: 14, img: "/images/hero/14.jpg"},
+  {id: 15, img: "/images/hero/15.jpg"}
 ];
 
 export const contactMethods = [
@@ -210,7 +158,7 @@ export const team = [
     id:5,
     description: "Lorem",
     title: "Camila Quiroga",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/camilaQ.jpeg",
     social: 'https://www.instagram.com/camiqnacif/',
   },
   {
@@ -223,22 +171,22 @@ export const team = [
   {
     id:7,
     description: "Lorem ipsum",
-    title: "Daniela Amin",
-    src: "/images/team/ariel.jpg",
+    title: "Daniela Amín",
+    src: "/images/team/daniela.jpeg",
     social: 'https://www.instagram.com/dani.amin.11/',
   },
   {
     id:8,
     description: "Lorem ipsum",
-    title: "Fatima Taha",
+    title: "Fátima Taha",
     src: "/images/team/fatima.jpeg",
     social: 'https://www.instagram.com/fatima.tahaa/',
   },
   {
     id:9,
     description: "Lorem",
-    title: "Florencia Amin",
-    src: "/images/team/ariel.jpg",
+    title: "Florencia Amín",
+    src: "/images/team/florenciaA.jpeg",
     social: 'https://www.instagram.com/florcitamin/',
   },
   {
@@ -251,7 +199,7 @@ export const team = [
   {
     id:11,
     description: "Lorem",
-    title: "Florencia Munafo",
+    title: "Florencia Munafó",
     src: "/images/team/ariel.jpg",
     social: 'https://www.instagram.com/flor_munafo_bellydancer/',
   },
@@ -259,7 +207,8 @@ export const team = [
     id:12,
     description: "Lorem",
     title: "Gisel Guzman",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/gisel.jpeg",
+    social: 'https://www.instagram.com/gisel_guzman_/'
   },
   {
     id:13,
@@ -271,7 +220,7 @@ export const team = [
   {
     id:14,
     description: "Lorem",
-    title: "Maria Eugenia Cassar",
+    title: "María Eugenia Cassar",
     src: "/images/team/ariel.jpg",
     social: 'https://www.instagram.com/mauge.cassar/',
   },
@@ -285,13 +234,13 @@ export const team = [
   {
     id:16,
     description: "Lorem",
-    title: "Magali Mafauad",
+    title: "Magalí Mafauad",
     src: "/images/team/magali.jpeg",
   },
   {
     id:17,
     description: "Lorem",
-    title: "Martin Bulfon",
+    title: "Martín Bulfon",
     src: "/images/team/ariel.jpg",
   },
   {
@@ -305,7 +254,7 @@ export const team = [
     id:19,
     description: "Lorem",
     title: "Nadir Daou",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/nadir.jpg",
   },
   {
     id:20,
@@ -331,15 +280,15 @@ export const team = [
   {
     id:23,
     description: "Lorem",
-    title: "Rocio Cutifani",
+    title: "Rocío Cutifani",
     src: "/images/team/rocio.jpeg",
     social: 'https://www.instagram.com/ro_cutifani/',
   },
   {
     id:24,
     description: "Lorem",
-    title: "Sebastian Andrawos",
-    src: "/images/team/ariel.jpg",
+    title: "Sebastián Andrawos",
+    src: "/images/team/sebastian.png",
   },
   {
     id:25,

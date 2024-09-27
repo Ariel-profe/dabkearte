@@ -9,7 +9,7 @@ export const FlipLink = ({ children, href }: { children: string; href: string })
       initial="initial"
       whileHover="hovered"
       href={href}
-      className="relative py-2 block overflow-hidden whitespace-nowrap font-black uppercase text-5xl md:text-8xl lg:text-9xl"
+      className="relative block overflow-hidden whitespace-nowrap font-black uppercase text-5xl md:text-8xl lg:text-9xl lg:hover:text-white/70 transition-colors"
       style={{
         lineHeight: 0.85,
       }}
@@ -30,7 +30,7 @@ export const FlipLink = ({ children, href }: { children: string; href: string })
               ease: "easeInOut",
               delay: STAGGER * i,
             }}
-            className="inline-block py-4"
+            className="inline-block"
             key={i}
           >
             {l}
@@ -53,7 +53,7 @@ export const FlipLink = ({ children, href }: { children: string; href: string })
               ease: "easeInOut",
               delay: STAGGER * i,
             }}
-            className="inline-block py-4"
+            className="inline-block"
             key={i}
           >
             {l}
