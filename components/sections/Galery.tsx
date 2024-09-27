@@ -24,11 +24,17 @@ export const Galery = () => {
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/3.jpeg" />
+                            src="/images/hero/3.jpg" />
                         </div>
                     </div>
                     <div className="flex w-full md:w-1/2 flex-wrap">
                         <div className="w-full p-1 md:p-2">
+                            <img
+                            alt="gallery"
+                            className="block h-full w-full rounded-lg object-cover object-center"
+                            src="/images/hero/4.jpg" />
+                        </div>
+                        <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
@@ -38,13 +44,7 @@ export const Galery = () => {
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/4.jpeg" />
-                        </div>
-                        <div className="w-full lg:w-1/2 p-1 md:p-2">
-                            <img
-                            alt="gallery"
-                            className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/2.jpeg" />
+                            src="/images/hero/6.jpg" />
                         </div>
                     </div>
                 </div>
@@ -55,19 +55,19 @@ export const Galery = () => {
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/1.jpeg" />
+                            src="/images/hero/7.jpeg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/2.jpeg" />
+                            src="/images/hero/8.jpg" />
                         </div>
                         <div className="w-full p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/3.jpeg" />
+                            src="/images/hero/9.jpg" />
                         </div>
                     </div>
                     <div className="flex w-full md:w-1/2 flex-wrap">
@@ -75,19 +75,19 @@ export const Galery = () => {
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/5.jpg" />
+                            src="/images/hero/10.jpg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/4.jpeg" />
+                            src="/images/hero/11.jpeg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/2.jpeg" />
+                            src="/images/hero/12.jpg" />
                         </div>
                     </div>
                 </div>

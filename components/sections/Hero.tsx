@@ -44,14 +44,14 @@ export const Hero = () => {
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-500, 200]),
+    useTransform(scrollYProgress, [0, 0.2], [-500, 100]),
     springConfig
   );
   return (
     <section
       id="#"
       ref={ref}
-      className="h-[210vh] xl:h-[230vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[180vh] xl:h-[220vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
