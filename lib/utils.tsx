@@ -200,7 +200,7 @@ export const team = [
     id:11,
     description: "Lorem",
     title: "Florencia Munafó",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/florenciaM.jpeg",
     social: 'https://www.instagram.com/flor_munafo_bellydancer/',
   },
   {
@@ -267,7 +267,7 @@ export const team = [
     id:21,
     description: "Lorem",
     title: "Nur Yamin",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/nur.jpeg",
     social: 'https://www.instagram.com/nur.yaminsemaan/',
   },
   {

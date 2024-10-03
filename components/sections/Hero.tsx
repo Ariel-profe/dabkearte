@@ -1,140 +1,110 @@
+
 "use client";
 
+import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import { twMerge } from "tailwind-merge";
+import { VideoCarousel } from "../ui/video-carousel";
 
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  MotionValue,
-} from "framer-motion";
-import { heroImages } from "@/lib/utils";
-
-export const Hero = () => {
-  const firstRow = heroImages.slice(0, 5);
-  const secondRow = heroImages.slice(5, 10);
-  const thirdRow = heroImages.slice(10, 15);
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
-
-  const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
-    springConfig
-  );
-  const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
-    springConfig
-  );
-  const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-    springConfig
-  );
-  const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-    springConfig
-  );
-  const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-    springConfig
-  );
-  const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-500, 100]),
-    springConfig
-  );
-  return (
-    <section
-      id="#"
-      ref={ref}
-      className="h-[180vh] xl:h-[220vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
-    >
-      <Header />
-      <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className="space-y-5"
-      >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 mt-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.id}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row mb-20 space-x-10 ">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.id}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="hidden xl:flex flex-row-reverse space-x-reverse space-x-10">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.id}
-            />
-          ))}
-        </motion.div>
-      </motion.div>
-    </section>
-  );
+type Props = {
+  children: React.ReactNode;
+  className?: string;
 };
 
-export const Header = () => {
+const Container = ({ children, className }: Props) => {
   return (
-    <div className="max-w-7xl relative mx-auto pt-60 px-4 w-full left-0 top-0">
-      <h1 className="text-5xl md:text-7xl font-bold dark:text-white">
-        Somos <br /> Dabkearte Mendoza
-      </h1>
-      <p className="max-w-2xl text-lg md:text-xl mt-8 dark:text-neutral-200">
-        Estamos en Mendoza - Argentina <br />
-        Bailamos Dabke, danza folclórica árabe <br />
-        ¡Queremos conocerte y que nos conozcas!
-      </p>
+    <div className={twMerge("mx-auto max-w-[980px] px-6", className)}>
+      {children}
     </div>
   );
 };
 
-export const ProductCard = ({
-  product,
-  translate,
-}: {
-  product: {
-    id: number;
-    img: string;
-  };
-  translate: MotionValue<number>;
-}) => {
+type FadeInProps = {
+  children: React.ReactNode;
+};
+
+export const FadeIn = ({ children }: FadeInProps) => {
   return (
     <motion.div
-      style={{
-        x: translate,
-      }}
-      key={product.id}
-      className="group/product h-52 xl:h-96 w-[23rem] xl:w-[30rem] relative flex-shrink-0"    >
-      <div className="block group-hover/product:shadow-2xl">
-        <img
-          src={product.img}
-          className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={`imagen-${product.id}`}
-        />
-      </div>
-      <div className="absolute inset-0 h-full w-full opacity-0 bg-black pointer-events-none"></div>
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ margin: "100% 0px -300px 0px" }}
+    >
+      {children}
     </motion.div>
+  );
+};
+
+export const Usps = () => {
+  return (
+    <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
+      <FadeIn>
+        <p>El Dabke es lo que nos apasiona y une en cada momento</p>
+      </FadeIn>
+      <FadeIn>
+        <p>
+          Nuestros valores son la guía que nos lleva al camino del amor por lo que hacemos
+        </p>
+      </FadeIn>
+      <FadeIn>
+        <p>Queremos conocerte y que nos conozcas</p>
+      </FadeIn>
+      <FadeIn>
+        <p>Somos de Mendoza - Argentina.</p>
+      </FadeIn>
+    </Container>
+  );
+};
+
+export const Hero = () => {
+  return (
+    <div>
+        <div className="bg-[#191036] relative z-10">
+          <Hero2 />
+          <Usps />
+        </div>
+        <VideoCarousel />
+      </div>
+  )
+}
+
+const Hero2 = () => {
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: videoContainerRef,
+    offset: ["start start", "end end"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
+
+  return (
+    <div className="bg-[#191036] text-white">
+      <motion.div
+        style={{ opacity }}
+        ref={videoContainerRef}
+        className="absolute -top-[--header-height] left-0 h-[200vh] w-full "
+      >
+        <div className="absolute inset-0 h-full bg-black z-10 opacity-40"></div>
+        <img
+          className="sticky top-0 h-screen w-full object-cover"
+          src="/images/hero/8.jpg"
+        />
+      </motion.div>
+      <Container className="relative z-10 h-[--hero-height] pb-7">
+        <motion.div
+          className="flex h-full flex-col items-start justify-end"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+          whileInView="visible"
+          exit="hidden"
+          animate="hidden"
+          viewport={{ amount: 0.98 }}
+        >
+          <h1 className="mb-5 text-4xl font-bold lg:text-6xl">Somos DabkeArte Mendoza</h1>
+        <p className="text-2xl lg:text-3xl">Grupo de folclore árabe</p>
+        </motion.div>
+      </Container>
+    </div>
   );
 };
