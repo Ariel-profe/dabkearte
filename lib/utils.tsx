@@ -241,7 +241,7 @@ export const team = [
     id:17,
     description: "Lorem",
     title: "Martín Bulfon",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/martin.jpeg",
   },
   {
     id:18,
