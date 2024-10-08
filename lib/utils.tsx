@@ -147,13 +147,12 @@ export const team = [
     src: "/images/team/ariel.jpg",
     social: 'https://www.instagram.com/arielo_elias/',
   },
-
-  {
-    id:4,
-    description: "Lorem ipsum",
-    title: "Camila Ferro",
-    src: "/images/team/ariel.jpg",
-  },
+  // {
+  //   id:4,
+  //   description: "Lorem ipsum",
+  //   title: "Camila Ferro",
+  //   src: "/images/team/ariel.jpg",
+  // },
   {
     id:5,
     description: "Lorem",
@@ -217,13 +216,13 @@ export const team = [
     src: "/images/team/guillermina.jpeg",
     social: 'https://linktr.ee/gelias',
   },
-  {
-    id:14,
-    description: "Lorem",
-    title: "María Eugenia Cassar",
-    src: "/images/team/ariel.jpg",
-    social: 'https://www.instagram.com/mauge.cassar/',
-  },
+  // {
+  //   id:14,
+  //   description: "Lorem",
+  //   title: "María Eugenia Cassar",
+  //   src: "/images/team/ariel.jpg",
+  //   social: 'https://www.instagram.com/mauge.cassar/',
+  // },
   {
     id:15,
     description: "Lorem",
@@ -243,13 +242,13 @@ export const team = [
     title: "Martín Bulfon",
     src: "/images/team/martin.jpeg",
   },
-  {
-    id:18,
-    description: "Lorem",
-    title: "Micaela Poblete",
-    src: "/images/team/ariel.jpg",
-    social: 'https://www.instagram.com/micapoblete_/',
-  },
+  // {
+  //   id:18,
+  //   description: "Lorem",
+  //   title: "Micaela Poblete",
+  //   src: "/images/team/ariel.jpg",
+  //   social: 'https://www.instagram.com/micapoblete_/',
+  // },
   {
     id:19,
     description: "Lorem",
@@ -274,7 +273,7 @@ export const team = [
     id:22,
     description: "Lorem",
     title: "Renzo Farjo",
-    src: "/images/team/ariel.jpg",
+    src: "/images/team/renzo.jpeg",
     social: 'https://www.instagram.com/renzofarjo/',
   },
   {

@@ -12,19 +12,19 @@ export const Galery = () => {
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/1.jpeg" />
+                            src="/images/galery/5.jpg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/2.jpeg" />
+                            src="/images/galery/2.jpg" />
                         </div>
                         <div className="w-full p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/3.jpg" />
+                            src="/images/galery/4.jpg" />
                         </div>
                     </div>
                     <div className="flex w-full md:w-1/2 flex-wrap">
@@ -32,19 +32,19 @@ export const Galery = () => {
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/4.jpg" />
+                            src="/images/galery/3.jpg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/5.jpg" />
+                            src="/images/galery/1.jpg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/6.jpg" />
+                            src="/images/galery/6.jpg" />
                         </div>
                     </div>
                 </div>
@@ -55,19 +55,19 @@ export const Galery = () => {
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/7.jpeg" />
+                            src="/images/galery/7.jpg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/8.jpg" />
+                            src="/images/galery/8.jpg" />
                         </div>
                         <div className="w-full p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/9.jpg" />
+                            src="/images/galery/9.jpg" />
                         </div>
                     </div>
                     <div className="flex w-full md:w-1/2 flex-wrap">
@@ -75,19 +75,19 @@ export const Galery = () => {
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/10.jpg" />
+                            src="/images/galery/10.jpg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/11.jpeg" />
+                            src="/images/galery/11.jpg" />
                         </div>
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img
                             alt="gallery"
                             className="block h-full w-full rounded-lg object-cover object-center"
-                            src="/images/hero/12.jpg" />
+                            src="/images/galery/12.jpg" />
                         </div>
                     </div>
                 </div>
