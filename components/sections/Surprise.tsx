@@ -23,8 +23,8 @@ export function Surprise() {
                         <h4 className="text-lg lg:text-4xl text-primary font-bold text-center mb-8">
                             ¡Cumplimos 10 años!
                         </h4>
-                        <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start text-center max-w-sm mx-auto text-black">
-                            AQUI BANNER DEL SHOW
+                        <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start text-center max-w-md mx-auto text-black">
+                            <img src="/banner.png" alt="banner-show" />
                         </div>
                     </ModalContent>
                     <ModalFooter className="gap-4">
