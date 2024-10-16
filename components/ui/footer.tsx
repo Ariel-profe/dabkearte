@@ -1,7 +1,9 @@
 
 import Link from "next/link";
 import { PiFacebookLogoLight, PiYoutubeLogoThin, PiInstagramLogoLight, PiWhatsappLogoThin   } from "react-icons/pi";
-import { contactMethods, navlinks } from "@/lib/utils";
+import { CiMail } from "react-icons/ci";
+
+import { navlinks } from "@/lib/utils";
 
 const footerSocials = [
   {
@@ -11,20 +13,24 @@ const footerSocials = [
   },
   {
       id:2,
-      href: '/',
+      href: 'https://www.facebook.com/profile.php?id=100031039077291',
       icon: PiFacebookLogoLight
   },
   {
       id:3,
-      href: '/',
+      href: 'https://www.youtube.com/@dabkeartemendoza6982',
       icon: PiYoutubeLogoThin
   },
-
   {
       id:4,
-      href: '/',
+      href: 'https://api.whatsapp.com/send?phone=+5492613625959&text=Hola DabkeArte!',
       icon: PiWhatsappLogoThin
-  }
+  },
+  {
+      id:5,
+      href: 'mailto:dabkearte.mendoza@gmail.com',
+      icon: CiMail
+  },
 ]
 
 export const Footer = () => {
@@ -48,22 +54,11 @@ export const Footer = () => {
                   ))
               }
           </ul>
-          <div className="flex flex-col md:flex-row items-center justify-center mt-8 space-y-5 sm:space-x-4 sm:space-y-0">
-              {
-                  contactMethods.map((item, idx) => (
-                      <div key={idx} className="hover:text-slate-300 transition-colors">
-                        <p className="flex flex-wrap items-center gap-1">
-                        <span className="text-secondary">{item.icon}</span>
-                        { item.contact }
-                        </p>
-                      </div>
-                  ))
-              }
-          </div>
+         
           <div className="mt-8 flex flex-col lg:flex-row items-center justify-between w-full">
               <h4 className="mt-4 sm:mt-0 text-center">
                   &copy; {year} Desarrollado por  
-                    <a href="/" className="hover:text-slate-300 transition-colors md:hover:underline"> AMN Consultora Informatica. </a>
+                    <a href="/" className="hover:text-slate-300 transition-colors md:hover:underline"> AMN Consultora Informática. </a>
               </h4>
               <div className="mt-6 sm:mt-0">
                   <ul className="flex items-center space-x-4">
@@ -77,7 +72,7 @@ export const Footer = () => {
                             className="group relative outline-0 [--sz-btn:68px] [--space:calc(var(--sz-btn)/5.5)] [--gen-sz:calc(var(--space)*2)] [--sz-text:calc(var(--sz-btn)-var(--gen-sz))] h-[var(--sz-btn)] w-[var(--sz-btn)] border border-solid border-transparent rounded-xl flex items-center justify-center aspect-square cursor-pointer transition-transform duration-200 active:scale-[0.95]"
                           >
                             <svg
-                              className="absolute z-10 overflow-visible transition-all duration-300 text-secondary md:group-hover:text-white top-[calc(var(--sz-text)/4)] left-[calc(var(--sz-text)/7)] h-[var(--gen-sz)] w-[var(--gen-sz)] md:group-hover:h-[var(--sz-text)] md:group-hover:w-[var(--sz-text)] md:group-hover:left-[calc(var(--sz-text)/4)] md:group-hover:top-[calc(calc(var(--gen-sz))/2)]"
+                              className="absolute z-10 overflow-visible transition-all duration-300 text-secondary md:group-hover:text-slate-200 top-[calc(var(--sz-text)/4)] left-[calc(var(--sz-text)/7)] h-[var(--gen-sz)] w-[var(--gen-sz)] md:group-hover:h-[var(--sz-text)] md:group-hover:w-[var(--sz-text)] md:group-hover:left-[calc(var(--sz-text)/4)] md:group-hover:top-[calc(calc(var(--gen-sz))/2)]"
                               stroke="none"
                               viewBox="0 0 24 24"
                               fill="currentColor"
@@ -89,7 +84,7 @@ export const Footer = () => {
                               ></path>
                             </svg>
                             <span
-                              className="text-3xl font-extrabold leading-none text-white transition-all duration-200 md:group-hover:opacity-0"
+                              className="text-3xl  leading-none text-white transition-all duration-200 md:group-hover:opacity-0"
                               ><Icon /></span>
                           </a>
                         </li>

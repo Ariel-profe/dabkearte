@@ -13,7 +13,7 @@ type Props = {
 
 const Container = ({ children, className }: Props) => {
   return (
-    <div className={twMerge("mx-auto max-w-[980px] px-6", className)}>
+    <div className={twMerge("mx-auto max-w-[1080px] px-3", className)}>
       {children}
     </div>
   );
@@ -37,20 +37,20 @@ export const FadeIn = ({ children }: FadeInProps) => {
 
 export const Usps = () => {
   return (
-    <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
+    <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-2xl font-bold text-white md:text-4xl text-center">
       <FadeIn>
-        <p>El Dabke es lo que nos apasiona y une en cada momento</p>
+        <p>El Dabke es lo que nos apasiona y une en cada momento.</p>
       </FadeIn>
       <FadeIn>
         <p>
-          Nuestros valores son la guía que nos lleva al camino del amor por lo que hacemos
+          Nuestros valores son la guía que nos lleva al camino del amor por lo que hacemos.
         </p>
       </FadeIn>
       <FadeIn>
-        <p>Queremos conocerte y que nos conozcas</p>
+        <p>Fuerza en nuestros pasos y unión para ir juntos en la misma dirección.</p>
       </FadeIn>
       <FadeIn>
-        <p>Somos de Mendoza - Argentina.</p>
+        <p>Queremos conocerte y que nos conozcas.</p>
       </FadeIn>
     </Container>
   );
@@ -86,12 +86,12 @@ const Hero2 = () => {
         <div className="absolute inset-0 h-full bg-black z-10 opacity-40"></div>
         <img
           className="sticky top-0 h-screen w-full object-cover"
-          src="/images/hero/8.jpg"
+          src="/images/hero/hero.webp"
         />
       </motion.div>
       <Container className="relative z-10 h-[--hero-height] pb-7">
         <motion.div
-          className="flex h-full flex-col items-start justify-end"
+          className="flex h-full flex-col items-start justify-end w-full"
           variants={{
             hidden: { opacity: 0 },
             visible: { opacity: 1 },
@@ -101,8 +101,8 @@ const Hero2 = () => {
           animate="hidden"
           viewport={{ amount: 0.98 }}
         >
-          <h1 className="mb-5 text-4xl font-bold lg:text-6xl">Somos DabkeArte Mendoza</h1>
-        <p className="text-2xl lg:text-3xl">Grupo de folclore árabe</p>
+          <h1 className="mb-5 text-4xl font-bold lg:text-7xl w-full text-center">Somos DabkeArte Mendoza</h1>
+        <p className="text-2xl lg:text-3xl w-full text-center">Grupo de folclore árabe</p>
         </motion.div>
       </Container>
     </div>

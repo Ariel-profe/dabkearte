@@ -65,8 +65,8 @@ import { Movie, movies, randomMoviesSet1, randomMoviesSet2 } from "./movies";
               >
                 <img
                   className="h-full w-full object-cover"
-                  src={movies[0].poster}
-                  alt={movies[0].poster}
+                  src={movies[20].poster}
+                  alt={movies[20].poster}
                 />
               </motion.div>
               <motion.div
@@ -75,8 +75,8 @@ import { Movie, movies, randomMoviesSet1, randomMoviesSet2 } from "./movies";
               >
                 <img
                   className="h-full w-full object-cover"
-                  src={movies[1].poster}
-                  alt={movies[1].poster}
+                  src={movies[10].poster}
+                  alt={movies[10].poster}
                 />
               </motion.div>
               <motion.div
@@ -85,8 +85,8 @@ import { Movie, movies, randomMoviesSet1, randomMoviesSet2 } from "./movies";
               >
                 <img
                   className="h-full w-full object-cover"
-                  src={movies[2].poster}
-                  alt={movies[2].poster}
+                  src={movies[11].poster}
+                  alt={movies[11].poster}
                 />
               </motion.div>
             </div>
