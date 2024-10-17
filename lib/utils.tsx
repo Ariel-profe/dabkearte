@@ -176,7 +176,7 @@ export const team = [
   },
   {
     id:12,
-    description: "Lorem",
+    description: "17/01",
     title: "Gisel Guzman",
     src: "/images/team/gisel.jpeg",
     social: 'https://www.instagram.com/gisel_guzman_/'
@@ -229,7 +229,7 @@ export const team = [
   },
   {
     id:20,
-    description: "Lorem",
+    description: "26/06",
     title: "Nancy Ceschin",
     src: "/images/team/nancy.jpeg",
     social: 'https://www.instagram.com/nanyceschin/',
