@@ -6,6 +6,7 @@ import { navlinks } from "@/lib/utils";
 import { BurgerButton } from "./burger-button";
 import { FlipLink } from "./flip-link";
 import clsx from "clsx";
+import Link from "next/link";
 
 export const Navbar = () => {
 
@@ -75,7 +76,9 @@ export const Navbar = () => {
       hasScrolled && "py-2 bg-[#201446ee] backdrop-blur-sm",
     )}>
       <div className="w-full flex justify-between items-center rounded-lg relative z-50 container px-3 mx-auto">
-        <img src="/logo.svg" alt="logo-dabkearte" className="w-16 h-16 lg:w-20 lg:h-20" />
+        <Link href="/">
+          <img src="/logo.svg" alt="logo-dabkearte" className="w-16 h-16 lg:w-20 lg:h-20" />
+        </Link>
         <BurgerButton setIsOpen={setIsOpen} isOpen={isOpen} />
       </div>
 

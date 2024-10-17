@@ -5,7 +5,7 @@ import { SparklesText } from "../ui/sparkles-text";
 export function About() {
  
   return (
-    <section id="#nosotros" className="container px-3 mx-auto py-10 lg:py-20">
+    <section id="nosotros" className="container px-3 mx-auto py-10 lg:py-20">
       <SparklesText text="Un poquito de nosotros" className="text-center lg:text-start" />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 relative z-10 mx-auto px-3">
         {events.map((event, index) => (

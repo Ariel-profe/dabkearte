@@ -7,13 +7,13 @@ import { Team } from "@/components/sections/Team"
 
 const Homepage = () => {
   return (
-    <div>
+    <>
       <Hero />
       <About />
       <Team />
       <Galery />
       <Surprise />
-    </div>
+    </>
   )
 }
 
