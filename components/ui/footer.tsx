@@ -43,17 +43,6 @@ export const Footer = () => {
           <Link href={'/'} className="relative max-w-lg mx-auto text-center">
               <img src="/logo.svg" className="w-20 lg:w-32 mx-auto" />
           </Link>
-          <ul className="flex flex-col md:flex-row items-center justify-center mt-8 space-y-5  sm:space-x-4 sm:space-y-0">
-              {
-                  navlinks.map((item, idx) => (
-                      <li key={idx} className="hover:text-slate-300 transition-colors capitalize">
-                          <a key={idx} href={item.href}>
-                              { item.name }
-                          </a>
-                      </li>
-                  ))
-              }
-          </ul>
          
           <div className="mt-8 flex flex-col lg:flex-row items-center justify-between w-full">
               <h4 className="mt-4 sm:mt-0 text-center">
