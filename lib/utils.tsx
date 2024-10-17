@@ -188,13 +188,13 @@ export const team = [
     src: "/images/team/guillermina.jpeg",
     social: 'https://linktr.ee/gelias',
   },
-  // {
-  //   id:14,
-  //   description: "Lorem",
-  //   title: "María Eugenia Cassar",
-  //   src: "/images/team/ariel.jpg",
-  //   social: 'https://www.instagram.com/mauge.cassar/',
-  // },
+  {
+    id:14,
+    description: "09/04",
+    title: "Mauge Cassar",
+    src: "/images/team/mauge.jpeg",
+    social: 'https://www.instagram.com/mauge.cassar/',
+  },
   {
     id:15,
     description: "02/09",
