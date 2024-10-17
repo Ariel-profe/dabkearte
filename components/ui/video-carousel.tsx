@@ -9,6 +9,8 @@ import { Movie, movies, randomMoviesSet1, randomMoviesSet2 } from "./movies";
   
   export const VideoCarousel = () => {
     const { width, height } = useWindowSize();
+    console.log({width});
+    
     const carouselWrapperRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
       target: carouselWrapperRef,
@@ -17,7 +19,8 @@ import { Movie, movies, randomMoviesSet1, randomMoviesSet2 } from "./movies";
   
     const maximumScale = useMemo(() => {
       const windowYRatio = height / width;
-      const xScale = 1.66667;
+      // const xScale = 1.66667;
+      const xScale = width < 675 ? .6 : 1.5;
       const yScale = xScale * (16 / 9) * windowYRatio;
       return Math.max(xScale, yScale);
     }, [width, height]);
@@ -116,7 +119,7 @@ import { Movie, movies, randomMoviesSet1, randomMoviesSet2 } from "./movies";
         <div className="animate-carousel-move relative left-[var(--carousel-offset,0px)] flex gap-3">
           {movies.map((movie, index) => (
             <div
-              className="aspect-video w-[40vw] shrink-0 md:w-[23vw]"
+              className="aspect-video w-[60vw] shrink-0 md:w-[28vw]"
               key={`${movie.poster}-${index}`}
             >
               <img

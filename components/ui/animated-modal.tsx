@@ -51,7 +51,7 @@ export const ModalTrigger = ({
     return (
         <button
             className={cn(
-                "px-4 py-2 rounded-md text-black dark:text-white text-center relative overflow-hidden",
+                "px-4 py-1 rounded-md text-black dark:text-white text-center relative overflow-hidden",
                 className
             )}
             onClick={() => setOpen(true)}
@@ -147,7 +147,7 @@ export const ModalContent = ({
     className?: string;
 }) => {
     return (
-        <div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
+        <div className={cn("flex flex-col flex-1 p-4 md:p-6", className)}>
             {children}
         </div>
     );
@@ -166,7 +166,7 @@ export const ModalFooter = ({
     return (
         <div
             className={cn(
-                "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
+                "flex justify-end p-2 bg-gray-100 dark:bg-neutral-900",
                 className
             )}
             onClick={() => setOpen(false)}
