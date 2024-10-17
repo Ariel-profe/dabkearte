@@ -243,7 +243,7 @@ export const team = [
   },
   {
     id:22,
-    description: "Lorem",
+    description: "08/04",
     title: "Renzo Farjo",
     src: "/images/team/renzo.jpeg",
     social: 'https://www.instagram.com/renzofarjo/',
@@ -270,7 +270,7 @@ export const team = [
   },
   {
     id:26,
-    description: "Lorem",
+    description: "04/03",
     title: "Yamil Mocayar",
     src: "/images/team/yamil.jpeg",
     social: 'https://www.instagram.com/yamilovich.ar/',

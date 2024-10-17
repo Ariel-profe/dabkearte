@@ -72,7 +72,7 @@ export const Navbar = () => {
 
   return (
     <nav className={clsx("fixed top-0 left-0 z-50 w-full px-3 xl:px-6 py-10 transition-all duration-500 max-lg:py-2",
-      hasScrolled && "py-2 bg-[#201446] backdrop-blur-[8px]",
+      hasScrolled && "py-2 bg-[#201446ee] backdrop-blur-sm",
     )}>
       <div className="w-full flex justify-between items-center rounded-lg relative z-50 container px-3 mx-auto">
         <img src="/logo.svg" alt="logo-dabkearte" className="w-16 h-16 lg:w-20 lg:h-20" />

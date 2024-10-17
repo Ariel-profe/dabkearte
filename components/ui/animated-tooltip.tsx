@@ -79,7 +79,7 @@ export const AnimatedTooltip = ({
                 </div>
                 <div className="text-slate-300 text-sm flex items-center gap-x-2"> <LiaBirthdayCakeSolid size={25} /> {item.description}</div>
                 <a href={item.social} target="_blank" className="flex items-center gap-x-2 text-slate-300 text-sm transition-colors md:hover:opacity-75 animate-bounce">
-                  Seguime!
+                  {item.social && <span>Seguime!</span>}
                   {item.social && item.social.includes('instagram') && <FaInstagram size={25} className="text-rose-400" />}
                   {item.social && item.social.includes('linktr') && <PiLinktreeLogoThin size={25} className="text-emerald-300"  />}
                   </a>

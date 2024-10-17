@@ -41,7 +41,7 @@ export const Footer = () => {
       <footer className="text-slate-400 px-3 lg:px-6 py-10 w-full mx-auto flex flex-col items-center bg-[#201446]">
         <div className="container px-3">
           <Link href={'/'} className="relative max-w-lg mx-auto text-center">
-              <img src="/logo.svg" className="w-32 mx-auto" />
+              <img src="/logo.svg" className="w-20 lg:w-32 mx-auto" />
           </Link>
           <ul className="flex flex-col md:flex-row items-center justify-center mt-8 space-y-5  sm:space-x-4 sm:space-y-0">
               {
@@ -57,8 +57,8 @@ export const Footer = () => {
          
           <div className="mt-8 flex flex-col lg:flex-row items-center justify-between w-full">
               <h4 className="mt-4 sm:mt-0 text-center">
-                  &copy; {year} Desarrollado por  
-                    <a href="/" className="hover:text-slate-300 transition-colors md:hover:underline"> AMN Consultora Informática. </a>
+                  &copy; {year} Desarrollado por <br className="lg:hidden" /> 
+                    <a href="/" className="text-slate-300 transition-colors md:hover:underline"> AMN Consultora Informática. </a>
               </h4>
               <div className="mt-6 sm:mt-0">
                   <ul className="flex items-center space-x-4">

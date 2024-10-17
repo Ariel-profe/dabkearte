@@ -102,7 +102,7 @@ const Hero2 = () => {
           viewport={{ amount: 0.98 }}
         >
           <h1 className="mb-5 text-4xl font-bold lg:text-7xl w-full text-center">Somos DabkeArte Mendoza</h1>
-        <p className="text-2xl lg:text-3xl w-full text-center">Grupo de folclore árabe</p>
+        <p className="text-2xl lg:text-3xl xl:text-5xl w-full text-center">Grupo de folclore árabe</p>
         </motion.div>
       </Container>
     </div>
