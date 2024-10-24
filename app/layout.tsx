@@ -1,4 +1,3 @@
-
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -26,9 +25,9 @@ export default function RootLayout({
         <div className='flex flex-col relative'>
           <Navbar />
           <div className="pointer-events-none absolute inset-0 z-0 h-full bg-[url('/noisetexture.jpg')] opacity-10 mix-blend-soft-light"></div>
-          <main className='flex-grow shadow-md z-20'>
-            {children}
-          </main>
+            <main className='flex-grow shadow-md z-20'>
+              {children}
+            </main>
           <Footer />
         </div>
       </body>

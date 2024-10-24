@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import {
@@ -6,7 +7,7 @@ import {
   useTransform,
   AnimatePresence,
   useMotionValue,
-  useSpring,
+  useSpring
 } from "framer-motion";
 import { FaInstagram } from "react-icons/fa";
 import { PiLinktreeLogoThin } from "react-icons/pi";
@@ -23,6 +24,7 @@ export const AnimatedTooltip = ({
     social?: string;
   }[];
 }) => {
+
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0); // going to set this value on mouse move
@@ -44,9 +46,16 @@ export const AnimatedTooltip = ({
   return (
     <>
       {items.map((item, idx) => (
-        <div
+        <motion.div
           className="relative group"
-          key={item.title}
+          key={item.id}
+          initial={{
+            opacity: 0, 
+            translateX: -30, 
+            translateY: -30
+          }}
+          whileInView={{opacity: 1, translateX: 0, translateY: 0}}
+          transition={{duration: 0.3, delay: idx * 0.1}}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -94,8 +103,9 @@ export const AnimatedTooltip = ({
             alt={item.title}
             className="object-cover !m-0 !p-0 object-top rounded-full h-20 w-20 border-2 group-hover:scale-105 group-hover:z-30 border-white  relative transition duration-500"
           />
-        </div>
+        </motion.div>
       ))}
     </>
   );
 };
+

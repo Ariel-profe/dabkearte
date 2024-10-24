@@ -58,7 +58,7 @@ export const Usps = () => {
 
 export const Hero = () => {
   return (
-    <div>
+    <div id="hero">
         <div className="bg-[#191036] relative z-10">
           <Hero2 />
           <Usps />
