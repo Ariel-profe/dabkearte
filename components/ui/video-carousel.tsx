@@ -9,7 +9,6 @@ import { Movie, movies, randomMoviesSet1, randomMoviesSet2 } from "./movies";
   
   export const VideoCarousel = () => {
     const { width, height } = useWindowSize();
-    console.log({width});
     
     const carouselWrapperRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -55,7 +54,7 @@ import { Movie, movies, randomMoviesSet1, randomMoviesSet2 } from "./movies";
     });
   
     return (
-      <motion.div animate={carouselVariant} className="bg-[#191036] pb-16">
+      <motion.div animate={carouselVariant} className="bg-[#291b5a] pb-16">
         <div
           ref={carouselWrapperRef}
           className="mt-[-100vh] h-[300vh] overflow-clip"

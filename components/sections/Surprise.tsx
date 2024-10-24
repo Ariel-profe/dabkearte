@@ -12,10 +12,10 @@ import { TextHoverEffect } from "../ui/text-hover-effect";
 export function Surprise() {
 
     return (
-        <section className="py-40 flex relative items-center justify-center group bg-slate-950">
+        <section className="py-40 flex relative items-center justify-center group bg-slate-950/50">
             <Modal>
                 <ModalTrigger className="flex flex-col justify-center group/modal-btn w-full lg:h-[22rem]">
-                <p className="text-slate-200 text-center w-full max-w-sm mx-auto">Se vienen cositas, ¡haz click para más info!</p>
+                <p className="text-slate-200 text-center w-full max-w-sm mx-auto">Se vienen cositas <br /> ¡Haz click para más info!</p>
                     <TextHoverEffect text="#YoDabkeArte" />
                 </ModalTrigger>
                 <ModalBody>

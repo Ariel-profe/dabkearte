@@ -22,10 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`w-full bg-[#191036] mx-auto flex flex-col antialiased ${poppins.className} text-tertiary`}>
-        <div className='flex flex-col'>
+      <body className={`w-full bg-[#291b5a] mx-auto flex flex-col antialiased ${poppins.className} text-tertiary`}>
+        <div className='flex flex-col relative'>
           <Navbar />
-          <main className='flex-grow shadow-md'>
+          <div className="pointer-events-none absolute inset-0 z-0 h-full bg-[url('/noisetexture.jpg')] opacity-10 mix-blend-soft-light"></div>
+          <main className='flex-grow shadow-md z-20'>
             {children}
           </main>
           <Footer />
