@@ -51,8 +51,8 @@ export const AnimatedTooltip = ({
           key={item.id}
           initial={{
             opacity: 0, 
-            translateX: -30, 
-            translateY: -30
+            translateX: -10, 
+            translateY: -10
           }}
           whileInView={{opacity: 1, translateX: 0, translateY: 0}}
           transition={{duration: 0.3, delay: idx * 0.1}}

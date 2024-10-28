@@ -49,7 +49,7 @@ export const Galery = () => {
                     </div>
                 </div>
                 {/* Second images */}
-                <div className="flex flex-wrap">
+                <div className="hidden lg:flex lg:flex-wrap">
                     <div className="flex w-full md:w-1/2 flex-wrap">
                         <div className="w-full lg:w-1/2 p-1 md:p-2">
                             <img

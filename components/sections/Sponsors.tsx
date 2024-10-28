@@ -1,6 +1,9 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Marquee } from "../ui/marquee";
 import { SparklesText } from "../ui/sparkles-text";
+import { motion } from "framer-motion";
 
 const sponsors = [
   {
@@ -54,8 +57,25 @@ const ReviewCard = ({
 
 export function Sponsors() {
   return (
-    <div className="container px-3 mx-auto relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+    <div className="container px-3 my-10 mx-auto relative flex w-full flex-col gap-y-5 items-center justify-center overflow-hidden">
       <SparklesText text='Sponsors' subtext='Empresas que confían y apoyan' className='text-center lg:text-start' />
+      
+      <div className="w-full flex flex-col md:flex-row gap-5 justify-center">
+        <motion.div className="w-full md:max-w-sm lg:max-w-lg">
+          <img
+            src="/images/sponsors/sponsor.png"
+            alt="rifa-1"
+            className="w-full h-full object-contain"
+            />
+        </motion.div>
+        <motion.div className="w-full md:max-w-sm lg:max-w-lg">
+          <img
+            src="/images/sponsors/miembro.png"
+            alt="rifa-1"
+            className="w-full h-full object-contain"
+            />
+        </motion.div>
+        </div>
       <Marquee pauseOnHover className="[--duration:20s]">
         {sponsors.map((review) => (
           <ReviewCard key={review.id} {...review} />
