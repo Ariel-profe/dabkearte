@@ -18,7 +18,7 @@ export const Lottery = () => {
 
   return (
     <section className="relative z-10 px-3 container mx-auto">
-        <SparklesText text='Participá y ganá' subtext='¡Que lindos premios!' className='text-center lg:text-end' />
+        <SparklesText text='Participá y ganá' subtext='¡Que lindos premios!' className='text-center lg:text-end -mb-20' />
         <motion.div 
             ref={ref}
             className="flex flex-col lg:flex-row items-center gap-5 justify-center mx-auto"

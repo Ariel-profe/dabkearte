@@ -283,3 +283,30 @@ export const team = [
     social: 'https://www.instagram.com/yiselgari/',
   }
 ];
+
+export const sponsors = [
+  {
+    id: 1,
+    name: "Alepo Motors",
+    img: "/images/sponsors/alepo-motors.png",
+    href: 'https://www.instagram.com/alepomotors/'
+  },
+  {
+    id: 2,
+    name: "Las Pastas de Ro",
+    img: "/images/sponsors/las-pastas-de-ro.jpg",
+    href: 'https://www.instagram.com/las.pastas.de.ro/'
+  },
+  {
+    id: 3,
+    name: "AMN Consultoria Informatica",
+    img: "/images/sponsors/amn.svg",
+    href: 'https://www.instagram.com/amn.consultorainformatica/'
+  },
+  {
+    id: 4,
+    name: "Monica Ojeda Indumentaria",
+    img: "/images/sponsors/monica.svg",
+    href: 'https://www.instagram.com/monicaojeda.indumentaria/'
+  },
+];

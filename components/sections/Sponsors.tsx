@@ -1,30 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, sponsors } from "@/lib/utils";
 import { Marquee } from "../ui/marquee";
 import { SparklesText } from "../ui/sparkles-text";
 import { motion } from "framer-motion";
-
-const sponsors = [
-  {
-    id: 1,
-    name: "Alepo Motors",
-    img: "/images/sponsors/alepo-motors.png",
-    href: 'https://www.instagram.com/alepomotors/'
-  },
-  {
-    id: 2,
-    name: "Las Pastas de Ro",
-    img: "/images/sponsors/las-pastas-de-ro.jpg",
-    href: 'https://www.instagram.com/las.pastas.de.ro/'
-  },
-  {
-    id: 3,
-    name: "AMN Consultoria Informatica",
-    img: "/images/sponsors/amn.svg",
-    href: 'https://www.instagram.com/amn.consultorainformatica/'
-  },
-];
 
 const firstRow = sponsors.slice(0, sponsors.length / 2);
 const secondRow = sponsors.slice(sponsors.length / 2);
@@ -60,7 +39,7 @@ export function Sponsors() {
     <div className="container px-3 my-10 mx-auto relative flex w-full flex-col gap-y-5 items-center justify-center overflow-hidden">
       <SparklesText text='Sponsors' subtext='Empresas que confían y apoyan' className='text-center lg:text-start' />
       
-      <div className="w-full flex flex-col md:flex-row gap-5 justify-center">
+      <div className="w-full flex flex-col md:flex-row gap-5 justify-center mb-10">
         <motion.div className="w-full md:max-w-sm lg:max-w-lg">
           <img
             src="/images/sponsors/sponsor.png"
