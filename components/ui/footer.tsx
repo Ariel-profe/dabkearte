@@ -3,8 +3,6 @@ import Link from "next/link";
 import { PiFacebookLogoLight, PiYoutubeLogoThin, PiInstagramLogoLight, PiWhatsappLogoThin   } from "react-icons/pi";
 import { CiMail } from "react-icons/ci";
 
-import { navlinks } from "@/lib/utils";
-
 const footerSocials = [
   {
       id:1,
@@ -31,7 +29,7 @@ const footerSocials = [
       href: 'mailto:dabkearte.mendoza@gmail.com',
       icon: CiMail
   },
-]
+];
 
 export const Footer = () => {
 
@@ -41,7 +39,7 @@ export const Footer = () => {
       <footer className="text-slate-400 px-3 lg:px-6 py-10 w-full mx-auto flex flex-col items-center bg-[#201446]">
         <div className="container px-3">
           <Link href={'/'} className="relative max-w-lg mx-auto text-center">
-              <img src="/logo.svg" className="w-20 lg:w-32 mx-auto" />
+              <img src="/logo.svg" className="w-20 lg:w-32 mx-auto md:hover:scale-105 transition-transform" />
           </Link>
          
           <div className="mt-8 flex flex-col lg:flex-row items-center justify-between w-full">

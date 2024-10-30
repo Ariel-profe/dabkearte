@@ -1,4 +1,5 @@
 import { About } from "@/components/sections/About"
+import { Banners } from "@/components/sections/Banners"
 import { Galery } from "@/components/sections/Galery"
 import { Hero } from "@/components/sections/Hero"
 import { Lottery } from "@/components/sections/Lottery"
@@ -14,7 +15,8 @@ const Homepage = () => {
       <About />
       <Team />
       <Galery />
-      <Lottery />
+      {/* <Lottery /> */}
+      <Banners />
       <Sponsors />
       <Surprise />
     </>

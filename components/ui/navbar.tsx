@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { navlinks } from "@/lib/utils";
 import { BurgerButton } from "./burger-button";
 import { FlipLink } from "./flip-link";
@@ -12,6 +12,21 @@ export const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  const {scrollY} = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+  
+    if(previous){
+      if(latest > previous && latest > 100){
+        setHidden(true)
+      }else {
+        setHidden(false)
+      }
+    }
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,9 +87,17 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={clsx("fixed top-0 left-0 z-50 w-full px-3 xl:px-6 py-10 transition-all duration-500 max-lg:py-2",
-      hasScrolled && "py-2 bg-[#201446ee] backdrop-blur-sm",
-    )}>
+    <motion.nav 
+      variants={{
+        visible: {y: 0},
+        hidden: {y: "-100%"}
+      }} 
+      animate={hidden ? "hidden" : "visible"}
+      transition={{duration: 0.35, ease: "easeInOut"}}
+      className={clsx(
+        "fixed top-0 left-0 z-50 w-full px-3 xl:px-6 py-10 transition-all duration-500 max-lg:py-2",
+        hasScrolled && "py-2 bg-[#201446ee] backdrop-blur-sm",
+      )}>
       <div className="w-full flex justify-between items-center rounded-lg relative z-50 container px-3 mx-auto">
         <Link href="/">
           <img src="/logo.svg" alt="logo-dabkearte" className="w-16 h-16 lg:w-20 lg:h-20" />
@@ -118,6 +141,6 @@ export const Navbar = () => {
         ) : null
       }
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   )
 }
