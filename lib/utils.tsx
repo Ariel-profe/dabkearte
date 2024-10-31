@@ -352,4 +352,10 @@ export const sponsors = [
     img: "/images/sponsors/daniel.webp",
     href: 'https://wa.me/2616594326'
   },
+  {
+    id: 12,
+    name: "Te tengo en la mira",
+    img: "/images/sponsors/ttelm.webp",
+    href: "https://www.instagram.com/tetengoenlamiraoficial/"
+  },
 ];
