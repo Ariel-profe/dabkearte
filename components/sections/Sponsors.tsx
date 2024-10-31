@@ -24,7 +24,7 @@ const ReviewCard = ({
       href={href}
       target="_blank"
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden border p-1 rounded-md",
+        "relative w-40 md:w-56 cursor-pointer overflow-hidden border p-1 rounded-md",
         // light styles
         "border-gray-950/10 bg-white hover:bg-gray-950/10 hover:scale-105 transition"
       )}

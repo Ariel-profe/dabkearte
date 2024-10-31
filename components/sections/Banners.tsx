@@ -14,7 +14,7 @@ export function Banners() {
   ];
   return (
     <div className="relative container px-3">
-        <SparklesText text={"Copate con estos anuncios"} subtext='Sorteos y mas!' className='text-center lg:text-end'/>
+        <SparklesText text={"Copate con estos anuncios"} subtext='¡Sorteos y más!' className='text-center lg:text-end'/>
         <ImagesSlider images={images} className="h-[80vh] mx-auto">
             <motion.div
                 initial={{

@@ -309,4 +309,16 @@ export const sponsors = [
     img: "/images/sponsors/monica.svg",
     href: 'https://www.instagram.com/monicaojeda.indumentaria/'
   },
+  {
+    id: 5,
+    name: "Emilia Diez",
+    img: "/images/sponsors/emilia.svg",
+    href: 'https://www.instagram.com/emiliadiezfotografia/'
+  },
+  {
+    id: 6,
+    name: "Macarena Della Gaspera",
+    img: "/images/sponsors/macarena.jpg",
+    href: 'https://www.instagram.com/macadg0295/'
+  },
 ];
