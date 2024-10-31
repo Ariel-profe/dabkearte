@@ -213,6 +213,7 @@ export const team = [
     description: "19/10",
     title: "Martín Bulfon",
     src: "/images/team/martin.jpeg",
+    social: "https://www.instagram.com/tnchx/"
   },
   {
     id:18,
@@ -288,49 +289,67 @@ export const sponsors = [
   {
     id: 1,
     name: "Alepo Motors",
-    img: "/images/sponsors/alepo-motors.png",
+    img: "/images/sponsors/alepo.webp",
     href: 'https://www.instagram.com/alepomotors/'
   },
   {
     id: 2,
     name: "Las Pastas de Ro",
-    img: "/images/sponsors/las-pastas-de-ro.jpg",
+    img: "/images/sponsors/las-pastas-de-ro.webp",
     href: 'https://www.instagram.com/las.pastas.de.ro/'
   },
   {
     id: 3,
     name: "AMN Consultoria Informatica",
-    img: "/images/sponsors/amn.svg",
+    img: "/images/sponsors/amn.webp",
     href: 'https://www.instagram.com/amn.consultorainformatica/'
   },
   {
     id: 4,
     name: "Monica Ojeda Indumentaria",
-    img: "/images/sponsors/monica.svg",
+    img: "/images/sponsors/monica.webp",
     href: 'https://www.instagram.com/monicaojeda.indumentaria/'
   },
   {
     id: 5,
     name: "Emilia Diez",
-    img: "/images/sponsors/emilia.svg",
+    img: "/images/sponsors/emilia.webp",
     href: 'https://www.instagram.com/emiliadiezfotografia/'
   },
   {
     id: 6,
     name: "Macarena Della Gaspera",
-    img: "/images/sponsors/macarena.jpg",
+    img: "/images/sponsors/macarena.webp",
     href: 'https://www.instagram.com/macadg0295/'
   },
   {
     id: 7,
-    name: "Macarena Della Gaspera",
-    img: "/images/sponsors/macarena.jpg",
-    href: 'https://www.instagram.com/macadg0295/'
+    name: "Estefania Amin",
+    img: "/images/sponsors/estefania.webp",
+    href: 'https://www.instagram.com/ae.audiovisuales/'
   },
   {
     id: 8,
     name: "La Limpisima",
-    img: "/images/sponsors/lalimpisima.png",
+    img: "/images/sponsors/lalimpisima.webp",
     href: 'https://www.instagram.com/la_limpisima.arg/'
+  },
+  {
+    id: 9,
+    name: "Veronica Leiva",
+    img: "/images/sponsors/veronica.webp",
+    href: 'https://www.instagram.com/veronica_leiva_inmobiliaria/'
+  },
+  {
+    id: 10,
+    name: "Arabian Food",
+    img: "/images/sponsors/arabian.webp",
+    href: 'https://www.instagram.com/arabian.company/'
+  },
+  {
+    id: 11,
+    name: "Daniel Riveros",
+    img: "/images/sponsors/daniel.webp",
+    href: 'https://wa.me/2616594326'
   },
 ];

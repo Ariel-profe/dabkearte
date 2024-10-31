@@ -122,7 +122,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "carousel-move": "carousel-move var(--duration,80s) infinite",
         gradient: "gradient 6s linear infinite",
-        marquee: "marquee var(--duration) linear infinite",
+        marquee: "marquee 40s linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite"
       }
     },
