@@ -3,7 +3,6 @@
 import { cn, sponsors } from "@/lib/utils";
 import { Marquee } from "../ui/marquee";
 import { SparklesText } from "../ui/sparkles-text";
-import { motion } from "framer-motion";
 
 const firstRow = sponsors.slice(0, sponsors.length / 2);
 const secondRow = sponsors.slice(sponsors.length / 2);
@@ -24,12 +23,12 @@ const ReviewCard = ({
       href={href}
       target="_blank"
       className={cn(
-        "relative w-40 md:w-56 cursor-pointer overflow-hidden border p-1 rounded-md",
+        "relative w-40 md:w-56 h-full px-0.5 cursor-pointer overflow-hidden border  rounded-md aspect-video",
         // light styles
         "border-gray-950/10 bg-white hover:bg-gray-950/10 hover:scale-105 transition"
       )}
     >
-        <img className="w-full h-full object-contain rounded-md" alt={name} src={img} />
+        <img className="w-full h-full  rounded-md" alt={name} src={img} />
     </a>
   );
 };
@@ -56,15 +55,15 @@ export function Sponsors() {
         </motion.div>
         </div> */}
       <Marquee pauseOnHover className="[--duration:20s]">
-        {sponsors.map((review) => (
+        {firstRow.map((review) => (
           <ReviewCard key={review.id} {...review} />
         ))}
       </Marquee>
-      {/* <Marquee reverse pauseOnHover className="[--duration:20s]">
+      <Marquee reverse pauseOnHover className="[--duration:20s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.id} {...review} />
         ))}
-      </Marquee> */}
+      </Marquee>
     </div>
   );
 }

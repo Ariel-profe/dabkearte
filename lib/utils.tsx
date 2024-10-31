@@ -321,4 +321,16 @@ export const sponsors = [
     img: "/images/sponsors/macarena.jpg",
     href: 'https://www.instagram.com/macadg0295/'
   },
+  {
+    id: 7,
+    name: "Macarena Della Gaspera",
+    img: "/images/sponsors/macarena.jpg",
+    href: 'https://www.instagram.com/macadg0295/'
+  },
+  {
+    id: 8,
+    name: "La Limpisima",
+    img: "/images/sponsors/lalimpisima.png",
+    href: 'https://www.instagram.com/la_limpisima.arg/'
+  },
 ];
