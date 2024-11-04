@@ -358,4 +358,10 @@ export const sponsors = [
     img: "/images/sponsors/ttelm.webp",
     href: "https://www.instagram.com/tetengoenlamiraoficial/"
   },
+  {
+    id: 13,
+    name: "Anandi Spa",
+    img: "/images/sponsors/anandi.webp",
+    href: "https://www.instagram.com/anandi.spa/"
+  }
 ];
