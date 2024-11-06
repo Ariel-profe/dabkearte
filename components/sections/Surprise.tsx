@@ -1,12 +1,5 @@
 "use client";
 
-import {
-    Modal,
-    ModalBody,
-    ModalContent,
-    ModalFooter,
-    ModalTrigger,
-} from "../ui/animated-modal";
 import { SparklesText } from "../ui/sparkles-text";
 import { TextHoverEffect } from "../ui/text-hover-effect";
 
