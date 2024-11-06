@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Footer } from "@/components/ui/footer";
 import { Navbar } from "@/components/ui/navbar";
+import Particles from "@/components/ui/particles";
 
 const poppins = Poppins({ 
   subsets: ["latin"],

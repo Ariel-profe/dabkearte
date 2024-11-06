@@ -81,6 +81,45 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "fade-in": {
+					"0%": {
+						opacity: "0%",
+					},
+					"75%": {
+						opacity: "0%",
+					},
+					"100%": {
+						opacity: "100%",
+					},
+				},
+				"fade-left": {
+					"0%": {
+						transform: "translateX(100%)",
+						opacity: "0%",
+					},
+
+					"30%": {
+						transform: "translateX(0%)",
+						opacity: "100%",
+					},
+					"100%": {
+						opacity: "0%",
+					},
+				},
+				"fade-right": {
+					"0%": {
+						transform: "translateX(-100%)",
+						opacity: "0%",
+					},
+
+					"30%": {
+						transform: "translateX(0%)",
+						opacity: "100%",
+					},
+					"100%": {
+						opacity: "0%",
+					},
+				},
         "carousel-move": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
@@ -123,7 +162,11 @@ const config = {
         "carousel-move": "carousel-move var(--duration,80s) infinite",
         gradient: "gradient 6s linear infinite",
         marquee: "marquee 40s linear infinite",
-        "marquee-vertical": "marquee-vertical var(--duration) linear infinite"
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        "fade-in": "fade-in 3s ease-in-out forwards",
+				title: "title 3s ease-out forwards",
+				"fade-left": "fade-left 3s ease-in-out forwards",
+				"fade-right": "fade-right 3s ease-in-out forwards",
       }
     },
   },
