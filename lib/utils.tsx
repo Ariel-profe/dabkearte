@@ -363,5 +363,5 @@ export const sponsors = [
     name: "Anandi Spa",
     img: "/images/sponsors/anandi.webp",
     href: "https://www.instagram.com/anandi.spa/"
-  }
+  },
 ];

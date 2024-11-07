@@ -1,37 +1,55 @@
 "use client";
-import { motion } from "framer-motion";
-import { ImagesSlider } from "@/components/ui/images-slider";
+
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay"
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import { SparklesText } from "@/components/ui/sparkles-text";
 
+const images = [
+  "/images/lottery/lottery-1.jpg",
+  "/images/lottery/lottery-2.jpg",
+  "/images/sponsors/sponsor.png",
+  "/images/sponsors/miembro.png",
+
+];
 
 export function Banners() {
-  const images = [
-    "/images/lottery/lottery-1.jpg",
-    "/images/lottery/lottery-2.jpg",
-    "/images/sponsors/sponsor.png",
-    "/images/sponsors/miembro.png",
-    
-  ];
+
+  const plugin = useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
+
   return (
-    <div className="relative container px-3">
-        <SparklesText text={"Copate con estos anuncios"} subtext='¡Sorteos y más!' className='text-center lg:text-end'/>
-        <ImagesSlider images={images} className="h-[80vh] mx-auto">
-            <motion.div
-                initial={{
-                    opacity: 0,
-                    y: -80,
-                }}
-                animate={{
-                    opacity: 1,
-                    y: 0,
-                }}
-                transition={{
-                    duration: 0.6,
-                }}
-                className="z-50 flex flex-col justify-center items-center"
-                >
-            </motion.div>
-        </ImagesSlider>
+    <div className="relative container">
+      <SparklesText text={"Copate con estos anuncios"} subtext='¡Sorteos y más!' className='text-center lg:text-end' />
+
+      <Carousel
+        plugins={[plugin.current]}
+        className="w-full px-3"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+        opts={{loop: true}}
+      >
+        <CarouselContent>
+          {images.map((img, index) => (
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <div className="p-1">
+                <img src={img} alt="imagen-banner" />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   );
 }
