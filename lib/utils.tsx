@@ -364,4 +364,10 @@ export const sponsors = [
     img: "/images/sponsors/anandi.webp",
     href: "https://www.instagram.com/anandi.spa/"
   },
+  {
+    id: 14,
+    name: "Las Francinas",
+    img: "/images/sponsors/las-francinas.webp",
+    href: "https://www.instagram.com/lasfrancinas/"
+  },
 ];

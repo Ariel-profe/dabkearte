@@ -45,7 +45,7 @@ export const Footer = () => {
           <div className="mt-8 flex flex-col lg:flex-row items-center justify-between w-full">
               <h4 className="mt-4 sm:mt-0 text-center">
                   &copy; {year} Desarrollado por <br className="lg:hidden" /> 
-                    <a href="/" className="text-slate-300 transition-colors md:hover:underline"> AMN Consultora Informática. </a>
+                    <a href="https://amn.com.ar" target="_blank" className="text-slate-300 transition-colors md:hover:underline"> AMN Consultora Informática. </a>
               </h4>
               <div className="mt-6 sm:mt-0">
                   <ul className="flex items-center space-x-4">

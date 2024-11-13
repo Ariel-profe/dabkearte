@@ -6,6 +6,7 @@ import { Sponsors } from "@/components/sections/Sponsors"
 
 import { Surprise } from "@/components/sections/Surprise"
 import { Team } from "@/components/sections/Team"
+import { Upcoming } from "@/components/sections/Upcoming"
 
 const Homepage = () => {
   return (
@@ -17,6 +18,7 @@ const Homepage = () => {
       <Banners />
       <Sponsors />
       <Surprise />
+      <Upcoming />
     </>
   )
 }

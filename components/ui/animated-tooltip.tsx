@@ -55,7 +55,7 @@ export const AnimatedTooltip = ({
             translateY: -10
           }}
           whileInView={{opacity: 1, translateX: 0, translateY: 0}}
-          transition={{duration: 0.1, delay: idx * 0.1}}
+          transition={{duration: 0.1, delay: idx * 0.05}}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
