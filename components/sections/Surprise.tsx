@@ -10,7 +10,7 @@ export function Surprise() {
 
     return (
         <section className="py-20 relative bg-slate-950/50">
-            <canvas className="pointer-events-none fixed inset-0 z-50" id="canvas"/>
+            <canvas className="hidden lg:block pointer-events-none fixed inset-0 z-50" id="canvas"/>
             <div className="container mx-auto">
 
             <SparklesText text="Nuestro show más esperado" className="text-center lg:text-end" />
