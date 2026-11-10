@@ -1,26 +1,33 @@
-import { About } from "@/components/sections/About"
-import { Banners } from "@/components/sections/Banners"
-import { Galery } from "@/components/sections/Galery"
-import { Hero } from "@/components/sections/Hero"
-import { Sponsors } from "@/components/sections/Sponsors"
+import { Hero } from "@/components/sections/Hero";
+import { Presentaciones } from "@/components/sections/Presentaciones";
+import { Manifiesto } from "@/components/sections/Manifiesto";
+import { Shows } from "@/components/sections/Shows";
+import { Proceso } from "@/components/sections/Proceso";
+import { Testimonios } from "@/components/sections/Testimonios";
+import { Cifras } from "@/components/sections/Cifras";
+import { Galeria } from "@/components/sections/Galeria";
+import { Elenco } from "@/components/sections/Elenco";
+import { Trayectoria } from "@/components/sections/Trayectoria";
+import { Preguntas } from "@/components/sections/Preguntas";
+import { Encuentro } from "@/components/sections/Encuentro";
+import { Contacto } from "@/components/sections/Contacto";
 
-import { Surprise } from "@/components/sections/Surprise"
-import { Team } from "@/components/sections/Team"
-import { Upcoming } from "@/components/sections/Upcoming"
-
-const Homepage = () => {
+export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Team />
-      <Galery />
-      <Banners />
-      <Sponsors />
-      <Surprise />
-      <Upcoming />
+      <Presentaciones />
+      <Manifiesto />
+      <Shows />
+      <Proceso />
+      <Testimonios />
+      <Cifras />
+      <Galeria />
+      <Elenco />
+      <Trayectoria />
+      <Preguntas />
+      <Encuentro />
+      <Contacto />
     </>
-  )
+  );
 }
-
-export default Homepage

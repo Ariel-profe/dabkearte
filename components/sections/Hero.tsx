@@ -1,110 +1,118 @@
-
 "use client";
 
-import { useScroll, useTransform, motion } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
-import { twMerge } from "tailwind-merge";
-import { VideoCarousel } from "../ui/video-carousel";
+import { hero, whatsappLink } from "@/lib/content";
+import { gsap, ScrollTrigger, cssVar, docPos, px, useSectionMotion } from "@/lib/motion";
 
-type Props = {
-  children: React.ReactNode;
-  className?: string;
-};
+export function Hero() {
+  const root = useRef<HTMLElement>(null);
 
-const Container = ({ children, className }: Props) => {
+  useSectionMotion((el) => {
+    const frame = el.querySelector<HTMLElement>(".hero-frame");
+    const photo = el.querySelector<HTMLElement>(".hero-photo");
+    const bottom = el.querySelector<HTMLElement>(".hero-bottom");
+    const city = el.querySelector<HTMLElement>(".hero-city");
+    const wordmark = el.querySelector<HTMLElement>("[data-flight-from]");
+    const logo = document.querySelector<HTMLElement>("[data-flight-to]");
+    const dist = () => Math.round(Math.min(window.innerHeight * 0.72, 600));
+
+    const tl = gsap.timeline({
+      defaults: { ease: "none" },
+      scrollTrigger: { trigger: el, start: "top top", end: () => "+=" + dist(), scrub: true, invalidateOnRefresh: true },
+    });
+
+    if (frame) {
+      tl.fromTo(
+        frame,
+        { clipPath: () => `inset(0% 0% 0% 0% round ${px("--r-xl")}px)` },
+        { clipPath: () => `inset(5% 3.5% 0% 3.5% round ${px("--r-xl") * 1.8}px)`, duration: 1 },
+        0,
+      );
+    }
+    if (photo) tl.fromTo(photo, { scale: 1.12 }, { scale: 1, duration: 1 }, 0);
+    if (bottom) tl.to(bottom, { y: () => -window.innerHeight * 0.1, duration: 1 }, 0);
+    if (city) tl.to(city, { opacity: 0, y: -30, duration: 0.4 }, 0);
+
+    // The giant wordmark shrinks and travels into the header logo as the hero scrolls away.
+    if (wordmark && logo) {
+      const geo = () => {
+        const r = logo.getBoundingClientRect();
+        const p = docPos(wordmark);
+        const start = docPos(el).y;
+        const s = parseFloat(getComputedStyle(logo).fontSize) / parseFloat(getComputedStyle(wordmark).fontSize);
+        return { x: r.left - p.x, y: r.top + start + dist() - p.y, s };
+      };
+      tl.to(wordmark, { x: () => geo().x, y: () => geo().y, scale: () => geo().s, duration: 1 }, 0)
+        .to(wordmark, { color: () => cssVar("--ink"), duration: 0.3 }, 0.62)
+        .to(logo, { opacity: 1, duration: 0.02 }, 0.98)
+        .to(wordmark, { opacity: 0, duration: 0.02 }, 0.98);
+    }
+
+    ScrollTrigger.create({
+      trigger: el,
+      start: "top bottom",
+      end: "bottom top",
+      onToggle: (s) => el.classList.toggle("is-off", !s.isActive),
+    });
+  }, root);
+
   return (
-    <div className={twMerge("mx-auto max-w-[1080px] px-3", className)}>
-      {children}
-    </div>
-  );
-};
-
-type FadeInProps = {
-  children: React.ReactNode;
-};
-
-export const FadeIn = ({ children }: FadeInProps) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ margin: "100% 0px -300px 0px" }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-export const Usps = () => {
-  return (
-    <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-2xl font-bold text-white md:text-4xl text-center">
-      <FadeIn>
-        <p>El Dabke es lo que nos apasiona y une en cada momento.</p>
-      </FadeIn>
-      <FadeIn>
-        <p>
-          Nuestros valores son la guía que nos lleva al camino del amor por lo que hacemos.
-        </p>
-      </FadeIn>
-      <FadeIn>
-        <p>Fuerza en nuestros pasos y unión para ir juntos en la misma dirección.</p>
-      </FadeIn>
-      <FadeIn>
-        <p>Queremos conocerte y que nos conozcas.</p>
-      </FadeIn>
-    </Container>
-  );
-};
-
-export const Hero = () => {
-  return (
-    <div id="hero">
-        <div className="bg-[#191036] relative z-10">
-          <Hero2 />
-          <Usps />
+    <section ref={root} id="inicio" className="hero">
+      <div className="hero-frame">
+        <div className="hero-photo">
+          <Image
+            src={hero.image.src}
+            alt={hero.image.alt}
+            width={hero.image.width}
+            height={hero.image.height}
+            sizes="100vw"
+            quality={80}
+            priority
+          />
         </div>
-        <VideoCarousel />
+        <div className="hero-shade" aria-hidden />
+        <div className="grain" aria-hidden />
       </div>
-  )
-}
-
-const Hero2 = () => {
-  const videoContainerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: videoContainerRef,
-    offset: ["start start", "end end"],
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
-
-  return (
-    <div className="bg-[#191036] text-white">
-      <motion.div
-        style={{ opacity }}
-        ref={videoContainerRef}
-        className="absolute -top-[--header-height] left-0 h-[200vh] w-full "
-      >
-        <div className="absolute inset-0 h-full bg-black z-10 opacity-40"></div>
-        <img
-          className="sticky top-0 h-screen w-full object-cover"
-          src="/images/hero/hero.webp"
-        />
-      </motion.div>
-      <Container className="relative z-10 h-[--hero-height] pb-7">
-        <motion.div
-          className="flex h-full flex-col items-start justify-end w-full"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1 },
-          }}
-          whileInView="visible"
-          exit="hidden"
-          animate="hidden"
-          viewport={{ amount: 0.98 }}
-        >
-          <h1 className="mb-5 text-4xl font-bold lg:text-7xl w-full text-center">Somos DabkeArte Mendoza</h1>
-        <p className="text-2xl lg:text-3xl xl:text-5xl w-full text-center">Grupo de folclore árabe</p>
-        </motion.div>
-      </Container>
-    </div>
+      <div className="hero-inner">
+        <div className="hero-top">
+          <p className="wordmark" data-flight-from style={{ ["--len" as string]: 9 }} aria-hidden>
+            DabkeArte
+          </p>
+          <p className="hero-city">{hero.city}</p>
+        </div>
+        <div className="hero-marks" aria-hidden>
+          <i />
+          <i />
+          <i />
+          <i />
+        </div>
+        <div className="hero-bottom">
+          <h1 className="hero-lede">
+            <span className="sr">DabkeArte Mendoza. </span>
+            {hero.lede} <span>{hero.ledeMuted}</span>
+          </h1>
+          <ul className="hero-list">
+            {hero.list.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <div className="brand-card">
+            <div className="brand-card-mark">
+              <span className="logo-mark" />
+            </div>
+            <div className="brand-card-body">
+              <p className="brand-card-role">
+                {hero.card.role} <span>{hero.card.roleMuted}</span>
+              </p>
+              <p className="brand-card-name">{hero.card.name}</p>
+              <a className="btn btn--sm" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
+                Escribinos
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
-};
+}
