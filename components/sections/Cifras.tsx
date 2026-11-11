@@ -5,8 +5,8 @@ import { useRef, type CSSProperties } from "react";
 import { cifras } from "@/lib/content";
 import { gsap, useSectionMotion } from "@/lib/motion";
 
-const ringFill = (cifras.ring.value / cifras.ring.max) * 100;
-const barMax = Math.max(...cifras.bars.data.map((d) => d.value));
+const ringFill = Math.min(100, Math.max(0, (cifras.ring.value / cifras.ring.max) * 100));
+const barMax = Math.max(1, ...cifras.bars.data.map((d) => d.value));
 
 export function Cifras() {
   const root = useRef<HTMLElement>(null);
@@ -79,10 +79,10 @@ export function Cifras() {
               <p className="fig-label">{f.label}</p>
             </div>
           ))}
-          <blockquote className="tile-quote">
-            <p>“{quote.text}”</p>
-            <footer>{quote.by}</footer>
-          </blockquote>
+          <div className="tile-quote">
+            <p>{quote.text}</p>
+            <p className="tile-quote-by">{quote.by}</p>
+          </div>
         </article>
         <article className="tile tile-donut">
           <div className="donut-box">
@@ -90,7 +90,7 @@ export function Cifras() {
               <circle className="donut-bg" cx="60" cy="60" r="52" pathLength="100" />
               <circle className="donut-fg" cx="60" cy="60" r="52" pathLength="100" style={{ strokeDashoffset: 100 - ringFill }} />
             </svg>
-            <p className="donut-num">{ring.value}</p>
+            <p className="donut-num">{ring.label}</p>
           </div>
           <p className="tile-title">{ring.title}</p>
           <p className="tile-text">{ring.text}</p>

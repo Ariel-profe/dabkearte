@@ -52,8 +52,8 @@ export function Manifiesto() {
             <p className="about-sign">
               {manifiesto.sign} <span>{manifiesto.signMuted}</span>
             </p>
-            <a className="btn" href="#como-contratar">
-              Cómo contratarnos
+            <a className="btn" href="#contacto">
+              Contactanos
             </a>
           </div>
         </div>

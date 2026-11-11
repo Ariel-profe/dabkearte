@@ -37,10 +37,10 @@ function BookingForm() {
 
   return (
     <form className="form" noValidate onSubmit={onSubmit}>
-      <p className="form-title">¿Qué estás celebrando?</p>
+      <p className="form-title">¿A qué evento querés que asistamos?</p>
       <label className="field">
         <span>Tu nombre</span>
-        <input type="text" name="nombre" autoComplete="name" placeholder="Laura Haddad" required />
+        <input type="text" name="nombre" autoComplete="name" placeholder="Juan Perez" required />
       </label>
       <div className="form-row">
         <label className="field">
@@ -70,7 +70,7 @@ function BookingForm() {
         <textarea name="mensaje" rows={3} placeholder="Cantidad de invitados, horario, salón" />
       </label>
       <button className="btn" type="submit">
-        Enviar por WhatsApp
+        Enviar
       </button>
       <p className="form-status" role="status" aria-live="polite">
         {status}
@@ -126,14 +126,6 @@ export function Contacto() {
               </span>
             </h2>
             <p className="contact-lede">{contacto.lede}</p>
-            <ul className="contact-notes">
-              {contacto.notes.map((n) => (
-                <li key={n.title}>
-                  <strong>{n.title}</strong>
-                  {n.text}
-                </li>
-              ))}
-            </ul>
             <div className="brand-card">
               <div className="brand-card-mark">
                 <span className="logo-mark" />
@@ -142,9 +134,9 @@ export function Contacto() {
                 <p className="brand-card-role">
                   DabkeArte <span>Mendoza, Argentina</span>
                 </p>
-                <p className="brand-card-name">Hablemos por WhatsApp</p>
+                <p className="brand-card-name">Hablemos</p>
                 <a className="btn btn--sm" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-                  Abrir chat
+                  Abrir WhatsApp
                 </a>
               </div>
             </div>

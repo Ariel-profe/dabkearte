@@ -88,7 +88,7 @@ export function Preloader() {
       <span className="logo-mark preloader-mark" />
       <div className="preloader-foot">
         <p className="preloader-count">0</p>
-        <p className="preloader-note">Folclore árabe de Mendoza. Preparando la fila.</p>
+        <p className="preloader-note">Folclore árabe en Mendoza, Argentina.</p>
       </div>
       <div className="preloader-bar">
         <span />

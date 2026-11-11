@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { contact, nav, socials, whatsappLink } from "@/lib/content";
 import { gsap, useSectionMotion } from "@/lib/motion";
 
@@ -43,7 +44,6 @@ export function Footer() {
               {item.label}
             </a>
           ))}
-          <a className="link" href="#contacto">Contratanos</a>
         </nav>
         <div className="foot-col">
           <p className="foot-h">Seguinos</p>
@@ -53,11 +53,6 @@ export function Footer() {
             </a>
           ))}
         </div>
-      </div>
-      <div className="foot-mark-wrap" aria-hidden>
-        <p className="foot-mark" style={{ ["--len" as string]: 9 }}>
-          DabkeArte
-        </p>
       </div>
       <div className="foot-bottom wrap">
         <p>© {new Date().getFullYear()} DabkeArte Mendoza</p>

@@ -42,7 +42,7 @@ export function Presentaciones() {
           En escena
         </h2>
         <p className="sec-lede">
-          Escenarios, fiestas y celebraciones donde la fila de DabkeArte hizo bailar a todos.
+          Algunos escenarios, fiestas y eventos en los que participamos.
         </p>
       </div>
       <div className="work-grid wrap">
@@ -56,12 +56,12 @@ export function Presentaciones() {
                 height={p.height}
                 sizes={p.wide ? "(max-width: 760px) 84vw, 100vw" : "(max-width: 760px) 84vw, 50vw"}
                 quality={78}
+                className="object-cover object-top"
               />
             </div>
             <div className="project-meta">
               <h3 className="project-name">{p.name}</h3>
               <p className="project-kind">{p.kind}</p>
-              <p className="project-year">{p.year}</p>
             </div>
           </a>
         ))}

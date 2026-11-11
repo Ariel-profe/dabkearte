@@ -27,7 +27,7 @@ export function Header() {
       </nav>
       <div className="header-end">
         <a className="btn btn--sm" href="#contacto">
-          Contratanos
+          Contactanos
         </a>
         <button
           className="menu-btn"

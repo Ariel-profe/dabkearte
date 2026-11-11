@@ -97,7 +97,7 @@ export function Proceso() {
   }, root);
 
   return (
-    <section ref={root} id="como-contratar" className="process" aria-label="Cómo contratarnos">
+    <section ref={root} id="contacto" className="process" aria-label="Contactanos">
       <div className="split-track">
         <div className="split" data-split>
           <SplitTitle />

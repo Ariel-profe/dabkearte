@@ -1,84 +1,84 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
-import { elenco, team, whatsappLink } from "@/lib/content";
+import { elenco, team } from "@/lib/content";
 import { gsap, useSectionMotion } from "@/lib/motion";
+import ProfileCard from "../ui/profile-card";
 
 export function Elenco() {
   const root = useRef<HTMLElement>(null);
 
-  // The cards start stacked in a fan at the centre and deal out to their places as you scroll.
   useSectionMotion((el) => {
     const list = el.querySelector<HTMLElement>(".people");
     if (!list) return;
     const cards = Array.from(list.children) as HTMLElement[];
     if (cards.length < 2) return;
-    const dx = (c: HTMLElement) => list.clientWidth / 2 - (c.offsetLeft + c.offsetWidth / 2);
-    const dy = (c: HTMLElement) => Math.min(list.offsetHeight / 2, window.innerHeight * 0.6) - (c.offsetTop + c.offsetHeight / 2);
+
+    // Métricas dinámicas encapsuladas para evitar recalculaciones pesadas en el thread principal
+    const calculatePositions = () => {
+      const dx = (c: HTMLElement) => list.clientWidth / 2 - (c.offsetLeft + c.offsetWidth / 2);
+      const dy = (c: HTMLElement) => Math.min(list.offsetHeight / 2, window.innerHeight * 0.6) - (c.offsetTop + c.offsetHeight / 2);
+
+      return { dx, dy };
+    };
+
+    const { dx, dy } = calculatePositions();
+
+    // Línea de tiempo principal con ScrollTrigger optimizado
     gsap.fromTo(
       cards,
       {
-        x: (_i: number, c: HTMLElement) => dx(c) * 0.92,
-        y: (_i: number, c: HTMLElement) => Math.max(dy(c) * 0.92 + 40, -window.innerHeight),
+        x: (_i: number, c: HTMLElement) => dx(c) * 0.95,
+        y: (_i: number, c: HTMLElement) => Math.max(dy(c) * 0.95 + 50, -window.innerHeight * 0.4),
         rotation: (_i: number, c: HTMLElement) => {
           const d = dx(c);
-          return d === 0 ? 0 : (d > 0 ? -1 : 1) * Math.min(10, (Math.abs(d) / list.clientWidth) * 22);
+          // Modificamos el multiplicador para un abanico más armónico y menos agresivo
+          return d === 0 ? 0 : (d > 0 ? -1 : 1) * Math.min(12, (Math.abs(d) / list.clientWidth) * 28);
         },
+        opacity: 0,
+        scale: 0.85,
       },
       {
         x: 0,
         y: 0,
         rotation: 0,
-        ease: "power2.out",
-        stagger: 0.02,
-        scrollTrigger: { trigger: list, start: "top 90%", end: "top 20%", scrub: 0.6, invalidateOnRefresh: true },
+        opacity: 1,
+        scale: 1,
+        ease: "power3.out", // 🌟 Cambiado a power3 para mayor suavidad cinemática
+        stagger: {
+          amount: 0.3, // Distribuye uniformemente el tiempo total en lugar de un paso fijo
+          from: "center", // Las cartas se esparcen desde el centro hacia afuera de forma orgánica
+        },
+        scrollTrigger: {
+          trigger: list,
+          start: "top 100%", // Entra un poco antes para evitar cortes visuales
+          end: "bottom 97%", // 🌟 Ajustado el end para darle más espacio físico al desarrollo del scroll
+          scrub: 1.2, // 🌟 Subido a 1.2 para que amortigüe perfectamente con el scroll de Lenis
+          invalidateOnRefresh: true, // Recalcula si el usuario cambia el tamaño de la pantalla
+        },
       },
     );
   }, root);
 
   return (
-    <section ref={root} id="elenco" className="team" aria-labelledby="elenco-title">
-      <div className="sec-head wrap">
-        <h2 id="elenco-title" className="h2">
+    <section ref={root} id="elenco" className="team py-20" aria-labelledby="elenco-title">
+      <div className="sec-head wrap mb-16">
+        <h2 id="elenco-title" className="h2 text-4xl md:text-6xl font-black uppercase tracking-tighter">
           {elenco.title}
         </h2>
-        <div className="side-col">
-          <p className="sec-lede">{elenco.lede}</p>
-          <a
-            className="link link--under"
-            href={whatsappLink("Hola DabkeArte, quiero sumarme al grupo.")}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Quiero sumarme a la fila
-          </a>
+        <div className="side-col mt-4">
+          <p className="sec-lede text-zinc-400 font-mono text-sm max-w-xl">{elenco.lede}</p>
         </div>
       </div>
-      <ul className="people wrap">
-        {team.map((p) => {
-          const card = (
-            <>
-              <figure className="member-photo">
-                <Image src={p.src} alt="" width={480} height={640} sizes="(max-width: 620px) 50vw, 200px" quality={70} />
-              </figure>
-              <p className="member-name">{p.name}</p>
-              <p className="member-role">{p.social ? "Agregame!" : "Integrante del elenco"}</p>
-            </>
-          );
-          return (
-            <li key={p.name} className="member">
-              {p.social ? (
-                <a href={p.social} target="_blank" rel="noopener noreferrer" aria-label={`${p.name} en Instagram`}>
-                  {card}
-                </a>
-              ) : (
-                card
-              )}
-            </li>
-          );
-        })}
-      </ul>
+      
+      {/* 🌟 CAMBIO SEMÁNTICO: Modificado a <div> para cumplir estándares HTML con los divs internos de las Cards */}
+      <div className="people wrap grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 isolation-auto">
+        {team.map((p) => (
+          <div key={p.name} className="will-change-transform">
+            <ProfileCard dancer={p} />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

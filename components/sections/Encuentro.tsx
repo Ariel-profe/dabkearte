@@ -74,7 +74,7 @@ export function Encuentro() {
           </ul>
           <div className="doc-actions">
             <a className="btn" href={doc.href} target="_blank" rel="noopener noreferrer">
-              Ver en el navegador
+              Ver
             </a>
             <a className="btn btn--line" href={doc.href} download={doc.downloadName}>
               Descargar PDF
@@ -85,9 +85,9 @@ export function Encuentro() {
 
       <div className="videos wrap">
         {encuentro.videos.map((v) => (
-          <a key={v.title} className="post" href={youtube.href} target="_blank" rel="noopener noreferrer">
+          <a key={v.title} className="post" href={v.href} target="_blank" rel="noopener noreferrer">
             <figure className="post-photo" data-inner>
-              <Image src={v.src} alt={v.alt} width={v.width} height={v.height} sizes="(max-width: 860px) 100vw, 33vw" quality={72} />
+              <Image src={v.src} alt={v.alt} width={v.width} height={v.height} sizes="(max-width: 860px) 100vw, 33vw" loading="lazy" className="object-cover object-top" quality={72} />
               <span className="post-play" aria-hidden>
                 <svg viewBox="0 0 12 14" fill="currentColor">
                   <path d="M0 0v14l12-7z" />

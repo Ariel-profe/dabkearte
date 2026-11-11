@@ -24,7 +24,6 @@ export default function Home() {
       <Cifras />
       <Galeria />
       <Elenco />
-      <Trayectoria />
       <Preguntas />
       <Encuentro />
       <Contacto />

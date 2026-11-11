@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     description: "Shows de dabke, folclore árabe en vivo, para casamientos, cumpleaños y eventos.",
     locale: "es_AR",
     type: "website",
-    images: ["/images/hero/17.jpeg"],
+    images: ["/images/hero/hero.jpeg"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#eeeeeb",
+  themeColor: "#ffffff",
 };
 
 // Runs before paint: turns on the animated version unless the visitor prefers reduced motion,
