@@ -102,11 +102,11 @@ export const proceso = {
 export const resenas = {
   scoreText: "Bailando dabke en casamientos, cumpleaños, festivales y eventos de la colectividad.",
   items: [
-    { text: "Entraron en la fiesta y en dos minutos estaban todos los invitados bailando en fila. Fue el mejor momento de la noche.", name: "Lucía y Martín", where: "Casamiento" },
-    { text: "Súper puntuales y organizados. Se adaptaron al salón y al horario sin ningún problema.", name: "Carolina M.", where: "Cumpleaños de 50" },
+    { text: "Mi familia nos dió el regalo sorpresa de DabkeArte y nos hicieron pasar un momento hermoso. Gracias por todo!", name: "Lucía y Martín", where: "Casamiento" },
+    { text: "Súper puntuales y organizados. Se adaptaron al poco espacio que teniamos. Hermoso show.", name: "Carolina M.", where: "Cumpleaños de 50" },
     { text: "Representan a la colectividad con muchísimo respeto y alegría. Siempre los volvemos a convocar.", name: "Comisión directiva", where: "Evento institucional" },
-    { text: "El vestuario, la música y la energía. Mis abuelos se emocionaron al ver el dabke de su tierra.", name: "Sofía A.", where: "Quince años" },
-    { text: "Hicimos un taller con el equipo de trabajo y terminamos todos bailando. Una experiencia distinta.", name: "Recursos Humanos", where: "Taller para empresas" },
+    { text: "El vestuario, la música y la energía. Mis abuelos se emocionaron al verlos.", name: "Sofía A.", where: "Quince años" },
+    { text: "Hicimos un taller con DabkeArte y nos encantó. Queremos más clases!", name: "Academia de danza", where: "Taller de dabke" },
   ],
 };
 

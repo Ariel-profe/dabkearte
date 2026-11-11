@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config = {
   content: ["./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}"],
@@ -24,7 +25,12 @@ const config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Wide screen with a real pointer: the only place hover effects can open and close.
+    plugin(({ addVariant }) => {
+      addVariant("can-hover", "@media (min-width: 768px) and (hover: hover)");
+    }),
+  ],
 } satisfies Config;
 
 export default config;

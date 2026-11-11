@@ -22,7 +22,8 @@ export default function ProfileCard({ dancer }: { dancer: DancerProps }) {
   const instagramRef = useRef<HTMLAnchorElement>(null);
   const activeTimelineRef = useRef<gsap.core.Timeline | null>(null);
 
-  const isDesktop = () => window.matchMedia("(min-width: 768px)").matches;
+  // Touch screens fire mouseenter on tap and never mouseleave, which would leave image 2 stuck on.
+  const isDesktop = () => window.matchMedia("(min-width: 768px) and (hover: hover)").matches;
 
   const handleMouseEnter = () => {
     if (!cardRef.current || !isDesktop()) return;
@@ -87,58 +88,57 @@ export default function ProfileCard({ dancer }: { dancer: DancerProps }) {
       className="group relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-zinc-950 cursor-pointer will-change-transform border border-zinc-800/30"
     >
       {/* IMAGEN 1: Primera Medida */}
-      <div ref={primaryImgRef} className="absolute inset-0 h-full w-full hidden md:block will-change-transform">
+      <div ref={primaryImgRef} className="absolute inset-0 h-full w-full will-change-transform">
         <Image
           src={dancer.primaryImage}
           alt={`${dancer.name} ${dancer.lastName}`}
           fill
-          sizes="(max-width: 768px) 100vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover"
-          priority
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent can-hover:hidden" />
       </div>
 
       {/* Capa estática de Desenfoque / Multiplicador de contraste por hardware */}
       <div 
         ref={blurOverlayRef}
-        className="absolute inset-0 z-10 opacity-0 pointer-events-none hidden md:block backdrop-blur-[6px] bg-black/25 will-change-transform"
+        className="absolute inset-0 z-10 opacity-0 pointer-events-none hidden can-hover:block backdrop-blur-[6px] bg-black/25 will-change-transform"
       />
 
-      {/* IMAGEN 2: Al posar el mouse (Fija en escala de grises para Mobile, animada para Desktop) */}
+      {/* IMAGEN 2: Arranca recortada a una línea en el borde inferior; el hover la abre. */}
       <div
         ref={hoverImgRef}
-        className="absolute inset-0 h-full w-full overflow-hidden z-10 will-change-transform 
-                   filter grayscale md:grayscale-0 brightness-[0.35] md:brightness-100"
-        style={{ 
-          clipPath: typeof window !== "undefined" && isDesktop() ? "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" : "none",
-          transform: typeof window !== "undefined" && isDesktop() ? "scale(1.15)" : "scale(1)",
+        className="absolute inset-0 h-full w-full overflow-hidden z-10 will-change-transform"
+        style={{
+          clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+          transform: "scale(1.15)",
         }}
+        aria-hidden
       >
         <Image
           src={dancer.hoverImage}
-          alt={`${dancer.name} en movimiento`}
+          alt=""
           fill
-          sizes="(max-width: 768px) 100vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover select-none"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent md:hidden" />
       </div>
 
       {/* CONTENIDO INTERACTIVO */}
       <div
         ref={infoRef}
-        className="absolute inset-0 z-20 flex flex-col justify-end p-2 opacity-100 md:opacity-0 translate-y-0 md:translate-y-5 pointer-events-auto md:pointer-events-none group-hover:pointer-events-auto select-none"
+        className="absolute inset-0 z-20 flex flex-col justify-end p-2 opacity-100 can-hover:opacity-0 translate-y-0 can-hover:translate-y-5 pointer-events-auto can-hover:pointer-events-none group-hover:pointer-events-auto select-none"
       >
         <div ref={textItemsRef} className="space-y-2 md:space-y-3">
           {/* Cumpleaños */}
-          <div className="opacity-100 md:opacity-0 translate-y-0 md:translate-y-4 flex items-center">
+          <div className="opacity-100 can-hover:opacity-0 translate-y-0 can-hover:translate-y-4 flex items-center">
             <span className="text-[10px] font-mono uppercase tracking-widest text-white bg-purple-950/40 border border-purple-500/30 px-2 py-0.5 rounded-md">
               🎂 {dancer.birthdate}
             </span>
           </div>
           
           {/* Nombre Completo */}
-          <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tighter leading-none opacity-100 md:opacity-0 translate-y-0 md:translate-y-4">
+          <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tighter leading-none opacity-100 can-hover:opacity-0 translate-y-0 can-hover:translate-y-4">
             {dancer.name} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500">
               {dancer.lastName}
@@ -146,7 +146,7 @@ export default function ProfileCard({ dancer }: { dancer: DancerProps }) {
           </h3>
 
           {/* Enlace de Instagram con Estilo de Marca Oficial */}
-          <div className="pt-1 md:pt-2 opacity-100 md:opacity-0 translate-y-0 md:translate-y-4">
+          <div className="pt-1 md:pt-2 opacity-100 can-hover:opacity-0 translate-y-0 can-hover:translate-y-4">
             <a
               ref={instagramRef}
               href={dancer.instagramUrl}
