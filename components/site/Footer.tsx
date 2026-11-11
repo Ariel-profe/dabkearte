@@ -56,7 +56,7 @@ export function Footer() {
       </div>
       <div className="foot-bottom wrap">
         <p>© {new Date().getFullYear()} DabkeArte Mendoza</p>
-        <span className="logo-mark foot-logo" aria-hidden />
+        <Image className="foot-logo" src="/logos/logo-text-color.png" alt="" width={2084} height={1534} sizes="64px" />
         <p>
           Desarrollado por{" "}
           <a className="link link--under" href="https://amn.com.ar" target="_blank" rel="noopener noreferrer">

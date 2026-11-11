@@ -128,7 +128,7 @@ export function Contacto() {
             <p className="contact-lede">{contacto.lede}</p>
             <div className="brand-card">
               <div className="brand-card-mark">
-                <span className="logo-mark" />
+                <Image src="/logos/logo-text-white.png" alt="" width={2084} height={1534} sizes="84px" />
               </div>
               <div className="brand-card-body">
                 <p className="brand-card-role">

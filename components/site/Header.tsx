@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { nav } from "@/lib/content";
 
@@ -16,7 +17,7 @@ export function Header() {
   return (
     <header className={`site-header${open ? " is-open" : ""}`}>
       <a className="logo" href="#inicio" data-flight-to aria-label="DabkeArte, volver al inicio">
-        DabkeArte
+        <Image src="/logos/logo-text-color.png" alt="" width={2084} height={1534} sizes="64px" priority />
       </a>
       <nav className="nav" id="site-nav" aria-label="Principal">
         {nav.map((item) => (

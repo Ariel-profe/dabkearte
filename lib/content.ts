@@ -31,10 +31,9 @@ export const nav = [
 export const hero = {
   city: "Mendoza",
   image: { src: "/images/hero/hero.jpeg", alt: "DabkeArte en escena, con fuego de fondo", width: 1600, height: 1068 },
-  lede: "Grupo de Dabke.",
-  ledeMuted: "Dedicados a difundir la danza folclórica árabe por excelencia.",
-  list: ["Casamientos", "Cumpleaños y aniversarios", "Festivales y escenarios", "Eventos en general"],
-  card: { role: "Contrataciones", roleMuted: "Te respondemos lo antes posible", name: "Llevá el dabke a tu fiesta" },
+  lede: "Folclore árabe ",
+  ledeMuted: "para casamientos, cumpleaños, muestras y eventos en general.",
+  cta: { label: "Escribinos para tu evento", note: "Lo haremos inolvidable" },
 };
 
 // Borrador: nombres y años de cada presentación.
@@ -85,9 +84,9 @@ export const shows = {
 };
 
 export const proceso = {
-  title: "Agarrados de la mano",
-  image: { src: "/images/gallery/hero.jpeg", alt: "La fila de DabkeArte en un escenario iluminado", width: 1280, height: 853 },
-  caption: "El dabke se baila de la mano, en símbolo de unión y paz.",
+  title: "Yallah el Dabke!",
+  image: { src: "/images/gallery/23.jpeg", alt: "La fila de DabkeArte en un escenario iluminado", width: 1280, height: 853 },
+  caption: "Bailamos de la mano, en símbolo de unión y paz.",
   stepsTitle: "Cómo contratarnos",
   stepsLede: "Escribinos, te proponemos el mejor show para tu evento y coordinamos el resto.",
   steps: [

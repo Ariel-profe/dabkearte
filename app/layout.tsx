@@ -1,4 +1,5 @@
 import "@fontsource-variable/host-grotesk";
+import "@fontsource-variable/el-messiri";
 import "./globals.css";
 import "./site.css";
 import type { Metadata, Viewport } from "next";
@@ -18,7 +19,6 @@ export const metadata: Metadata = {
     description: "Shows de dabke, folclore árabe en vivo, para casamientos, cumpleaños y eventos.",
     locale: "es_AR",
     type: "website",
-    images: ["/images/hero/hero.jpeg"],
   },
 };
 

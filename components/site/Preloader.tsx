@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap, ScrollTrigger, motionOn } from "@/lib/motion";
@@ -85,7 +86,7 @@ export function Preloader() {
 
   return (
     <div ref={root} className="preloader" aria-hidden>
-      <span className="logo-mark preloader-mark" />
+      <Image className="preloader-mark" src="/logos/logo-text-color.png" alt="" width={2084} height={1534} sizes="220px" priority />
       <div className="preloader-foot">
         <p className="preloader-count">0</p>
         <p className="preloader-note">Folclore árabe en Mendoza, Argentina.</p>
