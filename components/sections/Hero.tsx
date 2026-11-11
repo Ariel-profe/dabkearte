@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { hero, whatsappLink } from "@/lib/content";
-import { gsap, ScrollTrigger, docPos, px, useSectionMotion } from "@/lib/motion";
+import { gsap, ScrollTrigger, docPos, px, relPos, useSectionMotion } from "@/lib/motion";
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -11,11 +11,13 @@ export function Hero() {
   useSectionMotion((el) => {
     const frame = el.querySelector<HTMLElement>(".hero-frame");
     const photo = el.querySelector<HTMLElement>(".hero-photo");
+    const inner = el.querySelector<HTMLElement>(".hero-inner");
     const bottom = el.querySelector<HTMLElement>(".hero-bottom");
     const city = el.querySelector<HTMLElement>(".hero-city");
     const wordmark = el.querySelector<HTMLElement>("[data-flight-from]");
     const logo = document.querySelector<HTMLElement>("[data-flight-to]");
     const dist = () => Math.round(Math.min(window.innerHeight * 0.72, 600));
+    const sideInset = 0.035;
 
     const tl = gsap.timeline({
       defaults: { ease: "none" },
@@ -26,13 +28,25 @@ export function Hero() {
       tl.fromTo(
         frame,
         { clipPath: () => `inset(0% 0% 0% 0% round ${px("--r-xl")}px)` },
-        { clipPath: () => `inset(5% 3.5% 0% 3.5% round ${px("--r-xl") * 1.8}px)`, duration: 1 },
+        { clipPath: () => `inset(5% ${sideInset * 100}% 0% ${sideInset * 100}% round ${px("--r-xl") * 1.8}px)`, duration: 1 },
         0,
       );
     }
     if (photo) tl.fromTo(photo, { scale: 1.12 }, { scale: 1, duration: 1 }, 0);
     if (bottom) tl.to(bottom, { y: () => -window.innerHeight * 0.1, duration: 1 }, 0);
     if (city) tl.to(city, { opacity: 0, y: -30, duration: 0.4 }, 0);
+
+    // The text and button along the bottom step in with the photo's side edges, so they never end up outside it.
+    if (frame && inner && bottom) {
+      const edgeItems = [...Array.from(bottom.children), ...Array.from(el.querySelectorAll(".hero-marks i"))] as HTMLElement[];
+      const inward = (item: HTMLElement) => {
+        // Full-width rows (the stacked mobile layout) already clear the edges with their padding.
+        if (item.offsetWidth > inner.clientWidth * 0.8) return 0;
+        const centre = relPos(item, inner).x + item.offsetWidth / 2;
+        return (centre < inner.offsetWidth / 2 ? 1 : -1) * frame.offsetWidth * sideInset;
+      };
+      edgeItems.forEach((item) => tl.to(item, { x: () => inward(item), duration: 1 }, 0));
+    }
 
     // The giant white logo shrinks and travels into the header, turning into the colour logo on the way.
     const colour = wordmark?.querySelector<HTMLElement>(".wordmark-colour");
@@ -46,7 +60,8 @@ export function Hero() {
       };
       tl.to(wordmark, { x: () => geo().x, y: () => geo().y, scale: () => geo().s, duration: 1 }, 0);
       if (colour) tl.fromTo(colour, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.62);
-      tl.to(logo, { opacity: 1, duration: 0.02 }, 0.98)
+      // The header logo appears before the travelling one hides, so there is never a frame with neither on screen.
+      tl.to(logo, { opacity: 1, duration: 0.01 }, 0.97)
         .to(wordmark, { opacity: 0, duration: 0.02 }, 0.98);
     }
 
@@ -86,6 +101,7 @@ export function Hero() {
               width={2084}
               height={1534}
               sizes="(max-width: 900px) 80vw, 640px"
+              loading="eager"
             />
           </div>
           <p className="hero-city">{hero.city}</p>

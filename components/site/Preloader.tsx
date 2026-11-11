@@ -28,6 +28,19 @@ export function Preloader() {
       const mark = el.querySelector<HTMLElement>(".preloader-mark");
       const progress = { value: 0 };
 
+      // Sits exactly over the hero logo, so when the screen wipes away the colour logo hands over to the white one.
+      const heroLogo = document.querySelector<HTMLElement>("[data-flight-from]");
+      const place = () => {
+        if (!mark || !heroLogo) return;
+        const r = heroLogo.getBoundingClientRect();
+        const onScreen = r.bottom > 0 && r.top < window.innerHeight;
+        mark.style.width = `${r.width}px`;
+        mark.style.left = `${onScreen ? r.left : (window.innerWidth - r.width) / 2}px`;
+        mark.style.top = `${onScreen ? r.top : (window.innerHeight - r.height) / 2}px`;
+      };
+      place();
+      window.addEventListener("resize", place);
+
       const ready = Promise.race([
         Promise.all([
           document.fonts?.ready,
@@ -37,6 +50,7 @@ export function Preloader() {
       ]);
 
       const finish = () => {
+        window.removeEventListener("resize", place);
         sessionStorage.setItem(INTRO_KEY, "1");
         html.classList.add("intro-seen");
         lock(false);
@@ -76,6 +90,7 @@ export function Preloader() {
       }, 9000);
 
       return () => {
+        window.removeEventListener("resize", place);
         window.clearTimeout(failSafe);
         tl.kill();
         lock(false);
@@ -86,7 +101,7 @@ export function Preloader() {
 
   return (
     <div ref={root} className="preloader" aria-hidden>
-      <Image className="preloader-mark" src="/logos/logo-text-color.png" alt="" width={2084} height={1534} sizes="220px" priority />
+      <Image className="preloader-mark" src="/logos/logo-text-color.png" alt="" width={2084} height={1534} sizes="(max-width: 900px) 80vw, 640px" priority />
       <div className="preloader-foot">
         <p className="preloader-count">0</p>
         <p className="preloader-note">Folclore árabe en Mendoza, Argentina.</p>

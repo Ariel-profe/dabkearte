@@ -3,6 +3,8 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: var(--header);
+  /* The loading screen locks scrolling; keeping the scrollbar's space stops the page shifting sideways when it unlocks. */
+  scrollbar-gutter: stable;
 }
 body {
   margin: 0;
@@ -270,7 +272,8 @@ main > section { position: relative; overflow-x: clip; }
   color: var(--ink);
 }
 .intro-seen .preloader { display: none !important; }
-.preloader-mark { width: clamp(120px, 16vw, 220px); height: auto; align-self: center; margin-top: auto; }
+/* Placed by Preloader.tsx over the hero logo's exact box, so the wipe hands one logo over to the other. */
+.preloader-mark { position: absolute; left: 50%; top: 50%; width: 40vw; height: auto; opacity: 0; }
 .preloader-foot { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-top: auto; }
 .preloader-count {
   font-family: var(--font-display);
@@ -360,6 +363,7 @@ main > section { position: relative; overflow-x: clip; }
   z-index: 60;
   width: min(calc(48cqw + 124px), 56svh, 620px);
   transform-origin: 0 0;
+  will-change: transform;
 }
 .wordmark img { display: block; width: 100%; height: auto; }
 .wordmark .wordmark-colour { position: absolute; inset: 0; opacity: 0; }

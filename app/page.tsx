@@ -7,7 +7,6 @@ import { Testimonios } from "@/components/sections/Testimonios";
 import { Cifras } from "@/components/sections/Cifras";
 import { Galeria } from "@/components/sections/Galeria";
 import { Elenco } from "@/components/sections/Elenco";
-import { Trayectoria } from "@/components/sections/Trayectoria";
 import { Preguntas } from "@/components/sections/Preguntas";
 import { Encuentro } from "@/components/sections/Encuentro";
 import { Contacto } from "@/components/sections/Contacto";
