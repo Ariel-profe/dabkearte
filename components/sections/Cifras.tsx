@@ -5,6 +5,8 @@ import { useRef, type CSSProperties } from "react";
 import { cifras } from "@/lib/content";
 import { gsap, useSectionMotion } from "@/lib/motion";
 
+import { BtnText } from "@/components/ui/split";
+
 const ringFill = Math.min(100, Math.max(0, (cifras.ring.value / cifras.ring.max) * 100));
 const barMax = Math.max(1, ...cifras.bars.data.map((d) => d.value));
 
@@ -67,9 +69,6 @@ export function Cifras() {
             <p className="tile-label">{caseTile.label}</p>
             <p className="tile-brand">{caseTile.brand}</p>
             <p className="tile-sub">{caseTile.sub}</p>
-            <a className="btn btn--light btn--sm" href="#encuentro">
-              Ver la parte teórica
-            </a>
           </div>
         </article>
         <article className="tile tile-figs">

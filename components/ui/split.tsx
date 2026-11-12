@@ -39,6 +39,24 @@ export function Chars({ text }: { text: string }) {
   );
 }
 
+/** Button label whose letters stomp one after another on hover, like a dabke line. */
+export function BtnText({ children }: { children: string }) {
+  let i = 0;
+  return (
+    <span className="btn-text">
+      {Array.from(children).map((ch, j) =>
+        ch === " " ? (
+          <Fragment key={j}> </Fragment>
+        ) : (
+          <span key={j} className="bt-ch" style={{ ["--i" as string]: i++ }}>
+            {ch}
+          </span>
+        ),
+      )}
+    </span>
+  );
+}
+
 /** The round full stop that ends a title. */
 export function Stop() {
   return <span className="stop" aria-hidden />;

@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { shows } from "@/lib/content";
 import { gsap, headerH, px, relPos, useSectionMotion } from "@/lib/motion";
 import { Accordion } from "@/components/ui/accordion";
-import { Stop } from "@/components/ui/split";
+import { Stop, BtnText } from "@/components/ui/split";
 
 function StageCopy() {
   return (
@@ -103,7 +103,7 @@ export function Shows() {
         <div className="svc-foot">
           <p>{shows.footNote}</p>
           <a className="btn btn--light" href="#contacto">
-            Pedí tu show
+            <BtnText>Pedí tu show</BtnText>
           </a>
         </div>
       </div>

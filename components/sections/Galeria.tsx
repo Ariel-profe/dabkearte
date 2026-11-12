@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { galeria, socials } from "@/lib/content";
-import { gsap, useSectionMotion } from "@/lib/motion";
+import { gsap, useSectionMotion } from "@/lib/motion";
+import { BtnText } from "@/components/ui/split";
 
 const shotClass = ["shot-a", "shot-b", "shot-c", "shot-d", "shot-e"];
 const instagram = socials.find((s) => s.id === "instagram")!;
@@ -36,7 +37,7 @@ export function Galeria() {
             </h2>
             <p>{galeria.text}</p>
             <a className="btn" href={instagram.href} target="_blank" rel="noopener noreferrer">
-              Ver más en Instagram
+              <BtnText>Ver más en Instagram</BtnText>
             </a>
           </div>
         </div>

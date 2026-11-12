@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef, useState, type FormEvent } from "react";
 import { contacto, whatsappLink } from "@/lib/content";
 import { gsap, ScrollTrigger, useSectionMotion } from "@/lib/motion";
-import { Chars, Stop } from "@/components/ui/split";
+import { Chars, Stop, BtnText } from "@/components/ui/split";
 
 const formatDate = (iso: string) => {
   const [y, m, d] = iso.split("-");
@@ -37,7 +37,7 @@ function BookingForm() {
 
   return (
     <form className="form" noValidate onSubmit={onSubmit}>
-      <p className="form-title">¿A qué evento querés que asistamos?</p>
+      <p className="form-title">¿Qué evento estás organizando?</p>
       <label className="field">
         <span>Tu nombre</span>
         <input type="text" name="nombre" autoComplete="name" placeholder="Juan Perez" required />
@@ -67,10 +67,10 @@ function BookingForm() {
       </label>
       <label className="field">
         <span>Mensaje (opcional)</span>
-        <textarea name="mensaje" rows={3} placeholder="Cantidad de invitados, horario, salón" />
+        <textarea name="mensaje" rows={3} placeholder="Cantidad de invitados, horario, salón, etc." />
       </label>
       <button className="btn" type="submit">
-        Enviar
+        <BtnText>Enviar</BtnText>
       </button>
       <p className="form-status" role="status" aria-live="polite">
         {status}
@@ -136,7 +136,7 @@ export function Contacto() {
                 </p>
                 <p className="brand-card-name">Hablemos</p>
                 <a className="btn btn--sm" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-                  Abrir WhatsApp
+                  <BtnText>Abrir WhatsApp</BtnText>
                 </a>
               </div>
             </div>

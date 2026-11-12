@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { hero, whatsappLink } from "@/lib/content";
 import { gsap, ScrollTrigger, docPos, px, relPos, useSectionMotion } from "@/lib/motion";
+import { BtnText } from "@/components/ui/split";
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -48,21 +49,31 @@ export function Hero() {
       edgeItems.forEach((item) => tl.to(item, { x: () => inward(item), duration: 1 }, 0));
     }
 
-    // The giant white logo shrinks and travels into the header, turning into the colour logo on the way.
-    const colour = wordmark?.querySelector<HTMLElement>(".wordmark-colour");
+    // One element makes the whole trip: the header logo starts scaled up exactly over the hero wordmark
+    // (which stays as an invisible placeholder) and lands at transform 0, so there is no hand-off to see.
+    const white = logo?.querySelector<HTMLElement>(".logo-white");
     if (wordmark && logo) {
       const geo = () => {
-        const r = logo.getBoundingClientRect();
+        // Offsets ignore the logo's own transform; the header is fixed, so its rect is the viewport origin.
+        const header = logo.offsetParent as HTMLElement;
+        const h = header.getBoundingClientRect();
         const p = docPos(wordmark);
-        const start = docPos(el).y;
-        const s = logo.offsetWidth / wordmark.offsetWidth;
-        return { x: r.left - p.x, y: r.top + start + dist() - p.y, s };
+        return {
+          x: p.x - (h.left + logo.offsetLeft),
+          y: p.y - docPos(el).y - (h.top + logo.offsetTop),
+          s: wordmark.offsetWidth / logo.offsetWidth,
+        };
       };
-      tl.to(wordmark, { x: () => geo().x, y: () => geo().y, scale: () => geo().s, duration: 1 }, 0);
-      if (colour) tl.fromTo(colour, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.62);
-      // The header logo appears before the travelling one hides, so there is never a frame with neither on screen.
-      tl.to(logo, { opacity: 1, duration: 0.01 }, 0.97)
-        .to(wordmark, { opacity: 0, duration: 0.02 }, 0.98);
+      gsap.set(wordmark, { visibility: "hidden" });
+      gsap.set(logo, { opacity: 1, transformOrigin: "0 0" });
+      // 2D transforms keep the docked logo on the normal paint path, as sharp as the static one.
+      tl.fromTo(
+        logo,
+        { x: () => geo().x, y: () => geo().y, scale: () => geo().s, force3D: false },
+        { x: 0, y: 0, scale: 1, force3D: false, duration: 1, ease: "power1.inOut" },
+        0,
+      );
+      if (white) tl.fromTo(white, { opacity: 1 }, { opacity: 0, duration: 0.3 }, 0.62);
     }
 
     ScrollTrigger.create({
@@ -88,21 +99,12 @@ export function Hero() {
           />
         </div>
         <div className="hero-shade" aria-hidden />
-        <div className="grain" aria-hidden />
+        
       </div>
       <div className="hero-inner">
         <div className="hero-top">
           <div className="wordmark" data-flight-from aria-hidden>
             <Image src="/logos/logo-text-white.png" alt="" width={2084} height={1534} sizes="(max-width: 900px) 80vw, 640px" priority />
-            <Image
-              className="wordmark-colour"
-              src="/logos/logo-text-color.png"
-              alt=""
-              width={2084}
-              height={1534}
-              sizes="(max-width: 900px) 80vw, 640px"
-              loading="eager"
-            />
           </div>
           <p className="hero-city">{hero.city}</p>
         </div>
@@ -119,7 +121,7 @@ export function Hero() {
           </h1>
           <div className="hero-cta">
             <a className="btn btn--light" href={whatsappLink()} target="_blank" rel="noopener noreferrer">
-              {hero.cta.label}
+              <BtnText>{hero.cta.label}</BtnText>
             </a>
             <p className="hero-cta-note">{hero.cta.note}</p>
           </div>

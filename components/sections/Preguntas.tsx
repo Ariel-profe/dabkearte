@@ -3,7 +3,8 @@
 import { useRef } from "react";
 import { preguntas, whatsappLink } from "@/lib/content";
 import { gsap, useSectionMotion } from "@/lib/motion";
-import { Accordion } from "@/components/ui/accordion";
+import { Accordion } from "@/components/ui/accordion";
+import { BtnText } from "@/components/ui/split";
 
 export function Preguntas() {
   const root = useRef<HTMLElement>(null);
@@ -31,7 +32,7 @@ export function Preguntas() {
           </h2>
           <p className="sec-lede">{preguntas.lede}</p>
           <a className="btn" href={whatsappLink("Hola DabkeArte, tengo una consulta sobre un show.")} target="_blank" rel="noopener noreferrer">
-            Preguntar por WhatsApp
+            <BtnText>Preguntar por WhatsApp</BtnText>
           </a>
         </div>
         <Accordion

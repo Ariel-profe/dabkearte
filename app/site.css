@@ -123,6 +123,22 @@ main > section { position: relative; overflow-x: clip; }
   max-width: 100%;
   transition: color 0.45s var(--ease);
 }
+/* Hover, "golpe de tabl": the violet rises with the wavy edge of a twirling mendil,
+   the dot beats twice like the tabl (dum-tek) and the letters stomp in a line. */
+.btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100% + 14px);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12'%3E%3Cpath d='M0 6Q12 0 24 6T48 6V12H0Z' fill='%23362664'/%3E%3C/svg%3E") repeat-x 0 0 / 48px 12px,
+    linear-gradient(var(--accent), var(--accent)) no-repeat 0 11px / 100% calc(100% - 11px);
+  transform: translateY(100%);
+  transition: transform 0.6s var(--ease);
+}
 .btn::after {
   content: "";
   position: absolute;
@@ -134,33 +150,65 @@ main > section { position: relative; overflow-x: clip; }
   margin-top: -4px;
   border-radius: 50%;
   background: var(--accent-soft);
-  transition: transform 0.6s var(--ease), background-color 0.3s var(--ease);
+  transition: background-color 0.3s var(--ease);
 }
 .btn--light { background: var(--surface); color: var(--ink); }
 .btn--light::after { background: var(--accent); }
 .btn--line { background: transparent; color: inherit; box-shadow: inset 0 0 0 1px currentColor; }
 .btn--sm { height: 40px; padding: 0 38px 0 16px; font-size: 14px; }
 .btn--sm::after { right: 16px; }
+.btn-text { white-space: nowrap; }
+.bt-ch { display: inline-block; }
+.btn:focus-visible { color: var(--on-accent); }
+.btn:focus-visible::before { transform: translateY(0); }
+.btn:focus-visible::after { background: var(--on-accent); }
 @media (hover: hover) {
-  .btn:hover { color: var(--on-accent); }
-  .btn:hover::after { transform: scale(var(--btn-fill, 90)); background: var(--accent); }
+  .btn:hover { color: var(--on-accent); transition-delay: 0.08s; }
+  .btn:hover::before { transform: translateY(0); animation: mendil 1.6s linear infinite; }
+  .btn:hover::after { background: var(--on-accent); animation: tabl 0.62s var(--ease) 0.12s; }
+  .btn:hover .bt-ch { animation: stomp 0.5s cubic-bezier(0.3, 0.7, 0.3, 1) calc(0.06s + var(--i) * 22ms) both; }
 }
+@keyframes mendil {
+  to { background-position: 48px 0, 0 11px; }
+}
+@keyframes tabl {
+  0%, 36%, 72%, 100% { transform: scale(1); }
+  18% { transform: scale(1.9); }
+  54% { transform: scale(1.45); }
+}
+@keyframes stomp {
+  0% { transform: none; }
+  35% { transform: translateY(-4px); }
+  62% { transform: translateY(1.5px); }
+  82% { transform: translateY(-0.5px); }
+  100% { transform: none; }
+}
+
+/* Text links: the underline is a small mendil wave that draws in from the left and flutters. */
 .link { position: relative; display: inline-block; }
 .link::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -0.08em;
-  height: 1px;
+  bottom: -0.3em;
+  height: 5px;
   background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.5s var(--ease);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M0 2.5Q4 0 8 2.5T16 2.5' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3C/svg%3E") repeat-x 0 0 / 16px 5px;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M0 2.5Q4 0 8 2.5T16 2.5' fill='none' stroke='%23000' stroke-width='1.2'/%3E%3C/svg%3E") repeat-x 0 0 / 16px 5px;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.55s var(--ease);
 }
-.link--under::after { transform: scaleX(1); opacity: 0.35; }
+.link--under::after { clip-path: inset(0 0 0 0); opacity: 0.35; }
 @media (hover: hover) {
-  .link:hover::after { transform: scaleX(1); transform-origin: left; opacity: 1; }
+  .link:hover::after {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    animation: mendil-line 1.2s linear infinite;
+  }
+}
+@keyframes mendil-line {
+  to { -webkit-mask-position: 16px 0; mask-position: 16px 0; }
 }
 .icon-btn {
   flex: none;
@@ -193,8 +241,9 @@ main > section { position: relative; overflow-x: clip; }
   padding-inline: calc(var(--gutter) + var(--frame));
   background: var(--bg);
 }
-.logo { display: block; width: 64px; }
+.logo { position: relative; display: block; width: 64px; transform-origin: 0 0; }
 .logo img { display: block; width: 100%; height: auto; }
+.logo .logo-white { position: absolute; inset: 0; opacity: 0; }
 .nav { display: flex; gap: clamp(18px, 2.6vw, 40px); font-size: 15px; font-weight: 500; }
 .nav a { white-space: nowrap; }
 .header-end { display: flex; align-items: center; gap: 10px; }
@@ -297,7 +346,7 @@ main > section { position: relative; overflow-x: clip; }
   background: var(--panel);
 }
 .hero-photo { position: absolute; inset: 0; transform: scale(1.12); }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; background: var(--panel); }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; background: var(--panel); opacity: 0.7; }
 .hero-shade {
   position: absolute;
   inset: 0;
@@ -322,7 +371,7 @@ main > section { position: relative; overflow-x: clip; }
   position: absolute;
   inset: -50%;
   pointer-events: none;
-  opacity: 0.17;
+  opacity: -100;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .motion .grain { animation: grain 1.2s steps(1) infinite; }
@@ -362,11 +411,8 @@ main > section { position: relative; overflow-x: clip; }
   position: relative;
   z-index: 60;
   width: min(calc(48cqw + 124px), 56svh, 620px);
-  transform-origin: 0 0;
-  will-change: transform;
 }
 .wordmark img { display: block; width: 100%; height: auto; }
-.wordmark .wordmark-colour { position: absolute; inset: 0; opacity: 0; }
 .hero-city {
   font-size: clamp(13px, 1.1vw, 16px);
   font-weight: 500;
@@ -862,7 +908,7 @@ main > section { position: relative; overflow-x: clip; }
   background: linear-gradient(180deg, transparent 35%, color-mix(in oklab, var(--panel) 85%, transparent));
 }
 .tile-case-in { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-.tile-label { font-size: 14px; color: var(--panel-muted); }
+.tile-label { font-size: 14px; color: white; }
 .tile-brand {
   font-family: var(--font-display);
   font-size: clamp(36px, 4.2vw, 62px);
@@ -872,7 +918,7 @@ main > section { position: relative; overflow-x: clip; }
   overflow-wrap: break-word;
   max-width: 100%;
 }
-.tile-sub { color: var(--panel-muted); margin-bottom: 10px; }
+.tile-sub { color: white; margin-bottom: 10px; }
 .tile-figs { grid-row: span 2; display: flex; flex-direction: column; gap: 22px; }
 .fig { padding-bottom: 18px; border-bottom: 1px solid var(--line); }
 .fig-num {
@@ -1282,8 +1328,7 @@ main > section { position: relative; overflow-x: clip; }
 .field select:focus-visible { box-shadow: inset 0 0 0 1.5px var(--accent); }
 .field input::placeholder,
 .field textarea::placeholder { color: color-mix(in oklab, var(--ink) 40%, var(--surface)); }
-/* Full-width button: the dot must grow past 1000px to reach the far edge. */
-.form .btn { align-self: stretch; justify-content: center; margin-top: 6px; --btn-fill: 220; }
+.form .btn { align-self: stretch; justify-content: center; margin-top: 6px; }
 .form-status { font-weight: 500; }
 .form-status:empty { display: none; }
 .form-small { font-size: 13px; color: var(--muted); }

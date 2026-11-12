@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { manifiesto } from "@/lib/content";
 import { gsap, useSectionMotion } from "@/lib/motion";
-import { Words } from "@/components/ui/split";
+import { Words, BtnText } from "@/components/ui/split";
 
 export function Manifiesto() {
   const root = useRef<HTMLElement>(null);
@@ -53,7 +53,7 @@ export function Manifiesto() {
               {manifiesto.sign} <span>{manifiesto.signMuted}</span>
             </p>
             <a className="btn" href="#contacto">
-              Contactanos
+              <BtnText>Contactanos</BtnText>
             </a>
           </div>
         </div>

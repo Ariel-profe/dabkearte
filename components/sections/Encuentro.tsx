@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { encuentro, socials } from "@/lib/content";
-import { gsap, useSectionMotion } from "@/lib/motion";
+import { gsap, useSectionMotion } from "@/lib/motion";
+import { BtnText } from "@/components/ui/split";
 
 const youtube = socials.find((s) => s.id === "youtube")!;
 
@@ -74,10 +75,10 @@ export function Encuentro() {
           </ul>
           <div className="doc-actions">
             <a className="btn" href={doc.href} target="_blank" rel="noopener noreferrer">
-              Ver
+              <BtnText>Ver</BtnText>
             </a>
             <a className="btn btn--line" href={doc.href} download={doc.downloadName}>
-              Descargar PDF
+              <BtnText>Descargar PDF</BtnText>
             </a>
           </div>
         </div>

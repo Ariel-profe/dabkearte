@@ -46,7 +46,7 @@ export const presentaciones = [
 ];
 
 export const manifiesto = {
-  image: { src: "/images/gallery/9.jpg", alt: "Bailarines de DabkeArte con vestuario rojo", width: 1200, height: 1600 },
+  image: { src: "/images/gallery/28.jpg", alt: "Bailarines de DabkeArte con vestuario rojo", width: 1200, height: 1600 },
   text: "Nacimos en 2014 para darle a la colectividad árabe de Mendoza un grupo estable que represente a cada sirio y libanés de este suelo. Hoy somos 24 bailarines estables, unidos por el amor a esta danza.",
   sign: "DabkeArte Mendoza",
   signMuted: "Grupo de folclore árabe desde 2014",
@@ -59,25 +59,25 @@ export const shows = {
       name: "Casamientos",
       text: "La entrada de los novios, el momento de la torta o el cierre de la fiesta: armamos un cuadro de dabke que hace levantar a todos de la silla.",
       tags: ["Entrada de novios", "Show central", "Baile con invitados"],
-      image: { src: "/images/gallery/11.jpeg", alt: "Elenco con vestuario dorado sobre el escenario", width: 1280, height: 847 },
+      image: { src: "/images/gallery/24.jpeg", alt: "Elenco con vestuario dorado sobre el escenario", width: 1280, height: 847 },
     },
     {
       name: "Cumpleaños y fiestas",
       text: "Quince, cumpleaños, aniversarios y reuniones familiares. Adaptamos la duración y el repertorio al espacio y al público.",
       tags: ["Quince años", "Aniversarios", "Fiestas familiares"],
-      image: { src: "/images/gallery/19.jpeg", alt: "Bailarines con vestuario tradicional al aire libre", width: 1600, height: 1200 },
+      image: { src: "/images/gallery/34.jpg", alt: "Bailarines con vestuario tradicional al aire libre", width: 1600, height: 1200 },
     },
     {
       name: "Eventos institucionales",
       text: "Actos de la colectividad, festivales, ferias culturales, escenarios municipales y eventos en general. Representamos al Levante árabe con respeto por la tradición.",
       tags: ["Colectividad", "Festivales", "Actos culturales"],
-      image: { src: "/images/gallery/4.jpg", alt: "El grupo completo con vestuario rojo", width: 1600, height: 1200 },
+      image: { src: "/images/gallery/19.jpeg", alt: "El grupo completo con vestuario rojo", width: 1600, height: 1200 },
     },
     {
       name: "Clases y talleres",
       text: "Clases de nivel básico y avanzado, y talleres para escuelas, academias o grupos que quieran aprender a bailar.",
       tags: ["Nivel básico", "Nivel avanzado", "Talleres a medida"],
-      image: { src: "/images/gallery/15.jpg", alt: "Ensayo de dabke en un salón", width: 1256, height: 670 },
+      image: { src: "/images/gallery/27.jpg", alt: "Ensayo de dabke en un salón", width: 1256, height: 670 },
     },
   ],
   footNote: "¿Qué tipo de evento estás organizando? Contanos la fecha y el lugar, y te proponemos el mejor show para tu evento.",
@@ -117,7 +117,7 @@ export const cifras = {
     label: "Formación",
     brand: "Nos formamos constantemente",
     sub: "Aprendemos y bailamos cada semana",
-    image: { src: "/images/gallery/11.jpeg", alt: "Integrantes de DabkeArte durante una formación", width: 1280, height: 847 },
+    image: { src: "/images/gallery/33.jpg", alt: "Integrantes de DabkeArte durante una formación", width: 1280, height: 847 },
   },
   figs: [
     { num: "2014", label: "El año en que nació el grupo" },
@@ -145,9 +145,9 @@ export const galeria = {
   text: "Ensayos, viajes, festivales y escenarios. Seguinos en Instagram para ver cada presentación.",
   shots: [
     { src: "/images/gallery/1.jpg", alt: "El grupo con la bandera argentina", width: 4000, height: 3000, speed: 0.3 },
+    { src: "/images/gallery/25.jpg", alt: "Integrantes con vestuario tradicional", width: 720, height: 716, speed: 0.2 },
     { src: "/images/gallery/20.jpeg", alt: "Integrantes después de un show", width: 1600, height: 1200, speed: 0.1 },
     { src: "/images/gallery/21.jpeg", alt: "Bailarines con vestuario azul", width: 1600, height: 1200, speed: 0.45 },
-    { src: "/images/gallery/25.jpg", alt: "Integrantes con vestuario tradicional", width: 720, height: 716, speed: 0.2 },
     { src: "/images/gallery/26.jpg", alt: "Cuadro de dabke con vestuario negro y dorado", width: 1600, height: 900, speed: 0.33 },
   ],
 };
@@ -228,7 +228,7 @@ export const encuentro = {
     points: ["Hipótesis sobre el origen del dabke", "Los estilos de Baalbek y sus pasos", "Fuentes y bibliografía"],
     href: "/docs/encuentro-nacional-dabke.pdf",
     downloadName: "DabkeArte - Encuentro Nacional de Dabke.pdf",
-    image: { src: "/images/gallery/24.jpeg", alt: "Participantes del Encuentro Nacional de Dabke", width: 4000, height: 3000 },
+    image: { src: "/images/gallery/32.jpg", alt: "Participantes del Encuentro Nacional de Dabke", width: 4000, height: 3000 },
   },
   videos: [
     { title: "Clásico de Fairouz", text: "Dabke de mujeres estilo clásico.", href: "https://www.youtube.com/watch?v=Q1DTP3ROLOI", src: "/images/gallery/30.png", width: 1280, height: 853, alt: "La fila de bailarinas en el escenario" },

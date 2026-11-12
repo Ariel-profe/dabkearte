@@ -8,7 +8,7 @@
   --ink: #0c0c09;
   --panel: #110f17;
   --on-panel: #f2f2ef;
-  --accent: #55307a;
+  --accent: #663894;
   --on-accent: #f2f2ef;
   /* Violet lifted enough to read as violet on the dark panels. */
   --accent-soft: color-mix(in oklab, var(--accent) 55%, #ffffff);
