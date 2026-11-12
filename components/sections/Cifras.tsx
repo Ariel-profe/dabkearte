@@ -5,8 +5,6 @@ import { useRef, type CSSProperties } from "react";
 import { cifras } from "@/lib/content";
 import { gsap, useSectionMotion } from "@/lib/motion";
 
-import { BtnText } from "@/components/ui/split";
-
 const ringFill = Math.min(100, Math.max(0, (cifras.ring.value / cifras.ring.max) * 100));
 
 export function Cifras() {
@@ -65,7 +63,6 @@ export function Cifras() {
             quality={75}
           />
           <div className="tile-case-in">
-            <p className="tile-label">{caseTile.label}</p>
             <p className="tile-brand">{caseTile.brand}</p>
             <p className="tile-sub">{caseTile.sub}</p>
           </div>

@@ -66,7 +66,6 @@ export function Presentaciones() {
           </a>
         ))}
       </div>
-      <p className="swipe-hint wrap">Deslizá para ver más presentaciones.</p>
     </section>
   );
 }

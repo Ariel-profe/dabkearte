@@ -114,7 +114,6 @@ export const cifras = {
   title: "Una historia que crece cada vez más.",
   lede: "De un grupo de pocas personas a un elenco estable que baila en todo el país.",
   caseTile: {
-    label: "Formación",
     brand: "Nos formamos constantemente",
     sub: "Aprendemos y bailamos cada semana",
     image: { src: "/images/gallery/33.jpg", alt: "Integrantes de DabkeArte durante una formación", width: 1280, height: 847 },
