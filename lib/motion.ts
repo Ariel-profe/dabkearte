@@ -17,6 +17,12 @@ const root = () => document.documentElement;
 export const cssVar = (name: string) => getComputedStyle(root()).getPropertyValue(name).trim();
 export const px = (name: string) => parseFloat(cssVar(name)) || 0;
 
+/** Freezes the page scroll, Lenis included, while an overlay is on screen. */
+export const lockScroll = (on: boolean) => {
+  root().style.overflow = on ? "hidden" : "";
+  window.dispatchEvent(new CustomEvent("dabke:lock", { detail: on }));
+};
+
 export const headerH = () => {
   const header = document.querySelector<HTMLElement>(".site-header");
   return header ? header.offsetHeight : 0;

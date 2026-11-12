@@ -24,8 +24,7 @@ export const nav = [
   { href: "#shows", label: "Shows" },
   { href: "#elenco", label: "Elenco" },
   { href: "#galeria", label: "Galería" },
-  { href: "#encuentro", label: "Encuentro" },
-  { href: "#contacto", label: "Contactanos" },
+  { href: "#encuentro", label: "Encuentro" }
 ];
 
 export const hero = {
@@ -84,7 +83,7 @@ export const shows = {
 };
 
 export const proceso = {
-  title: "Yallah el Dabke!",
+  title: "¡Yallah el Dabke!",
   image: { src: "/images/gallery/23.jpeg", alt: "La fila de DabkeArte en un escenario iluminado", width: 1280, height: 853 },
   caption: "Bailamos de la mano, en símbolo de unión y paz.",
   stepsTitle: "Cómo contratarnos",
@@ -220,7 +219,7 @@ export const preguntas = {
 
 export const encuentro = {
   title: "Encuentro Nacional de Dabke",
-  lede: "En el END compartimos brindamos una clase. Acá podés leerla completa o descargarla.",
+  lede: "En el END compartimos y brindamos una clase. Acá podés leerla completa o descargarla.",
   doc: {
     kind: "PDF, parte teórica",
     title: "Dabke Baalbackiie",
@@ -231,9 +230,9 @@ export const encuentro = {
     image: { src: "/images/gallery/32.jpg", alt: "Participantes del Encuentro Nacional de Dabke", width: 4000, height: 3000 },
   },
   videos: [
-    { title: "Clásico de Fairouz", text: "Dabke de mujeres estilo clásico.", href: "https://www.youtube.com/watch?v=Q1DTP3ROLOI", src: "/images/gallery/30.png", width: 1280, height: 853, alt: "La fila de bailarinas en el escenario" },
-    { title: "Dabke bedewe", text: "Dabke de hombres estilo bedewe.", href: "https://www.youtube.com/watch?v=VmW9hmI-Pwo", src: "/images/gallery/31.png", width: 1600, height: 1200, alt: "Ensayo en un salón" },
-    { title: "Dabke Lebnani", text: "Dabke grupal libanés.", href: "https://www.youtube.com/watch?v=E7f6cp53RGc", src: "/images/gallery/29.png", width: 1080, height: 804, alt: "Integrantes en una fiesta" },
+    { title: "Clásico de Fairouz", text: "Dabke de mujeres estilo clásico.", href: "https://www.youtube.com/watch?v=Q1DTP3ROLOI", src: "/images/videos/clasico-fairouz.jpg", width: 1440, height: 1080, alt: "Bailarinas con vestidos blancos abren los brazos en el escenario" },
+    { title: "Dabke bedewe", text: "Dabke de hombres estilo bedewe.", href: "https://www.youtube.com/watch?v=VmW9hmI-Pwo", src: "/images/videos/dabke-bedewe.jpg", width: 1440, height: 1080, alt: "Fila de bailarines tomados de las manos en el escenario" },
+    { title: "Dabke Lebnani", text: "Dabke grupal libanés.", href: "https://www.youtube.com/watch?v=E7f6cp53RGc", src: "/images/videos/dabke-lebnani.jpg", width: 1440, height: 1080, alt: "El elenco completo baila frente a la bandera del Líbano" },
   ],
 };
 

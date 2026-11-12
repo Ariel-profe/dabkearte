@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
-import { encuentro, socials } from "@/lib/content";
-import { gsap, useSectionMotion } from "@/lib/motion";
+import { useCallback, useRef, useState } from "react";
+import { encuentro } from "@/lib/content";
+import { gsap, useSectionMotion } from "@/lib/motion";
 import { BtnText } from "@/components/ui/split";
-
-const youtube = socials.find((s) => s.id === "youtube")!;
+import { VideoPlayer, type Video } from "@/components/ui/video-player";
 
 export function Encuentro() {
   const root = useRef<HTMLElement>(null);
+  const [video, setVideo] = useState<Video | null>(null);
+  const closeVideo = useCallback(() => setVideo(null), []);
 
   // Photos slide slightly inside their frames while the cards pass.
   useSectionMotion((el) => {
@@ -86,21 +87,34 @@ export function Encuentro() {
 
       <div className="videos wrap">
         {encuentro.videos.map((v) => (
-          <a key={v.title} className="post" href={v.href} target="_blank" rel="noopener noreferrer">
+          <a
+            key={v.title}
+            className="post"
+            href={v.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-haspopup="dialog"
+            onClick={(e) => {
+              if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+              e.preventDefault();
+              setVideo(v);
+            }}
+          >
             <figure className="post-photo" data-inner>
-              <Image src={v.src} alt={v.alt} width={v.width} height={v.height} sizes="(max-width: 860px) 100vw, 33vw" loading="lazy" className="object-cover object-top" quality={72} />
+              <Image src={v.src} alt={v.alt} width={v.width} height={v.height} sizes="(max-width: 860px) 100vw, 33vw" loading="lazy" className="object-cover object-top" quality={82} />
               <span className="post-play" aria-hidden>
                 <svg viewBox="0 0 12 14" fill="currentColor">
                   <path d="M0 0v14l12-7z" />
                 </svg>
               </span>
             </figure>
-            <p className="post-date">Video en YouTube</p>
+            <p className="post-date">Ver video</p>
             <h3 className="post-title">{v.title}</h3>
             <p className="post-text">{v.text}</p>
           </a>
         ))}
       </div>
+      <VideoPlayer video={video} onClose={closeVideo} />
     </section>
   );
 }

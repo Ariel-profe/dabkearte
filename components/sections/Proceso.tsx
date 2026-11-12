@@ -27,7 +27,11 @@ export function Proceso() {
   const root = useRef<HTMLElement>(null);
 
   useSectionMotion((el) => {
+    const mm = gsap.matchMedia();
+    const breakpoints = { wide: "(min-width: 761px)", narrow: "(max-width: 760px)" };
+
     // The title splits to both edges while the photo opens from a sliver to the full stage.
+    // Wide screens split sideways; narrow ones stack the halves and split top/bottom.
     const track = el.querySelector<HTMLElement>(".split-track");
     const split = el.querySelector<HTMLElement>("[data-split]");
     const title = split?.querySelector<HTMLElement>(":scope > .split-title");
@@ -36,37 +40,48 @@ export function Proceso() {
     if (track && split && title && fig && over) {
       const a = title.querySelector<HTMLElement>(".half-a")!;
       const b = title.querySelector<HTMLElement>(".half-b")!;
+      const overA = over.querySelector(".half-a");
+      const overB = over.querySelector(".half-b");
       const img = fig.querySelector("img");
-      const cap = fig.querySelector("figcaption");
+      const cap = fig.querySelector<HTMLElement>("figcaption");
       const pad = () => parseFloat(getComputedStyle(title).paddingLeft) || 0;
-      const shiftA = () => -(relPos(a, split).x - pad());
-      const shiftB = () => split.clientWidth - pad() - (relPos(b, split).x + b.offsetWidth);
       const r = px("--r-xl");
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: track,
-          start: () => "top " + headerH(),
-          end: () => "bottom bottom-=" + px("--frame"),
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
+      mm.add(breakpoints, (ctx) => {
+        const vertical = Boolean(ctx.conditions?.narrow);
+        const axis = vertical ? "y" : "x";
+        const sliver = vertical ? "inset(49.5% 14% 49.5% 14% round 14px)" : "inset(34% 49% 34% 49% round 14px)";
+        const shiftA = vertical
+          ? () => pad() - relPos(a, split).y
+          : () => pad() - relPos(a, split).x;
+        const shiftB = vertical
+          ? () => (cap ? cap.offsetTop - pad() : split.clientHeight - pad()) - (relPos(b, split).y + b.offsetHeight)
+          : () => split.clientWidth - pad() - (relPos(b, split).x + b.offsetWidth);
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: track,
+            start: () => "top " + headerH(),
+            end: () => "bottom bottom-=" + px("--frame"),
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        });
+        tl.fromTo(fig, { clipPath: sliver }, { clipPath: `inset(0% 0% 0% 0% round ${r}px)`, ease: "power2.inOut", duration: 1 }, 0)
+          .fromTo([a, overA], { [axis]: 0 }, { [axis]: shiftA, ease: "power2.inOut", duration: 0.9 }, 0)
+          .fromTo([b, overB], { [axis]: 0 }, { [axis]: shiftB, ease: "power2.inOut", duration: 0.9 }, 0);
+        if (img) tl.fromTo(img, { scale: 1.35 }, { scale: 1, ease: "power2.out", duration: 1 }, 0);
+        if (cap) tl.fromTo(cap, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.2 }, 0.85);
+        tl.to({}, { duration: 0.15 });
       });
-      tl.fromTo(fig, { clipPath: "inset(34% 49% 34% 49% round 14px)" }, { clipPath: `inset(0% 0% 0% 0% round ${r}px)`, ease: "power2.inOut", duration: 1 }, 0)
-        .fromTo([a, over.querySelector(".half-a")], { x: 0 }, { x: shiftA, ease: "power2.inOut", duration: 0.9 }, 0)
-        .fromTo([b, over.querySelector(".half-b")], { x: 0 }, { x: shiftB, ease: "power2.inOut", duration: 0.9 }, 0);
-      if (img) tl.fromTo(img, { scale: 1.35 }, { scale: 1, ease: "power2.out", duration: 1 }, 0);
-      if (cap) tl.fromTo(cap, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.2 }, 0.85);
-      tl.to({}, { duration: 0.15 });
     }
 
     // The timeline fills and each step lights up as the line reaches it.
     const stepsTrack = el.querySelector<HTMLElement>(".steps-track");
     const line = stepsTrack?.querySelector<HTMLElement>(".steps-line");
     const steps = Array.from(el.querySelectorAll<HTMLElement>(".step"));
-    if (!stepsTrack || !line) return;
-    const mm = gsap.matchMedia();
-    mm.add({ wide: "(min-width: 761px)", narrow: "(max-width: 760px)" }, (ctx) => {
+    if (!stepsTrack || !line) return () => mm.revert();
+    mm.add(breakpoints, (ctx) => {
       const vertical = Boolean(ctx.conditions?.narrow);
       const prop = vertical ? "scaleY" : "scaleX";
       let marks: number[] = [];

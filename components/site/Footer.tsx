@@ -22,7 +22,7 @@ export function Footer() {
   return (
     <footer ref={root} className="site-footer">
       <div className="foot-top wrap">
-        <div className="foot-col">
+        <div className="foot-col foot-col--mail">
           <p className="foot-h">Escribinos</p>
           <a className="foot-big link" href={`mailto:${contact.email}`}>
             {contact.email.split("@")[0]}@<wbr />
@@ -32,12 +32,12 @@ export function Footer() {
             WhatsApp {contact.whatsappDisplay}
           </a>
         </div>
-        <div className="foot-col">
+        <div className="foot-col foot-col--where">
           <p className="foot-h">Dónde estamos</p>
           <p>Mendoza</p>
           <p>Argentina</p>
         </div>
-        <nav className="foot-col" aria-label="Secciones">
+        <nav className="foot-col foot-col--nav" aria-label="Secciones">
           <p className="foot-h">Secciones</p>
           {nav.map((item) => (
             <a key={item.href} className="link" href={item.href}>
@@ -45,7 +45,7 @@ export function Footer() {
             </a>
           ))}
         </nav>
-        <div className="foot-col">
+        <div className="foot-col foot-col--social">
           <p className="foot-h">Seguinos</p>
           {socials.map((s) => (
             <a key={s.id} className="link" href={s.href} target="_blank" rel="noopener noreferrer">
@@ -55,9 +55,9 @@ export function Footer() {
         </div>
       </div>
       <div className="foot-bottom wrap">
-        <p>© {new Date().getFullYear()} DabkeArte Mendoza</p>
-        <Image className="foot-logo" src="/logos/logo-text-color.png" alt="" width={2084} height={1534} sizes="64px" />
-        <p>
+        <p className="foot-copy">© {new Date().getFullYear()} Todos los derechos reservados</p>
+        <Image className="foot-logo" src="/logos/logo-text-color.png" alt="" width={2084} height={1534} sizes="88px" />
+        <p className="foot-credit">
           Desarrollado por{" "}
           <a className="link link--under" href="https://amn.com.ar" target="_blank" rel="noopener noreferrer">
             AMN Consultora Informática

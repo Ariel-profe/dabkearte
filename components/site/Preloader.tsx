@@ -3,14 +3,9 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap, ScrollTrigger, motionOn } from "@/lib/motion";
+import { gsap, ScrollTrigger, lockScroll as lock, motionOn } from "@/lib/motion";
 
 export const INTRO_KEY = "dabke-intro";
-
-const lock = (on: boolean) => {
-  document.documentElement.style.overflow = on ? "hidden" : "";
-  window.dispatchEvent(new CustomEvent("dabke:lock", { detail: on }));
-};
 
 /** Logo, a 0–100 counter and a violet bar. Shown once per tab, never with reduced motion. */
 export function Preloader() {
