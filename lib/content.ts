@@ -197,11 +197,11 @@ export const trayectoria = {
 export const preguntas = {
   lede: "Preguntas frecuentes sobre nuestros shows y eventos.",
   items: [
-    { q: "¿Cuánto dura el show?", a: "Entre 15 y 40 minutos, según el formato. Podemos hacer un cuadro enlazado o un show con varios bloques." },
+    { q: "¿Cuánto dura el show?", a: "Varía según el evento y la propuesta que elijas. Puede ser entre 10 y 35min. Está la opción de hacer un cuadro enlazado o con varios bloques." },
     { q: "¿Cuántos bailarines van?", a: "Desde dos parejas hasta el elenco completo. Lo definimos según el espacio, el presupuesto y el tipo de evento." },
     { q: "¿Qué espacio necesitan?", a: "Con un espacio de unos 3 por 3 metros alcanza. Pero si es más grande, mejor." },
-    { q: "¿Llevan la música?", a: "Sí, llevamos la música en un pendrive y la coordinamos con el DJ o el sonido del salón, pero tambien podemos enviarla." },
-    { q: "¿Con cuánta anticipación hay que reservar?", a: "Lo ideal es escribirnos con uno o dos meses de anticipación, sobre todo en verano." },
+    { q: "¿Llevan la música?", a: "Enviamos la música al canal de comunicación que nos pidan (WhatsApp o correo) y también la llevamos el día del evento por si hay que coordinar con el DJ encargado." },
+    { q: "¿Con cuánta anticipación hay que reservar?", a: "Te recomendamos reservar la fecha con la mayor anticipación posible, para asegurarte de que podamos asistir a tu evento." },
     { q: "¿Viajan fuera de Mendoza?", a: "Sí. Consultanos por eventos en otras provincias y armamos una propuesta con traslado incluido." },
   ],
 };
