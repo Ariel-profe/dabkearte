@@ -244,8 +244,9 @@ main > section { position: relative; overflow-x: clip; }
 .logo { position: relative; display: block; width: 64px; transform-origin: 0 0; }
 .logo img { display: block; width: 100%; height: auto; }
 .logo .logo-white { position: absolute; inset: 0; opacity: 0; }
-.nav { display: flex; gap: clamp(18px, 2.6vw, 40px); font-size: 15px; font-weight: 500; }
+.nav-links { display: flex; gap: clamp(18px, 2.6vw, 40px); font-size: 15px; font-weight: 500; }
 .nav a { white-space: nowrap; }
+.nav-foot { display: none; }
 .header-end { display: flex; align-items: center; gap: 10px; }
 .menu-btn { display: none; width: 44px; height: 44px; border-radius: 50%; place-items: center; }
 .menu-lines { position: relative; width: 26px; height: 8px; }
@@ -266,29 +267,98 @@ main > section { position: relative; overflow-x: clip; }
 .motion:has([data-flight-from]) [data-flight-to] { opacity: 0; }
 @media (max-width: 900px) {
   .menu-btn { display: grid; }
+  /* Full-height panel; dvh follows the browser's own toolbars as they show and hide.
+     Everything inside is sized in cqh (the panel's own height), so it always fits without scrolling. */
   .nav {
     position: fixed;
     top: var(--header);
     left: var(--frame);
     right: var(--frame);
+    height: calc(100vh - var(--header) - var(--frame));
+    height: calc(100dvh - var(--header) - var(--frame));
+    container-type: size;
+    display: flex;
     flex-direction: column;
-    gap: 6px;
-    padding: 20px 24px 28px;
+    gap: clamp(12px, 4vh, 40px);
+    gap: clamp(12px, 4dvh, 40px);
+    padding: clamp(14px, 4.5vh, 40px) clamp(22px, 6vw, 40px);
+    padding: clamp(14px, 4.5dvh, 40px) clamp(22px, 6vw, 40px);
     background: var(--panel);
     color: var(--on-panel);
     border-radius: var(--r-lg);
-    font-size: 30px;
-    letter-spacing: -0.04em;
-    opacity: 0;
+    overflow: hidden;
+    clip-path: inset(0 0 100% 0 round var(--r-lg));
     visibility: hidden;
-    transform: translateY(-10px);
-    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease), visibility 0s 0.4s;
+    transition: clip-path 0.6s var(--ease), visibility 0s 0.6s;
   }
   .is-open .nav {
+    clip-path: inset(0 0 0 0 round var(--r-lg));
+    visibility: visible;
+    transition: clip-path 0.6s var(--ease);
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    font-family: var(--font-display);
+    font-size: clamp(22px, min(11vw, 9cqh), 64px);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+  }
+  .nav-links a,
+  .nav-foot {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  }
+  .is-open .nav-links a,
+  .is-open .nav-foot {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+    transition-delay: calc(0.18s + var(--i, 4) * 0.06s);
+  }
+  .nav-foot {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(8px, 3cqh, 22px);
+    margin-top: auto;
+    padding-top: clamp(10px, 3cqh, 24px);
+    border-top: 1px solid var(--panel-line);
+    font-size: clamp(13px, 3.6cqh, 16px);
+    line-height: 1.4;
+  }
+  .nav-foot .btn { height: clamp(36px, 9cqh, 50px); }
+  .nav-contact,
+  .nav-social { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+  .nav-contact { flex-direction: column; }
+  .nav-social { color: var(--panel-muted); }
+  .site-header::before {
+    content: "";
+    position: fixed;
+    inset: var(--header) 0 0;
+    background: var(--bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s var(--ease), visibility 0s 0.4s;
+  }
+  .is-open.site-header::before {
     opacity: 1;
     visibility: visible;
-    transform: none;
-    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+    transition: opacity 0.3s var(--ease);
+  }
+}
+/* Phones on their side: too short for one column, so links and contact sit side by side. */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 520px) {
+  .nav { flex-direction: row; align-items: flex-end; }
+  .nav-links { align-self: stretch; justify-content: center; font-size: clamp(22px, 19cqh, 64px); }
+  .nav-foot {
+    margin: 0 0 0 auto;
+    padding: 0 0 0 clamp(16px, 4vw, 32px);
+    border-top: 0;
+    border-left: 1px solid var(--panel-line);
   }
 }
 @media (max-width: 560px) {
