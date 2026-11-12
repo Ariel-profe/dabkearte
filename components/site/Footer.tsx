@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { contact, nav, socials, whatsappLink } from "@/lib/content";
+import { contact, socials, whatsappLink } from "@/lib/content";
 import { gsap, useSectionMotion } from "@/lib/motion";
 
 export function Footer() {
@@ -37,14 +37,6 @@ export function Footer() {
           <p>Mendoza</p>
           <p>Argentina</p>
         </div>
-        <nav className="foot-col foot-col--nav" aria-label="Secciones">
-          <p className="foot-h">Secciones</p>
-          {nav.map((item) => (
-            <a key={item.href} className="link" href={item.href}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
         <div className="foot-col foot-col--social">
           <p className="foot-h">Seguinos</p>
           {socials.map((s) => (

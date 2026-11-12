@@ -8,7 +8,6 @@ import { gsap, useSectionMotion } from "@/lib/motion";
 import { BtnText } from "@/components/ui/split";
 
 const ringFill = Math.min(100, Math.max(0, (cifras.ring.value / cifras.ring.max) * 100));
-const barMax = Math.max(1, ...cifras.bars.data.map((d) => d.value));
 
 export function Cifras() {
   const root = useRef<HTMLElement>(null);
@@ -44,7 +43,7 @@ export function Cifras() {
     }
   }, root);
 
-  const { caseTile, figs, quote, ring, bars } = cifras;
+  const { caseTile, figs, quote, ring } = cifras;
 
   return (
     <section ref={root} id="cifras" className="results" aria-labelledby="cifras-title">
@@ -93,21 +92,6 @@ export function Cifras() {
           </div>
           <p className="tile-title">{ring.title}</p>
           <p className="tile-text">{ring.text}</p>
-        </article>
-        <article className="tile tile-bars">
-          <div>
-            <p className="fig-num">{bars.num}</p>
-            <p className="fig-label">{bars.label}</p>
-          </div>
-          <ul className="bars" aria-label="Integrantes por año">
-            {bars.data.map((d) => (
-              <li key={d.label}>
-                <span className="bar-val">{d.value}</span>
-                <span className="bar" style={{ "--h": (d.value / barMax).toFixed(3) } as CSSProperties} />
-                <span className="bar-label">{d.label}</span>
-              </li>
-            ))}
-          </ul>
         </article>
       </div>
     </section>

@@ -555,7 +555,7 @@ main > section { position: relative; overflow-x: clip; }
 @media (max-width: 900px) {
   .hero-bottom { grid-template-columns: 1fr; gap: 22px; }
   .hero-cta { align-items: flex-start; }
-  .hero-marks { margin-bottom: 20px; }
+  .hero-marks { display: none; }
 }
 
 /* Presentaciones */
@@ -571,14 +571,13 @@ main > section { position: relative; overflow-x: clip; }
 .project-media { border-radius: var(--r-md); overflow: hidden; aspect-ratio: 5 / 4; background: var(--shade); }
 .project--wide .project-media { aspect-ratio: 21 / 9; }
 .project-media img { width: 100%; height: 100%; object-fit: cover; }
-.project-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; padding: 16px 2px 0; }
+.project-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 16px 2px 0; }
 .project-name {
   font-family: var(--font-display);
   font-size: clamp(24px, 2.3vw, 34px);
   font-weight: 600;
   letter-spacing: -0.045em;
   line-height: 1.05;
-  margin-right: auto;
   transition: color 0.4s var(--ease);
 }
 .project-name::after {
@@ -651,7 +650,7 @@ main > section { position: relative; overflow-x: clip; }
 .about-sign span { display: block; color: var(--muted); }
 @media (max-width: 760px) {
   .about-grid { grid-template-columns: 1fr; }
-  .about-photo { width: 62%; aspect-ratio: 4 / 5; }
+  .about-photo { margin-inline: calc(var(--frame) - var(--gutter)); aspect-ratio: 4 / 5; }
 }
 
 /* Shows */
@@ -1519,12 +1518,10 @@ main > section { position: relative; overflow-x: clip; }
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "mail mail"
-      "where nav"
-      "social nav";
+      "where social";
   }
   .foot-col--mail { grid-area: mail; }
   .foot-col--where { grid-area: where; }
-  .foot-col--nav { grid-area: nav; }
   .foot-col--social { grid-area: social; }
 }
 @media (max-width: 640px) {

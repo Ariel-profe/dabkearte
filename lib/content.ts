@@ -18,6 +18,7 @@ export const socials = [
   { id: "instagram", label: "Instagram", href: "https://www.instagram.com/dabkearte_mendoza/" },
   { id: "facebook", label: "Facebook", href: "https://www.facebook.com/share/19rZ52YbyX/?mibextid=wwXIfr" },
   { id: "youtube", label: "YouTube", href: "https://www.youtube.com/@dabkeartemendoza" },
+  { id: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@dabkearte.mendoza" },
 ];
 
 export const nav = [
@@ -125,18 +126,6 @@ export const cifras = {
   ],
   quote: { text: "Bienvenidos a nuestra historia.", by: "Elenco de DabkeArte" },
   ring: { label: "+20", value: 20, max: 20, title: "Coreografías", text: "Estudiamos cada estilo con sus pasos, su ritmo y su historia." },
-  bars: {
-    num: "24",
-    label: "Bailarines estables en el elenco",
-    data: [
-      { label: "2014", value: 5 },
-      { label: "2016", value: 12 },
-      { label: "2018", value: 16 },
-      { label: "2020", value: 18 },
-      { label: "2023", value: 22 },
-      { label: "2026", value: 24 },
-    ],
-  },
 };
 
 export const galeria = {
@@ -171,7 +160,7 @@ export const team = [
   { id: 12, name: "Mauge", lastName: "Cassar", birthdate: "09-04", instagramUrl: "https://www.instagram.com/mauge.cassar/", primaryImage: "/images/team/mauge.jpg", hoverImage: "/images/team/mauge-1.jpeg" },
   { id: 13, name: "Maca", lastName: "Della Gaspera", birthdate: "02-09", instagramUrl: "https://www.instagram.com/macadg0295/", primaryImage: "/images/team/macarena.jpg", hoverImage: "/images/team/macarena-1.png" },
   { id: 14, name: "Magalí", lastName: "Mafauad", birthdate: "24-02", instagramUrl: "https://www.instagram.com/magali.mafauad/", primaryImage: "/images/team/magali.jpg", hoverImage: "/images/team/magali-1.jpeg" },
-  { id: 15, name: "Martín", lastName: "Bulfon", birthdate: "10-11", instagramUrl: "https://www.instagram.com/tnchx/", primaryImage: "/images/team/martin.jpg", hoverImage: "/images/team/martin-1.jpeg" },
+  { id: 15, name: "Martín", lastName: "Bulfon", birthdate: "19-10", instagramUrl: "https://www.instagram.com/tnchx/", primaryImage: "/images/team/martin.jpg", hoverImage: "/images/team/martin-1.jpeg" },
   { id: 16, name: "Micaela", lastName: "Poblete", birthdate: "19-10", instagramUrl: "https://www.instagram.com/micapoblete_/", primaryImage: "/images/team/micaela.jpg", hoverImage: "/images/team/micaela-1.jpg" },
   { id: 17, name: "Nadir", lastName: "Daou", birthdate: "15-12", instagramUrl: "https://www.instagram.com/nadir.daou/", primaryImage: "/images/team/nadir.jpg", hoverImage: "/images/team/nadir-1.jpg" },
   { id: 18, name: "Nancy", lastName: "Ceschin", birthdate: "26-06", instagramUrl: "https://www.instagram.com/nanyceschin/", primaryImage: "/images/team/nancy.jpg", hoverImage: "/images/team/nancy-1.jpeg" },
@@ -180,7 +169,7 @@ export const team = [
   { id: 21, name: "Rocío", lastName: "Cutifani", birthdate: "10-08", instagramUrl: "https://www.instagram.com/ro_cutifani/", primaryImage: "/images/team/rocio.jpg", hoverImage: "/images/team/rocio-1.jpeg" },
   { id: 22, name: "Sol", lastName: "Sttoco", birthdate: "30-10", instagramUrl: "https://www.instagram.com/sol_sttoco/", primaryImage: "/images/team/sol-1.jpeg", hoverImage: "/images/team/sol-1.jpeg" },
   { id: 23, name: "Yamil", lastName: "Mocayar", birthdate: "04-03", instagramUrl: "https://www.instagram.com/yamilovich.ar/", primaryImage: "/images/team/yamil.jpg", hoverImage: "/images/team/yamil-1.jpeg" },
-  { id: 23, name: "Yisel", lastName: "Gari", birthdate: "04-03", instagramUrl: "https://www.instagram.com/yiselgari/", primaryImage: "/images/team/yisel.jpg", hoverImage: "/images/team/yisel-1.jpeg" },
+  { id: 23, name: "Yisel", lastName: "Gari", birthdate: "20-06", instagramUrl: "https://www.instagram.com/yiselgari/", primaryImage: "/images/team/yisel.jpg", hoverImage: "/images/team/yisel-1.jpeg" },
 ] as {
   id: string | number;
   name: string;

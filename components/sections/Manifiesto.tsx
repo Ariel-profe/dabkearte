@@ -40,7 +40,7 @@ export function Manifiesto() {
             alt={manifiesto.image.alt}
             width={manifiesto.image.width}
             height={manifiesto.image.height}
-            sizes="(max-width: 760px) 62vw, 33vw"
+            sizes="(max-width: 760px) 100vw, 33vw"
             quality={78}
           />
         </figure>
