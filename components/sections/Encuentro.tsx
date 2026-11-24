@@ -101,7 +101,7 @@ export function Encuentro() {
             }}
           >
             <figure className="post-photo" data-inner>
-              <Image src={v.src} alt={v.alt} width={v.width} height={v.height} sizes="(max-width: 860px) 100vw, 33vw" loading="lazy" className="object-cover object-top" quality={82} />
+              <Image src={v.src} alt={v.alt} width={v.width} height={v.height} sizes="(max-width: 860px) 100vw, 33vw" loading="lazy" quality={85} />
               <span className="post-play" aria-hidden>
                 <svg viewBox="0 0 12 14" fill="currentColor">
                   <path d="M0 0v14l12-7z" />

@@ -218,9 +218,9 @@ export const encuentro = {
     image: { src: "/images/gallery/32.jpg", alt: "Participantes del Encuentro Nacional de Dabke", width: 4000, height: 3000 },
   },
   videos: [
-    { title: "Clásico de Fairouz", text: "Dabke de mujeres estilo clásico.", href: "https://www.youtube.com/watch?v=Q1DTP3ROLOI", src: "/images/videos/clasico-fairouz.jpg", width: 1440, height: 1080, alt: "Bailarinas con vestidos blancos abren los brazos en el escenario" },
-    { title: "Dabke bedewe", text: "Dabke de hombres estilo bedewe.", href: "https://www.youtube.com/watch?v=VmW9hmI-Pwo", src: "/images/videos/dabke-bedewe.jpg", width: 1440, height: 1080, alt: "Fila de bailarines tomados de las manos en el escenario" },
-    { title: "Dabke Lebnani", text: "Dabke grupal libanés.", href: "https://www.youtube.com/watch?v=E7f6cp53RGc", src: "/images/videos/dabke-lebnani.jpg", width: 1440, height: 1080, alt: "El elenco completo baila frente a la bandera del Líbano" },
+    { title: "Clásico de Fairouz", text: "Dabke de mujeres estilo clásico.", href: "https://www.youtube.com/watch?v=Q1DTP3ROLOI", src: "/images/videos/clasico-fairouz.png", width: 1280, height: 720, alt: "Portada del video Ya Ana de Fairuz con bailarinas en el escenario" },
+    { title: "Dabke bedewe", text: "Dabke de hombres estilo bedewe.", href: "https://www.youtube.com/watch?v=VmW9hmI-Pwo", src: "/images/videos/dabke-bedewe.png", width: 1280, height: 720, alt: "Portada del video Dabke Bedawiie con el tabl en el escenario" },
+    { title: "Dabke Lebnani", text: "Dabke grupal libanés.", href: "https://www.youtube.com/watch?v=E7f6cp53RGc", src: "/images/videos/dabke-lebnani.png", width: 1280, height: 720, alt: "Portada del video Lebnani con el elenco frente a la bandera del Líbano" },
   ],
 };
 
